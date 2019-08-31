@@ -1,0 +1,14 @@
+- name: Contact
+  link: /
+- name: About me
+  link: '#aboutme'
+- name: Experience
+  link: '#experience'
+- name: Education
+  link: '#education'
+- name: Side Projects
+  link: '#sideprojects'
+- name: Languages
+  link: '#languages'
+- name: Volunteer Exp.
+  link: '#volunteerexp'
