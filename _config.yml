@@ -2,7 +2,7 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "singlepage"
 plugins:
     - jekyll-sitemap
     - jekyll-seo-tag
