@@ -1,6 +1,12 @@
 body{
+    color: $primaryText;
     font-family: 'Nunito Sans', sans-serif;
 }
+
+a{
+    color: $primaryText;
+}
+
 ::-webkit-scrollbar {
     width: 0px; /* remove scrollbar space */
     background: transparent;
@@ -33,4 +39,8 @@ ul{
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+h1, h3{
+    font-weight: 600;
 }
