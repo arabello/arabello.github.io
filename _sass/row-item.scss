@@ -3,6 +3,12 @@
     h4, h5, h6{
         font-weight: 600;
         margin: 0;
+
+        /* markdownify generates <p> tag. Reset it */
+        p{
+            margin: 0;
+            padding: 0;
+        }
     }
 
     h4{
@@ -17,7 +23,7 @@
         font-size: 0.9rem;
     }
 
-    &-date{
+    &-subcaption{
         font-size: 0.8rem;
     }
 

@@ -1,9 +1,12 @@
 ---
 layout: default
 ---
+
 {% include contacts.html %}
+
 <h3 class="mb-3">About me</h3>
 {% include aboutme.html %}
+
 <h3 class="mb-3">Experience</h3>
 {% for item in site.data.experiences %}
     {% capture period %}
@@ -17,6 +20,7 @@ layout: default
         desc=item.desc 
         content=item.content %}
 {% endfor %}
+
 <h3 class="mb-3">Education</h3>
 {% for item in site.data.education %}
 {% capture period %}{{ item.startdate }} - {{ item.enddate }}{% endcapture %}
@@ -24,6 +28,19 @@ layout: default
         title=item.institute
         subtitle=item.title
         caption=item.grade
+        subcaption=period
+        content=item.content %}
+{% endfor %}
+
+<h3 class="mb-3">Side projects</h3>
+{% for item in site.data.projects %}
+{% capture period %}{{ item.startdate }} - {{ item.enddate }}{% endcapture %}
+{% capture url %}{{ item.url-md | markdownify }} {% endcapture %}
+{% capture repo-url %}{{ item.repo-url-md | markdownify }} {% endcapture %}
+    {% include row-item.html 
+        title=item.title
+        subtitle=url
+        repo-url=repo-url
         subcaption=period
         content=item.content %}
 {% endfor %}
