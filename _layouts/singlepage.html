@@ -44,3 +44,9 @@ layout: default
         subcaption=period
         content=item.content %}
 {% endfor %}
+
+<h3 class="mb-3">Languages</h3>
+<div class="row-item">
+    {% capture languages-md %}{% include languages.md %}{% endcapture %}
+    {{ languages-md | markdownify }}
+</div>
