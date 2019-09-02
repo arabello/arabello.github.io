@@ -2,9 +2,28 @@
 layout: default
 ---
 {% include contacts.html %}
-<h3>About me</h3>
+<h3 class="mb-3">About me</h3>
 {% include aboutme.html %}
-<h3> Experience </h3>
+<h3 class="mb-3">Experience</h3>
 {% for item in site.data.experiences %}
-    {% include experience.html item=item %}
+    {% capture period %}
+        {{ item.startdate }} - {{ item.enddate }}
+    {% endcapture %}
+    {% include row-item.html 
+        title=item.job 
+        subtitle=item.company 
+        caption=item.location 
+        subcaption=period 
+        desc=item.desc 
+        content=item.content %}
+{% endfor %}
+<h3 class="mb-3">Education</h3>
+{% for item in site.data.education %}
+{% capture period %}{{ item.startdate }} - {{ item.enddate }}{% endcapture %}
+    {% include row-item.html 
+        title=item.institute
+        subtitle=item.title
+        caption=item.grade
+        subcaption=period
+        content=item.content %}
 {% endfor %}
