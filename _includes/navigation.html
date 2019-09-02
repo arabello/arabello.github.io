@@ -1,7 +1,7 @@
-<nav>
+<nav class="text-nowrap">
     <ul>
         {% for item in site.data.navigation %}
-            <li>
+            <li class="mb-3">
             <a href="{{ item.link }}" 
                {% if page.url == item.link %} class="current" {% endif %}>
                 {{ item.name }}
