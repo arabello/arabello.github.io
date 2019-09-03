@@ -1,14 +1,14 @@
 - name: Contact
   link: /
 - name: About me
-  link: '#aboutme'
+  link: '#about-me'
 - name: Experience
   link: '#experience'
 - name: Education
   link: '#education'
-- name: Side Projects
-  link: '#sideprojects'
+- name: Projects
+  link: '#recent-projects'
 - name: Languages
   link: '#languages'
 - name: Other Exp.
-  link: '#otherexp'
+  link: '#other-experience'
