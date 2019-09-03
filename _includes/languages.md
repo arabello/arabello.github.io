@@ -1,2 +1,0 @@
-- __Italian__: Native proficiency
-- __English__: Professional working proficiency ([CEFR B2 assessment](res/CEFR-B2-assessment.pdf))

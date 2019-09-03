@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
-
+{% capture portfolio-md %}
+    {% include portfolio.md %}
+{% endcapture %}
+{{ portfolio-md | markdownify }}
+<!--
 {% include contacts.html %}
 
 <h3 class="mb-3">About me</h3>
@@ -55,4 +59,4 @@ layout: default
 <div class="row-item">
     {% capture otherexp-md %}{% include otherexp.md %}{% endcapture %}
     {{ otherexp-md | markdownify }}
-</div>
+</div>-->
