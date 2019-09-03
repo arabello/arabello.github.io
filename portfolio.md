@@ -1,8 +1,3 @@
-# Contact
-- matteo.pelle.pellegrino [at] gmail.com
-- [LinkedIn](https://www.linkedin.com/in/mttpll/)
-- [GitHub](https://github.com/arabello)
-
 # About me
 
 Hello, I'm Matteo from Italy! I'm a technology and science enthusiast and I love programming.
