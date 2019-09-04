@@ -35,7 +35,7 @@ Thesis: [Kotlin Safety Library Loader](res/Thesis.pdf) (code [here](https://gith
 #### 100/100 (cum laude)
 ##### 2010 - 2015
 
-# Recent Projects
+# Latest Projects
 
 ## TablutAI
 ##### Apr 2019 - May 2019
