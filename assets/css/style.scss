@@ -4,3 +4,19 @@
 @import "main";
 @import "navigation";
 @import "portfolio";
+
+{% for item in site.data.navigation %}
+$primary-{{ forloop.index0 }}: {{ item.color }};
+{% endfor %}
+
+{% for item in site.data.navigation %}
+.primary-{{ forloop.index0 }}{
+    color: $primary-{{ forloop.index0 }};
+}
+
+a.side-link-{{ forloop.index0 }}:hover{
+    color: $primary-{{ forloop.index0 }};
+    font-weight: 200;
+}
+
+{% endfor %}

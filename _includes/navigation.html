@@ -2,11 +2,16 @@
     <ul>
         {% for item in site.data.navigation %}
             <li class="mb-3">
-            <a href="{{ item.link }}" 
-               {% if page.url == item.link %} class="current" {% endif %}>
-                {{ item.name }}
-            </a>
-        </li>
+                {% capture classes %}
+                side-link side-link-{{ forloop.index0 }} 
+                    {% if forloop.first %}
+                        primary-{{ forloop.index0 }}
+                    {% endif %}
+                {% endcapture %}
+                <a href="{{ item.link }}" class="{{ classes }}">
+                    {{ item.name }}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 </nav>

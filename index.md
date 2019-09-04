@@ -1,4 +1,4 @@
 ---
-title: Contact | Matteo Pellegrino
+title: Matteo Pellegrino
 ---
 {% include_relative portfolio.md %}
