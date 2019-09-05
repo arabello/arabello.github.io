@@ -4,6 +4,7 @@
 @import "main";
 @import "navigation";
 @import "portfolio";
+@import "navbar";
 
 {% for item in site.data.navigation %}
 $primary-{{ forloop.index0 }}: {{ item.color }};

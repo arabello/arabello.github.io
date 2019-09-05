@@ -3,21 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700&display=swap" rel="stylesheet">
 
     <!-- Custom style -->
     <link rel="stylesheet" href="/assets/css/style.css">
-
-    <!-- jQuery -->
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-  crossorigin="anonymous"></script>
     
     <!-- JS -->
     <script text="text/javascript" src="/assets/js/main.js"></script>
@@ -26,16 +23,17 @@
   </head>
   <body>
       <div class="container vh-100">
+            {% include navbar.html %}
           <div class="row d-flex flex-row h-40 align-items-center">
-              <div class="col-8 offset-2">
+              <div class="col-12 col-lg-8 offset-lg-2">
                 {% include masthead.html %}
               </div>
           </div>
           <div class="row d-flex flex-row h-60">
-              <div class="col-1 p-0">
+              <div class="col-1 p-0 d-none d-lg-block">
                 {% include navigation.html %}
               </div>
-              <div class="col-8 offset-1 h-100 overflow-auto hide-scrollbar portfolio">
+              <div class="col-12 col-lg-8 offset-lg-1 h-100 overflow-auto hide-scrollbar portfolio">
                   {% include contact.html %}
                   {{ content }}
               </div>
