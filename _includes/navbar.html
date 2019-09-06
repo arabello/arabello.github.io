@@ -3,9 +3,9 @@
      <img src="/assets/images/menu.svg" class="pull-left">
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto h-100 d-flex align-items-center">
         {% for item in site.data.navigation %}
-            <li class="mb-3 ml-3">
+            <li class="mb-3">
                 {% capture classes %}
                 side-link side-link-{{ forloop.index0 }} 
                     {% if forloop.first %}

@@ -1,5 +1,19 @@
-.navbar-collapse.collapse.in {
-  display: block!important;
+.navbar-collapse{
+
+    &.collapse{
+        transition: 0.2s;
+    }
+
+
+    &.collapsing{
+        height: 0 !important;
+    }
+
+    &.collapse.in {
+        max-height: none;
+        height: 100vh;
+        display: block !important;
+    }
 }
 
 .navbar{
