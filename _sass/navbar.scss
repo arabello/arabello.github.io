@@ -1,3 +1,12 @@
 .navbar-collapse.collapse.in {
   display: block!important;
 }
+
+.navbar{
+    background: white;
+    padding: 16px 0;
+
+    &-toggler{
+        padding-left: 0;
+    }
+}

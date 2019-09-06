@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg d-lg-none">
+<nav class="navbar container-fluid">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><img src="/assets/images/menu.svg"></span>
+     <img src="/assets/images/menu.svg" class="pull-left">
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
         {% for item in site.data.navigation %}
             <li class="mb-3 ml-3">
                 {% capture classes %}
