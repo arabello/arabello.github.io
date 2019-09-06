@@ -3,11 +3,11 @@
      <img src="/assets/images/menu.svg" class="pull-left">
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav mr-auto h-100 d-flex align-items-center">
+      <div class="h-100 d-flex flex-column justify-content-center">
+    <div class="navbar-nav mr-auto">
         {% for item in site.data.navigation %}
-            <li class="mb-3">
                 {% capture classes %}
-                side-link side-link-{{ forloop.index0 }} 
+                mb-4 side-link side-link-{{ forloop.index0 }} 
                     {% if forloop.first %}
                         primary-{{ forloop.index0 }}
                     {% endif %}
@@ -15,8 +15,8 @@
                 <a href="{{ item.link }}" class="{{ classes }}">
                     {{ item.name }}
                 </a>
-            </li>
         {% endfor %}
+    </div>
     </div>
   </div>
 </nav>
