@@ -1,7 +1,6 @@
 $(function(){
     obfuscateEmail();
     $(window).bind('hashchange', onURLChange);
-    smoothScrollingTo(location.hash);
 });
 
 function obfuscateEmail() {
@@ -29,12 +28,3 @@ function onURLChange(){
         }
     });
 }
-
-function smoothScrollingTo(target){
-  $('.portfolio').animate({scrollTop:$(target).offset().top}, 500);
-}
-
-$('a[href*=\\#]').on('click', function(event){
-    event.preventDefault();
-    smoothScrollingTo(this.hash);
-});
