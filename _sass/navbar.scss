@@ -1,7 +1,7 @@
 .navbar-collapse{
 
     &.collapse{
-        transition: 0.2s;
+        transition: 0.4s;
     }
 
 
@@ -22,5 +22,15 @@
 
     &-toggler{
         padding-left: 0;
+        
+        img{
+            content: url('/assets/images/x.svg');
+        }
+
+        &.collapsed{
+            img{
+                content: url('/assets/images/menu.svg');
+            }
+        }
     }
 }
