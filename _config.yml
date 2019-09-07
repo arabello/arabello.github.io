@@ -1,3 +1,13 @@
+title: Matteo Pellegrino
+description: Personal website and online portfolio
+url: http://matteopellegrino.me
+author: Matteo Pellegrino
+lang: en_US
+social:
+    name: Matteo Pellegrino
+    links:
+        - https://github.com/arabello
+        - https://www.linkedin.com/in/mttpll
 defaults:
   - scope:
       path: ""
