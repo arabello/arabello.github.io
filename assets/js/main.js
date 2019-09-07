@@ -1,20 +1,22 @@
-window.onload = function(){
+$(function(){
     obfuscateEmail();
     $(window).bind('hashchange', onURLChange);
-}
+    smoothScrollingTo(location.hash);
+});
 
 function obfuscateEmail() {
   var obfuscatedEmail = span = '';
 
-  elem = $("#email");
-  email = elem.html();
+  email = $('.email').first().html();
 
   for (var i = 0; i < email.length; ++i) {
     span = '<span>' + email[i] + '</span>';
     obfuscatedEmail += span;
   }
 
-  elem.html(obfuscatedEmail);
+  $('.email').each(function(){
+      $(this).html(obfuscatedEmail);
+  });
 }
 
 function onURLChange(){
@@ -27,3 +29,12 @@ function onURLChange(){
         }
     });
 }
+
+function smoothScrollingTo(target){
+  $('.portfolio').animate({scrollTop:$(target).offset().top}, 500);
+}
+
+$('a[href*=\\#]').on('click', function(event){
+    event.preventDefault();
+    smoothScrollingTo(this.hash);
+});
