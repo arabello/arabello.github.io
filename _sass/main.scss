@@ -6,6 +6,14 @@ body{
     color: $primaryText;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
+    font-size: 1.75rem;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    body{
+        font-size: 1rem;
+    }
 }
 
 a{
@@ -24,6 +32,10 @@ a{
 
 .h-15{
     height: 15% !important;
+}
+
+.h-85{
+    height: 85% !important;
 }
 
 // Large devices (desktops, 992px and up)
