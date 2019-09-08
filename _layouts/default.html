@@ -20,27 +20,25 @@
   
   </head>
   <body>
-      <div class="fixed-top d-lg-none container">
-          <div class="row d-flex flex-row">
-              {% include navbar.html %}
-          </div>
-      </div>
-
-     <div class="container vh-100 mt-lg-0 mt-5">
-          <div class="row d-flex flex-row h-lg-40 h-15 align-items-center">
-              <div class="col-lg-8 offset-lg-2 p-0">
-                {% include masthead.html %}
-              </div>
-          </div>
-          <div class="row d-flex flex-row h-lg-60 h-85">
-              <div class="col-lg-1 p-0 d-none d-lg-block">
-                {% include navigation.html %}
-              </div>
-              <div class="portfolio p-0 col-lg-8 offset-lg-1 h-100 overflow-auto hide-scrollbar">
-                  {% include contact.html %}
-                  {{ content }}
-              </div>
-          </div>
+     <div class="container vh-100">
+         <div class="row d-flex flex-row h-100">
+             <div class="d-none d-lg-block col-1 h-100 p-0">
+                 <div class="h-lg-40"></div>
+                 <div class="h-lg-60">
+                     {% include navigation.html %}
+                 </div>
+             </div>
+             <div class="col-lg-8 col-12 h-100 p-0 offset-lg-1">
+                 <div class="d-flex flex-column h-lg-40 h-25 justify-content-lg-center">
+                     <div class="d-lg-none flex-grow-1 pt-5">{% include navbar.html %}</div>
+                      <div class="p-lg-0 pb-5 pt-5">{% include masthead.html %}</div>
+                 </div>
+                 <div class="h-lg-60 h-75 portfolio overflow-auto hide-scrollbar">
+                      {% include contact.html %}
+                      {{ content }}
+                 </div>
+             </div>
+         </div>
       </div>
   </body>
 </html>
