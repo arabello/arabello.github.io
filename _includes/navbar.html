@@ -1,18 +1,12 @@
 <nav class="navbar container-fluid">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-     <img src="/assets/images/menu.svg" class="pull-left">
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="h-100 d-flex flex-column justify-content-center">
     <div class="navbar-nav mr-auto">
         {% for item in site.data.navigation %}
-                {% capture classes %}
-                mb-4 side-link side-link-{{ forloop.index0 }} 
-                    {% if forloop.first %}
-                        primary-{{ forloop.index0 }}
-                    {% endif %}
-                {% endcapture %}
-                <a href="{{ item.link }}" class="{{ classes }}">
+                <a href="{{ item.link }}" class="mb-4 mt-4" data-toggle="collapse" data-target="#navbarNavAltMarkup">
                     {{ item.name }}
                 </a>
         {% endfor %}

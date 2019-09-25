@@ -2,11 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -22,39 +20,25 @@
   
   </head>
   <body>
-      <div class="fixed-top d-lg-none container">
-          <div class="row d-flex flex-row">
-              {% include navbar.html %}
-          </div>
-      </div>
-
-     <div class="container vh-100 d-lg-none">
-          <div class="row d-flex flex-row h-40 align-items-center">
-                {% include masthead.html %}
-          </div>
-          <div class="row d-flex flex-row">
-              <div class="portfolio">
-                  {% include contact.html %}
-                  {{ content }}
-              </div>
-          </div>
-      </div>
-
-      <div class="container vh-100 d-none d-lg-block">
-          <div class="row d-flex flex-row h-40 align-items-center">
-              <div class="col-8 offset-2">
-                {% include masthead.html %}
-              </div>
-          </div>
-          <div class="row d-flex flex-row h-60">
-              <div class="col-1 p-0">
-                {% include navigation.html %}
-              </div>
-              <div class="col-8 offset-1 h-100 overflow-auto hide-scrollbar portfolio">
-                  {% include contact.html %}
-                  {{ content }}
-              </div>
-          </div>
+     <div class="container vh-100">
+         <div class="row d-flex flex-row h-100">
+             <div class="d-none d-lg-block col-1 h-100 p-0">
+                 <div class="h-lg-40"></div>
+                 <div class="h-lg-60">
+                     {% include navigation.html %}
+                 </div>
+             </div>
+             <div class="col-lg-8 col-12 h-100 p-0 offset-lg-1">
+                 <div class="d-flex flex-column h-lg-40 h-25 justify-content-lg-center">
+                     <div class="d-lg-none flex-grow-1 pt-5 mt-3">{% include navbar.html %}</div>
+                      <div class="p-lg-0 pb-5 mb-5">{% include masthead.html %}</div>
+                 </div>
+                 <div class="h-lg-60 h-75 portfolio overflow-auto hide-scrollbar">
+                      {% include contact.html %}
+                      {{ content }}
+                 </div>
+             </div>
+         </div>
       </div>
   </body>
 </html>

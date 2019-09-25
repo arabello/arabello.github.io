@@ -1,19 +1,19 @@
 # About me
 
 Hello, I'm Matteo from Italy! I'm a technology and science enthusiast and I love programming.
-I am currently studying for Master of Computer Engineering at University of Bologna.
+I am currently studying for Master of Computer Engineering at the University of Bologna.
 In my spare time I enjoy EDM production, jogging and mountain biking.
 
 # Experience
 
-## Summer Internship 
+## Summer Internship
 ### Multitraccia sc
 #### Reggio Emilia, Italy.
 ##### Jul 2014 - Sep 2014
 
-PHP Web developer.
+PHP Web Developer
 
-I did a summer internship in a local software company in collaboration with my high school. I worked on a dedicated project collaborating with a graphic designer intern. I took care of designing and implementing a web application learning from the codebase of a similar application of the company. My main tasks was designing the database model, developing the backend business logic and implementing the web frontend under my graphic designer collegue directives. I also wrote the user manual and the technical manual as well.  
+I did a summer internship in a local software company in collaboration with my high school. I worked on a dedicated project collaborating with a graphic design intern. I took care of design and implement a web application learning from the codebase of a similar company project. My main tasks were designing the database model, developing the backend business logic and implementing the web frontend following the graphic designer directives. I also wrote the user manual and the technical manual as well.
 
 # Education
 
@@ -63,7 +63,7 @@ Code available [here](https://github.com/arabello/dokey-android)
 
 SAM (Software Architecture Metrics) is a naive tool that analyzes Scala source code retrieving module-level metrics helpful to the software architect. The project was born as an educational project for the Languages and Computational Models course at University of Bologna and it is my first approach to either Scala and Clean Architecture.
 
-Developing SAM helped me to learn multi-paradigm software with a special focus on functional programming. Also, I was able to concretely apply the concepts of the Clean Architecture from the homonymous book by Robert Martin.
+Developing SAM helped me to deepen multi-paradigm languages with a focus on functional programming. Also, I was able to concretely apply the concepts of the Clean Architecture from the homonymous book by Robert Martin.
 
 Code available [here](https://github.com/arabello/sam)
 
@@ -72,13 +72,13 @@ Code available [here](https://github.com/arabello/sam)
 
 Bachelor degree thesis. Development of an Android module which allow to dynamically download libraries in Kotlin/Android with digital signature checking at runtime. 
 
-The project will be used in an academic app for public transport mobility. The idea is to prevent personal user data spreading to third-party cloud systems, providing an alternative solution which aims to download executable code, elaborating personal data on the user device only.
+The project will be used in an academic app for public transport mobility. The idea is to prevent personal user data spreading to third-party cloud systems, providing an alternative solution which aims to download executable code to elaborate personal data on the user device only.
 
 Code available [here](https://github.com/arabello/KSLL)
 
 # Languages
 
-- __Italian__: Native proficiency
+- __Italian__: Native language
 - __English__: Professional working proficiency ([CEFR B2 assessment](res/CEFR-B2-assessment.pdf))
 
 # Other Experience

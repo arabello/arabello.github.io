@@ -1,0 +1,21 @@
+.masthead{
+    h1{
+        font-size: 3rem;
+    }
+
+    h2{
+        font-size: 2.5rem;
+    }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .masthead{
+        h1{
+            font-size: 2.5rem;
+        }
+
+        h2{
+            font-size: 2rem;
+        }
+    }
+}

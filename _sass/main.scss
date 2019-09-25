@@ -1,7 +1,19 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     color: $primaryText;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
+    font-size: 1.75rem;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    body{
+        font-size: 1rem;
+    }
 }
 
 a{
@@ -18,12 +30,23 @@ a{
     background: transparent;
 }
 
-.h-60{
-    height: 60% !important;
+.h-15{
+    height: 15% !important;
 }
 
-.h-40{
-    height: 40% !important;
+.h-85{
+    height: 85% !important;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .h-lg-60{
+        height: 60% !important;
+    }
+
+    .h-lg-40{
+        height: 40% !important;
+    }
 }
 
 .grad-trans-white{

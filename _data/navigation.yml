@@ -1,5 +1,5 @@
 - name: Contact
-  link: /
+  link: '#contact'
   color:  '#FF3B30'
 - name: About me
   link: '#about-me'
