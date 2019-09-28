@@ -13,7 +13,7 @@ In my spare time I enjoy EDM production, jogging and mountain biking.
 
 PHP Web Developer
 
-I did a summer internship in a local software company in collaboration with my high school. I worked on a dedicated project collaborating with a graphic design intern. I took care of design and implement a web application learning from the codebase of a similar company project. My main tasks were designing the database model, developing the backend business logic and implementing the web frontend following the graphic designer directives. I also wrote the user manual and the technical manual as well.
+I did a summer internship in a local software company in collaboration with my high school. I worked on a dedicated project collaborating with a graphic design intern. I took care of design and implement a web application learning from the codebase of a similar company project. My main tasks were designing the database model, developing the backend business logic and implementing the web frontend following the graphic designer directives. I also wrote the user manual and the technical manual.
 
 # Education
 
