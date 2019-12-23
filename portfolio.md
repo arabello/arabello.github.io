@@ -21,7 +21,7 @@ I did a summer internship in a local software company in collaboration with my h
 ### Master of Computer Engineering
 #### 2018 - 2020 (pending)
 
-Transcript [here](res/Transcript-master-1year.pdf) (first year only)
+Transcript [here](res/Transcript.pdf) (first year only)
 
 ## University of Bologna
 ### Bachelor of Computer Engineering
