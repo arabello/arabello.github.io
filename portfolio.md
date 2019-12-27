@@ -40,9 +40,10 @@ Thesis: [Kotlin Safety Library Loader](res/Thesis.pdf) (code [here](https://gith
 ## Hacker News Read Time
 #### Nov 2019
 
-Simple Chrome extension to show, sort and filter articles on [Hacker News](https://news.ycombinator.com/) based on an estimated read time. The purpose was to improve my Hacker News reading experience, especially during daily time sensitive activities.
+Simple Chrome extension that shows read time preview of [Hacker News](https://news.ycombinator.com/) articles with sorting and filtering features. HNRT improves my HN reading experience, especially during time sensitive daily activities.
 
 [Chrome Web Store page](https://chrome.google.com/webstore/detail/hacker-news-read-time/pomamnlfeifpmdjolclofcnhfgfenhil)
+
 [Open source code](https://github.com/arabello/hn-read-time)
 
 ## TablutAI
