@@ -6,9 +6,16 @@ In my spare time I enjoy EDM production, jogging and mountain biking.
 
 # Experience
 
+## Research Intern
+### Datalogic S.p.A
+#### Pasadena, CA, USA
+##### Jan 2020 - Jul 2020
+
+Machine Learning and Computer Vision research internship
+
 ## Summer Internship
 ### Multitraccia sc
-#### Reggio Emilia, Italy.
+#### Reggio Emilia, Italy
 ##### Jul 2014 - Sep 2014
 
 PHP Web Developer
