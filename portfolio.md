@@ -63,7 +63,7 @@ Thanks to this project I practiced the basic fundamentals of the artificial inte
 Code available [here](https://github.com/arabello/tablutai)
 
 ## Dokey
-### [www.dokey.io](https://dokey.io)
+### [Archived website](https://www.matteopellegrino.me/dokey-web/)
 ##### Nov 2017 - Feb 2019
 
 Dokey is a productivity app for professionals that turns your mobile device into a powerful controller for any kind of desktop applications.
@@ -72,7 +72,7 @@ Thanks to this project I enforced my Android (Kotlin) skill, with a particular f
 
 Dokey was involved into the application program of AlmaCube, a startup incubator in Bologna. During this experience I learned about startup environment and lean approach.
 
-Code available [here](https://github.com/arabello/dokey-android)
+Code and binaries available [here](https://github.com/arabello/dokey-android)
 
 ## S.A.M.
 ##### Feb 2019
