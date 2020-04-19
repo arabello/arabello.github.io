@@ -95,7 +95,7 @@ Code available [here](https://github.com/arabello/KSLL)
 # Languages
 
 - __Italian__: Native language
-- __English__: Professional working proficiency ([CEFR B2 assessment](res/CEFR-B2-assessment.pdf))
+- __English__: Professional working proficiency (IELTS Academic 7.0)
 
 # Other Experience
 
