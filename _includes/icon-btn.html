@@ -1,3 +1,11 @@
+{% if include.href %}
 <a href="{{ include.href }}" class='btn d-flex justify-content-center align-middle'>
     <img src="{{ include.iconurl }}" class="">
 </a>
+{% else %}
+<a href="#mailgo" class='btn d-flex justify-content-center align-middle' 
+data-address="matteo.pelle.pellegrino" 
+data-domain="gmail.com">
+    <img src="{{ include.iconurl }}" class="">
+</a>
+{% endif %}

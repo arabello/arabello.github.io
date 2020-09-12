@@ -17,7 +17,19 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     
     <!-- JS -->
-    <script text="text/javascript" src="/assets/js/main.js"></script>
+    <script>
+        // this object must follow the MailgoConfig type
+        window.mailgoConfig = {
+            actions: {
+                yahoo: false,
+                gmail: false,
+                outlook: false,
+            },
+            showFooter: false
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mailgo@0.9.17/dist/mailgo.min.js"></script>
     {% seo %}
   
   </head>
@@ -33,7 +45,9 @@
                 {% endfor %}
             </div>
             <div class='mx-auto footer'>Copyright &#169; Matteo Pellegrino 2020. 
-                Icons by <a href="https://feathericons.com/">Feather</a></div>
+                Icons by <a href="https://feathericons.com/">Feather.</a>
+                Mailto plugin by <a href="https://mailgo.dev/">mailgo.</a>
+            </div>
         </div>
     </div>
   </body>

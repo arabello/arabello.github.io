@@ -1,7 +1,6 @@
 contacts:
   - text: Email
     iconurl: /assets/images/mail.svg
-    href: 'mailto: matteo.pelle.pellegrino@gmail.com'
   - text: LinkedIn
     iconurl: /assets/images/linkedin.svg
     href: https://www.linkedin.com/in/mttpll
@@ -10,7 +9,7 @@ contacts:
     href: https://github.com/arabello
   - text: Curriculum Vitae
     iconurl: /assets/images/file-text.svg
-    href: /res/
+    href: /res/Matteo Pellegrino CV.pdf
 sections:
   - title: Experience
     type: experience
@@ -19,12 +18,12 @@ sections:
         date: Jan 2020 - Jul 2020
         location: Datalogic, Pasadena, CA, USA
         short: Machine Learning and Computer Vision
-        desc: Development of an API for synthetic image generation and augmentation.
+        desc: Development of API for synthetic image generation and augmentation.
       - title: Summer Internship
         date: Jul 2014 - Sep 2014
         location: Multitraccia, Reggio Emilia
         short: PHP Web Developer
-        desc: Full stack developement of an appointments scheduling application.
+        desc: Full stack development of an appointments scheduling application.
   - title: Latest Projects
     type: projects
     items:
@@ -36,8 +35,8 @@ sections:
         Thanks to this project I enforced my Android (Kotlin) skill, with a particular focus to efficient and dynamic 
         custom views. I also took care of the UI/UX design of the entire platform and brand.
         <br><br>
-        Dokey was involved into the application program of AlmaCube, a startup incubator in Bologna. 
-        During this experience I learned about startup environment and lean approach.'
+        Dokey was involved in the application program of AlmaCube, a startup incubator in Bologna. 
+        During this experience I learned about the startup environment and lean approach.'
         links:
           - text: Archived website
             iconurl: /assets/images/external-link.svg
@@ -47,7 +46,7 @@ sections:
             href: https://github.com/arabello/dokey-android
       - title: Hacker News Read Time
         date: Nov 2019
-        desc: 'Simple <b>Chrome extension</b> that shows read time preview of Hacker News articles with sorting 
+        desc: 'Simple <b>Chrome extension</b> showing read time preview of news.ycombinator.com articles with sorting 
         and filtering features. HNRT improves HN reading experience, especially during time sensitive daily activities.'
         links:
           - text: Chrome Web Store page
@@ -61,7 +60,7 @@ sections:
         desc: 'Competition project of the <b>Artificial Intelligence Fundamentals</b> course at University of Bologna.
         TablutAI is a complete knowledge game. It uses an iterative deepening alpha beta search (Russell-Norvig).
         <br><br>
-        Thanks to this project I practiced the basic fundamentals of the artificial intelligence in a joyful way. 
+        Thanks to this project I practiced the basic fundamentals of artificial intelligence in a joyful way. 
         The competition consisted in several teams playing against each other, driving the development of the AI in 
         terms of smart heuristics, performances and software engineering quality.'
         links:
@@ -85,7 +84,7 @@ sections:
             href: https://github.com/arabello/sam
       - title: Kotlin Safety Library Loader
         date: Apr 2018 - Jun 2018
-        desc: 'Bachelor degree thesis. Development of an <b>Android module</b> which allow to dynamically download libraries in
+        desc: 'Bachelor degree thesis. Development of an <b>Android module</b> which allows to dynamically download libraries in
         Kotlin/Android with digital signature checking at runtime.
         <br><br>
         The project will be used in an academic app for public transport mobility. The idea is to prevent personal user
