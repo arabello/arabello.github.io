@@ -28,6 +28,23 @@ sections:
   - title: Latest Projects
     type: projects
     items:
+      - title: Dokey
+        date: Nov 2017 - Feb 2019
+        desc: 'Dokey is a <b>productivity app</b> for professionals that turns your mobile device into a powerful controller 
+        for any kind of desktop applications.
+        <br><br>
+        Thanks to this project I enforced my Android (Kotlin) skill, with a particular focus to efficient and dynamic 
+        custom views. I also took care of the UI/UX design of the entire platform and brand.
+        <br><br>
+        Dokey was involved into the application program of AlmaCube, a startup incubator in Bologna. 
+        During this experience I learned about startup environment and lean approach.'
+        links:
+          - text: Archived website
+            iconurl: /assets/images/external-link.svg
+            href: https://www.matteopellegrino.me/dokey-web/
+          - text: Code and binaries
+            iconurl: /assets/images/code.svg
+            href: https://github.com/arabello/dokey-android
       - title: Hacker News Read Time
         date: Nov 2019
         desc: 'Simple <b>Chrome extension</b> that shows read time preview of Hacker News articles with sorting 
@@ -51,23 +68,6 @@ sections:
           - text: Open source code
             iconurl: /assets/images/code.svg
             href: https://github.com/arabello/tablutai
-      - title: Dokey
-        date: Nov 2017 - Feb 2019
-        desc: 'Dokey is a <b>productivity app</b> for professionals that turns your mobile device into a powerful controller 
-        for any kind of desktop applications.
-        <br><br>
-        Thanks to this project I enforced my Android (Kotlin) skill, with a particular focus to efficient and dynamic 
-        custom views. I also took care of the UI/UX design of the entire platform and brand.
-        <br><br>
-        Dokey was involved into the application program of AlmaCube, a startup incubator in Bologna. 
-        During this experience I learned about startup environment and lean approach.'
-        links:
-          - text: Archived website
-            iconurl: /assets/images/external-link.svg
-            href: https://www.matteopellegrino.me/dokey-web/
-          - text: Code and binaries
-            iconurl: /assets/images/code.svg
-            href: https://github.com/arabello/dokey-android
       - title: S.A.M.
         date: Feb 2019
         desc: 'SAM (Software Architecture Metrics) is a naive tool that analyzes Scala source code retrieving 
@@ -92,6 +92,9 @@ sections:
         data spreading to third-party cloud systems, providing an alternative solution which aims to download executable
         code to elaborate personal data on the user device only.'
         links:
+          - text: Thesis PDF
+            iconurl: /assets/images/file-text.svg
+            href: /res/Thesis.pdf
           - text: Open source code
             iconurl: /assets/images/code.svg
             href: https://github.com/arabello/KSLL

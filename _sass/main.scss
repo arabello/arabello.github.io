@@ -18,11 +18,10 @@ body{
 }
 
 a{
-    color: $primaryText;
+    color: $secondaryText;
 
     &:hover{
         color: $primaryText;
-        font-weight: bold;
     }
 }
 
@@ -47,4 +46,10 @@ a{
     }
 }
   
-  
+
+.footer{
+    font-size:0.8rem;
+    font-weight: 200;
+    color: $secondaryText;
+    margin-bottom: 10px;
+}
