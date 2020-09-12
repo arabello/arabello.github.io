@@ -1,21 +1,17 @@
 .masthead{
+    margin-top: 32px;
+    margin-bottom: 58px;
+
     h1{
-        font-size: 3rem;
+        font-size: 2rem;
+        font-weight: 200;
+        color: $accentText;
     }
 
     h2{
-        font-size: 2.5rem;
-    }
-}
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    .masthead{
-        h1{
-            font-size: 2.5rem;
-        }
-
-        h2{
-            font-size: 2rem;
-        }
+        font-size: 1.5rem;
+        font-weight: 200;
+        font-style: italic;
+        color: $secondaryText;
     }
 }

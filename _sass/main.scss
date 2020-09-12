@@ -5,8 +5,9 @@ html{
 body{
     color: $primaryText;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.75rem;
+    background-color: $primaryBg;
 }
 
 // Large devices (desktops, 992px and up)
@@ -30,40 +31,20 @@ a{
     background: transparent;
 }
 
-.h-15{
-    height: 15% !important;
-}
-
-.h-85{
-    height: 85% !important;
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    .h-lg-60{
-        height: 60% !important;
-    }
-
-    .h-lg-40{
-        height: 40% !important;
+.btn {
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: -2px -2px 6px 0 rgba(255, 255, 255, 0.5), 2px 2px 6px 0 #D7D7D7;
+    border: 4px solid transparent;
+    
+    &.-active {
+        box-shadow: inset -57px -54px 50px -39px rgba(238, 238, 238, 0.8), 8px 10px 9px 0 rgba(0, 0, 0, 0.03), inset 63px 63px 90px 21px rgba(0, 0, 0, 0.04);
+        border-color: #eee;
     }
 }
-
-.grad-trans-white{
-    position: relative
-}
-
-.grad-trans-white::before{
-    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-h1, h3{
-    font-weight: 700;
-}
+  
+  

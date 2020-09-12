@@ -1,14 +1,5 @@
-<div id='contact' class="contact d-flex justify-content-between">
-    <div class="d-flex flex-column">
-        {% for item in site.data.contacts %}
-            <div class="mb-4 align-items-strech d-flex">
-                <img src="{{ item.iconurl }}" class="mr-3">
-                {% if item.href %}
-                    <a href="{{ item.href }}">{{ item.text }} </a>
-                {% else %}
-                <span class="email">{{ item.text }}</span>
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
+<div id='contact' class="contact d-flex flex-row justify-content-between">
+    {% for item in site.data.portfolio.contacts %}
+        {% include icon-btn.html href=item.href iconurl=item.iconurl%}
+    {% endfor %}
 </div>

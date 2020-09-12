@@ -2,27 +2,5 @@
 ---
 @import "colors";
 @import "main";
-@import "navigation";
-@import "portfolio";
-@import "navbar";
 @import "masthead";
-
-{% for item in site.data.navigation %}
-$primary-{{ forloop.index0 }}: {{ item.color }};
-{% endfor %}
-
-{% for item in site.data.navigation %}
-.primary-{{ forloop.index0 }}{
-    color: $primary-{{ forloop.index0 }};
-}
-
-a.side-link-{{ forloop.index0 }}.primary-{{ forloop.index0 }}:hover{
-    color: $primary-{{ forloop.index0 }};
-    font-weight: 200;
-}
-
-a.side-link-{{ forloop.index0 }}:hover{
-    font-weight: 200;
-}
-
-{% endfor %}
+@import "section";

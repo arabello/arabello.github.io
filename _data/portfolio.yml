@@ -1,0 +1,99 @@
+contacts:
+  - text: Email
+    iconurl: /assets/images/mail.svg
+    href: 'mailto: matteo.pelle.pellegrino@gmail.com'
+  - text: LinkedIn
+    iconurl: /assets/images/linkedin.svg
+    href: https://www.linkedin.com/in/mttpll
+  - text: Github
+    iconurl: /assets/images/github.svg
+    href: https://github.com/arabello
+  - text: Curriculum Vitae
+    iconurl: /assets/images/file-text.svg
+    href: /res/
+sections:
+  - title: Experience
+    type: experience
+    items:
+      - title: Research Intern
+        date: Jan 2020 - Jul 2020
+        location: Datalogic, Pasadena, CA, USA
+        short: Machine Learning and Computer Vision
+        desc: Development of an API for synthetic image generation and augmentation.
+      - title: Summer Internship
+        date: Jul 2014 - Sep 2014
+        location: Multitraccia, Reggio Emilia
+        short: PHP Web Developer
+        desc: Full stack developement of an appointments scheduling application.
+  - title: Latest Projects
+    type: projects
+    items:
+      - title: Hacker News Read Time
+        date: Nov 2019
+        desc: 'Simple <b>Chrome extension</b> that shows read time preview of Hacker News articles with sorting 
+        and filtering features. HNRT improves HN reading experience, especially during time sensitive daily activities.'
+        links:
+          - text: Chrome Web Store page
+            iconurl: /assets/images/external-link.svg
+            href: https://chrome.google.com/webstore/detail/hacker-news-read-time/pomamnlfeifpmdjolclofcnhfgfenhil
+          - text: Open source code
+            iconurl: /assets/images/code.svg
+            href: https://github.com/arabello/hn-read-time
+      - title: TablutAI
+        date: Apr 2019 - May 2019
+        desc: 'Competition project of the <b>Artificial Intelligence Fundamentals</b> course at University of Bologna.
+        TablutAI is a complete knowledge game. It uses an iterative deepening alpha beta search (Russell-Norvig).
+        <br><br>
+        Thanks to this project I practiced the basic fundamentals of the artificial intelligence in a joyful way. 
+        The competition consisted in several teams playing against each other, driving the development of the AI in 
+        terms of smart heuristics, performances and software engineering quality.'
+        links:
+          - text: Open source code
+            iconurl: /assets/images/code.svg
+            href: https://github.com/arabello/tablutai
+      - title: Dokey
+        date: Nov 2017 - Feb 2019
+        desc: 'Dokey is a <b>productivity app</b> for professionals that turns your mobile device into a powerful controller 
+        for any kind of desktop applications.
+        <br><br>
+        Thanks to this project I enforced my Android (Kotlin) skill, with a particular focus to efficient and dynamic 
+        custom views. I also took care of the UI/UX design of the entire platform and brand.
+        <br><br>
+        Dokey was involved into the application program of AlmaCube, a startup incubator in Bologna. 
+        During this experience I learned about startup environment and lean approach.'
+        links:
+          - text: Archived website
+            iconurl: /assets/images/external-link.svg
+            href: https://www.matteopellegrino.me/dokey-web/
+          - text: Code and binaries
+            iconurl: /assets/images/code.svg
+            href: https://github.com/arabello/dokey-android
+      - title: S.A.M.
+        date: Feb 2019
+        desc: 'SAM (Software Architecture Metrics) is a naive tool that analyzes Scala source code retrieving 
+        module-level metrics helpful to the software architect. The project was born as an educational project for the 
+        Languages and Computational Models course at University of Bologna and it is my first approach to either <b>Scala 
+        and Clean Architecture.</b>
+        <br><br>  
+        Developing SAM helped me to deepen multi-paradigm languages with a focus on functional programming. 
+        Also, I was able to concretely apply the concepts of the Clean Architecture from the homonymous book by Robert 
+        Martin.
+        <br><br>'
+        links:
+          - text: Open source code
+            iconurl: /assets/images/code.svg
+            href: https://github.com/arabello/sam
+      - title: Kotlin Safety Library Loader
+        date: Apr 2018 - Jun 2018
+        desc: 'Bachelor degree thesis. Development of an <b>Android module</b> which allow to dynamically download libraries in
+        Kotlin/Android with digital signature checking at runtime.
+        <br><br>
+        The project will be used in an academic app for public transport mobility. The idea is to prevent personal user
+        data spreading to third-party cloud systems, providing an alternative solution which aims to download executable
+        code to elaborate personal data on the user device only.'
+        links:
+          - text: Open source code
+            iconurl: /assets/images/code.svg
+            href: https://github.com/arabello/KSLL
+
+

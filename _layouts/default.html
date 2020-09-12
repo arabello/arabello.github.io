@@ -8,8 +8,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200&display=swap" rel="stylesheet">
 
     <!-- Custom style -->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -21,25 +22,17 @@
   
   </head>
   <body>
-     <div class="container vh-100">
-         <div class="row d-flex flex-row h-100">
-             <div class="d-none d-lg-block col-1 h-100 p-0">
-                 <div class="h-lg-40"></div>
-                 <div class="h-lg-60">
-                     {% include navigation.html %}
-                 </div>
-             </div>
-             <div class="col-lg-8 col-12 h-100 p-0 offset-lg-1">
-                 <div class="d-flex flex-column h-lg-40 h-25 justify-content-lg-center">
-                     <div class="d-lg-none flex-grow-1 pt-5 mt-3">{% include navbar.html %}</div>
-                      <div class="p-lg-0 pb-5 mb-5">{% include masthead.html %}</div>
-                 </div>
-                 <div class="h-lg-60 h-75 portfolio overflow-auto hide-scrollbar">
-                      {% include contact.html %}
-                      {{ content }}
-                 </div>
-             </div>
-         </div>
-      </div>
+    <div class="container">
+        <div class="row d-flex flex-column">
+            <div class="mx-auto">
+                {% include masthead.html %}
+            </div>
+            <div class="mx-auto col-12 col-md-10">
+                {% for section in site.data.portfolio.sections %}
+                    {% include section.html section_data=section %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
   </body>
 </html>
