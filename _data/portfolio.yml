@@ -18,25 +18,28 @@ sections:
         date: Jan 2020 - Jul 2020
         location: Datalogic, Pasadena, CA, USA
         short: Machine Learning and Computer Vision
-        desc: Development of API for synthetic image generation and augmentation.
+        desc: 'Synthetic image generation/augmentation <b>API development</b>. Design and implementation of a
+         <b>Python</b> library to generate and manage artificial datasets. Other relevant tasks: internal tools 
+         integration and re-engineering, documentation writing and containerized deploying through <b>Docker</b>.'
       - title: Summer Internship
         date: Jul 2014 - Sep 2014
         location: Multitraccia, Reggio Emilia
         short: PHP Web Developer
-        desc: Full stack development of an appointments scheduling application.
+        desc: 'Development of an appointments scheduling application in <b>PHP</b>. 
+        Front-end specifications built in collaboration with a graphic designer.'
   - title: Latest Projects
     type: projects
     items:
       - title: Dokey
         date: Nov 2017 - Feb 2019
-        desc: 'Dokey is a <b>productivity app</b> for professionals that turns your mobile device into a powerful controller 
+        desc: 'Dokey is a productivity app for professionals that turns your mobile device into a powerful controller 
         for any kind of desktop applications.
         <br><br>
-        Thanks to this project I enforced my Android (Kotlin) skill, with a particular focus to efficient and dynamic 
-        custom views. I also took care of the UI/UX design of the entire platform and brand.
+        Thanks to this project I enforced my <b>Android (Kotlin)</b> skill, with a particular focus on efficient and 
+        dynamic custom views. I also took care of the <b>UI/UX design</b> of the entire platform and brand.
         <br><br>
         Dokey was involved in the application program of AlmaCube, a startup incubator in Bologna. 
-        During this experience I learned about the startup environment and lean approach.'
+        During this experience, I learned about the startup environment and <b>lean approach</b>.'
         links:
           - text: Archived website
             iconurl: /assets/images/external-link.svg
@@ -46,8 +49,9 @@ sections:
             href: https://github.com/arabello/dokey-android
       - title: Hacker News Read Time
         date: Nov 2019
-        desc: 'Simple <b>Chrome extension</b> showing read time preview of news.ycombinator.com articles with sorting 
-        and filtering features. HNRT improves HN reading experience, especially during time sensitive daily activities.'
+        desc: '<b>Chrome extension</b> showing read time preview of news.ycombinator.com articles.
+        Being a constant HN reader, I built this tool for myself to fastly know how much time an article takes to read. 
+        I also got the opportunity to learn more about <b>web scraping</b>.'
         links:
           - text: Chrome Web Store page
             iconurl: /assets/images/external-link.svg
@@ -71,25 +75,24 @@ sections:
         date: Feb 2019
         desc: 'SAM (Software Architecture Metrics) is a naive tool that analyzes Scala source code retrieving 
         module-level metrics helpful to the software architect. The project was born as an educational project for the 
-        Languages and Computational Models course at University of Bologna and it is my first approach to either <b>Scala 
-        and Clean Architecture.</b>
+        Languages and Computational Models course at University of Bologna and it is my first approach to either 
+        <b>Scala and Clean Architecture</b>.
         <br><br>  
         Developing SAM helped me to deepen multi-paradigm languages with a focus on functional programming. 
         Also, I was able to concretely apply the concepts of the Clean Architecture from the homonymous book by Robert 
-        Martin.
-        <br><br>'
+        Martin.'
         links:
           - text: Open source code
             iconurl: /assets/images/code.svg
             href: https://github.com/arabello/sam
       - title: Kotlin Safety Library Loader
         date: Apr 2018 - Jun 2018
-        desc: 'Bachelor degree thesis. Development of an <b>Android module</b> which allows to dynamically download libraries in
+        desc: "Bachelor's degree thesis. Development of an <b>Android module</b> which allows to dynamically download libraries in
         Kotlin/Android with digital signature checking at runtime.
         <br><br>
         The project will be used in an academic app for public transport mobility. The idea is to prevent personal user
         data spreading to third-party cloud systems, providing an alternative solution which aims to download executable
-        code to elaborate personal data on the user device only.'
+        code to elaborate personal data on the user device only."
         links:
           - text: Thesis PDF
             iconurl: /assets/images/file-text.svg
@@ -97,5 +100,3 @@ sections:
           - text: Open source code
             iconurl: /assets/images/code.svg
             href: https://github.com/arabello/KSLL
-
-

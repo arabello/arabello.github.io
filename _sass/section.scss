@@ -1,7 +1,7 @@
 .section{
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         font-weight: 300;
         color: $secondaryText
     }
@@ -17,13 +17,13 @@
         margin-top: 42px;
 
         h4 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 300;
             color: $accentText;
         }
 
         .floating-right{
-            font-size: 0.75rem;
+            font-size: 1rem;
             font-weight: 200;
             font-style: italic;
             color: $secondaryText;
@@ -35,7 +35,7 @@
         }
 
         .sub-title{
-            font-size: 1rem;
+            font-size: 1.25rem;
             font-weight: 200;
             font-style: italic;
             color: $secondaryText; 
@@ -43,14 +43,14 @@
         }
 
         .caption{
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 300;
             color: $primaryText;
             margin-bottom: 12px;
         }
 
         .content{
-            font-size: 1rem;
+            font-size: 1.25rem;
             color: $secondaryText;
             margin-bottom: 24px;
         }
