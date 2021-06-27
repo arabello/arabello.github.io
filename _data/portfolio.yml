@@ -14,6 +14,11 @@ sections:
   - title: Experience
     type: experience
     items:
+      - title: Software Engineer
+        date: Mar 2021 - Present
+        location: Buildo, Milan, Italy
+        short: Full Stack Development
+        desc: Scala, TypeScript, React. Functional programming. 
       - title: Research Intern
         date: Jan 2020 - Jul 2020
         location: Datalogic, Pasadena, CA, USA
