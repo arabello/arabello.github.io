@@ -101,7 +101,7 @@ sections:
         links:
           - text: Thesis PDF
             iconurl: /assets/images/file-text.svg
-            href: /res/Thesis.pdf
+            href: /res/Bachelor Thesis.pdf
           - text: Open source code
             iconurl: /assets/images/code.svg
             href: https://github.com/arabello/KSLL

@@ -7,15 +7,21 @@ In my spare time I enjoy EDM production, jogging and mountain biking.
 # Experience
 
 ## Research Intern
+
 ### Datalogic S.p.A
+
 #### Pasadena, CA, USA
+
 ##### Jan 2020 - Jul 2020
 
 Machine Learning and Computer Vision research internship
 
 ## Summer Internship
+
 ### Multitraccia sc
+
 #### Reggio Emilia, Italy
+
 ##### Jul 2014 - Sep 2014
 
 PHP Web Developer
@@ -25,26 +31,35 @@ I did a summer internship in a local software company in collaboration with my h
 # Education
 
 ## University of Bologna
+
 ### Master of Computer Engineering
+
 #### 2018 - 2020 (pending)
 
 Transcript [here](res/Transcript.pdf) (first year only)
 
 ## University of Bologna
+
 ### Bachelor of Computer Engineering
+
 #### 104/110
+
 ##### 2015 - 2018
 
-Thesis: [Kotlin Safety Library Loader](res/Thesis.pdf) (code [here](https://github.com/arabello/KSLL))
+Thesis: [Kotlin Safety Library Loader](res/Bachelor Thesis.pdf) (code [here](https://github.com/arabello/KSLL))
 
 ## I.I.S. Blaise Pascal
+
 ### Upper-secondary education in Information Technology
+
 #### 100/100 (cum laude)
+
 ##### 2010 - 2015
 
 # Latest Projects
 
 ## Hacker News Read Time
+
 #### Nov 2019
 
 Simple Chrome extension that shows read time preview of [Hacker News](https://news.ycombinator.com/) articles with sorting and filtering features. HNRT improves my HN reading experience, especially during time sensitive daily activities.
@@ -54,6 +69,7 @@ Simple Chrome extension that shows read time preview of [Hacker News](https://ne
 [Open source code](https://github.com/arabello/hn-read-time)
 
 ## TablutAI
+
 ##### Apr 2019 - May 2019
 
 Competition project of the Artificial Intelligence Fundamentals course at University of Bologna. TablutAI is a complete knowledge game. It uses an iterative deepening alpha beta search (Russell-Norvig).
@@ -63,7 +79,9 @@ Thanks to this project I practiced the basic fundamentals of the artificial inte
 Code available [here](https://github.com/arabello/tablutai)
 
 ## Dokey
+
 ### [Archived website](https://www.matteopellegrino.me/dokey-web/)
+
 ##### Nov 2017 - Feb 2019
 
 Dokey is a productivity app for professionals that turns your mobile device into a powerful controller for any kind of desktop applications.
@@ -75,6 +93,7 @@ Dokey was involved into the application program of AlmaCube, a startup incubator
 Code and binaries available [here](https://github.com/arabello/dokey-android)
 
 ## S.A.M.
+
 ##### Feb 2019
 
 SAM (Software Architecture Metrics) is a naive tool that analyzes Scala source code retrieving module-level metrics helpful to the software architect. The project was born as an educational project for the Languages and Computational Models course at University of Bologna and it is my first approach to either Scala and Clean Architecture.
@@ -84,9 +103,10 @@ Developing SAM helped me to deepen multi-paradigm languages with a focus on func
 Code available [here](https://github.com/arabello/sam)
 
 ## Kotlin Safety Library Loader
+
 ##### Apr 2018 - Jun 2018
 
-Bachelor degree thesis. Development of an Android module which allow to dynamically download libraries in Kotlin/Android with digital signature checking at runtime. 
+Bachelor degree thesis. Development of an Android module which allow to dynamically download libraries in Kotlin/Android with digital signature checking at runtime.
 
 The project will be used in an academic app for public transport mobility. The idea is to prevent personal user data spreading to third-party cloud systems, providing an alternative solution which aims to download executable code to elaborate personal data on the user device only.
 
@@ -94,10 +114,10 @@ Code available [here](https://github.com/arabello/KSLL)
 
 # Languages
 
-- __Italian__: Native language
-- __English__: Professional working proficiency (IELTS Academic 7.0)
+- **Italian**: Native language
+- **English**: Professional working proficiency (IELTS Academic 7.0)
 
 # Other Experience
 
-- __Study Jams 2016:__ I lectured an Android programming course at my upper-secondary school
-- __GDG (Aug 2016 - Feb 2017)__: I joined the Google Developers Group community of my city as an organizer
+- **Study Jams 2016:** I lectured an Android programming course at my upper-secondary school
+- **GDG (Aug 2016 - Feb 2017)**: I joined the Google Developers Group community of my city as an organizer
