@@ -1,8 +1,18 @@
-import { mailgoDirectRender } from "mailgo";
 import type { NextPage } from "next";
+import Head from "next/head";
 
 const Index: NextPage = () => (
   <div className="container-fluid d-flex flex-column min-vh-100">
+    <Head>
+      <title>Matteo Pellegrino | Software Engineer</title>
+      <meta
+        name="description"
+        content="Software Engineer and Full Stack Developer who loves building digital products.
+        Specialized in web tecnologies and cloud infrustructure.
+        Interested in requirements gathering, UI/UX design and startup environment.
+        Check out this website for resume and contact information."
+      ></meta>
+    </Head>
     <div className="row py-5">
       <div className="d-flex flex-column align-items-center">
         <h1 className="display-5 text-danger fw-lighter">Matteo Pellegrino</h1>
