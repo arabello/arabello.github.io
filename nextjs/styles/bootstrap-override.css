@@ -1,0 +1,11 @@
+.row {
+  background-color: inherit;
+}
+
+.body {
+  background-color: rgb(242, 242, 247);
+}
+
+.text-danger {
+  color: rgb(255, 59, 48) !important;
+}
