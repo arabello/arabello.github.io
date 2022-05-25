@@ -9,12 +9,12 @@ const Index: NextPage = () => (
         <h2 className="display-6 text-muted fw-lighter">Software Engineer</h2>
       </div>
     </div>
-    <div className="row pb-5">
-      <div className="d-flex justify-content-center">
+    <div className="row">
+      <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-end mb-4 pe-md-0 mb-md-0">
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center mx-4"
+          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
           href="/assets/matteo-pellegrino-cv.pdf"
         >
           <i className="bi bi-file-earmark-text" style={{ fontSize: 24 }} />
@@ -24,7 +24,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center mx-4"
+          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
           href="#mailgo"
           data-address="matteo.pelle.pellegrino"
           data-domain="gmail.com"
@@ -32,10 +32,12 @@ const Index: NextPage = () => (
           <i className="bi bi-envelope" style={{ fontSize: 24 }} />
           <span>Email</span>
         </a>
+      </div>
+      <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-start ps-md-0">
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center mx-4"
+          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
           href="https://github.com/arabello"
         >
           <i className="bi bi-github" style={{ fontSize: 24 }} />
@@ -44,7 +46,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center mx-4"
+          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
           href="https://www.linkedin.com/in/mttpll"
         >
           <i className="bi bi-linkedin" style={{ fontSize: 24 }} />
@@ -59,7 +61,7 @@ const Index: NextPage = () => (
     </div>
     <div className="row pb-2">
       <div
-        className="d-flex justify-content-center fw-lighter"
+        className="text-center justify-content-center fw-lightergit"
         style={{ color: "rgb(209, 209, 214)" }}
       >
         Copyright &#169; Matteo Pellegrino 2022. Mailto plugin by &nbsp;
