@@ -12,6 +12,7 @@ const Index: NextPage = () => (
         Interested in requirements gathering, UI/UX design and startup environment.
         Check out this website for resume and contact information."
       ></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
     <div className="row py-5">
       <div className="d-flex flex-column align-items-center">
@@ -24,7 +25,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
+          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
           href="/assets/matteo-pellegrino-cv.pdf"
         >
           <i className="bi bi-file-earmark-text" style={{ fontSize: 24 }} />
@@ -34,7 +35,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
+          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
           href="#mailgo"
           data-address="matteo.pelle.pellegrino"
           data-domain="gmail.com"
@@ -47,7 +48,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
+          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
           href="https://github.com/arabello"
         >
           <i className="bi bi-github" style={{ fontSize: 24 }} />
@@ -56,7 +57,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary d-flex flex-column align-items-center me-4"
+          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
           href="https://www.linkedin.com/in/mttpll"
         >
           <i className="bi bi-linkedin" style={{ fontSize: 24 }} />
