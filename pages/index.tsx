@@ -25,7 +25,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
+          className="col d-flex flex-column align-items-center me-0 me-md-4"
           href="/assets/matteo-pellegrino-cv.pdf"
         >
           <i className="bi bi-file-earmark-text" style={{ fontSize: 24 }} />
@@ -35,7 +35,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
+          className="col d-flex flex-column align-items-center me-0 me-md-4"
           href="#mailgo"
           data-address="matteo.pelle.pellegrino"
           data-domain="gmail.com"
@@ -48,7 +48,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
+          className="col d-flex flex-column align-items-center me-0 me-md-4"
           href="https://github.com/arabello"
         >
           <i className="bi bi-github" style={{ fontSize: 24 }} />
@@ -57,7 +57,7 @@ const Index: NextPage = () => (
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col btn btn-outline-secondary btn-sm d-flex flex-column align-items-center me-4"
+          className="col d-flex flex-column align-items-center me-0 me-md-4"
           href="https://www.linkedin.com/in/mttpll"
         >
           <i className="bi bi-linkedin" style={{ fontSize: 24 }} />
