@@ -8,9 +8,8 @@ const Index: NextPage = () => (
       <meta
         name="description"
         content="Software Engineer and Full Stack Developer who loves building digital products.
-        Specialized in web technologies and cloud infrustructure.
-        Interested in requirements gathering, UI/UX design and startup environment.
-        Check out this website for resume and contact information."
+        Specialized in web technologies and cloud infrastructures.
+        Enthusiastic about requirements gathering, UI/UX design, and startup environment."
       ></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
