@@ -74,7 +74,7 @@ const Index: NextPage = () => (
         className="text-center justify-content-center fw-lightergit"
         style={{ color: "rgb(209, 209, 214)" }}
       >
-        Copyright &#169; Matteo Pellegrino 2022. Mailto plugin by &nbsp;
+        Copyright &#169; Matteo Pellegrino 2023. Mailto plugin by &nbsp;
         <a href="https://mailgo.dev/" style={{ color: "inherit" }}>
           mailgo.
         </a>
