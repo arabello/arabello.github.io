@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 const Index: NextPage = () => (
-  <div className="container-fluid d-flex flex-column min-vh-100">
+  <div className="container-centered d-flex flex-column min-vh-100">
     <Head>
       <title>Matteo Pellegrino | Software Engineer</title>
       <meta
@@ -12,63 +12,121 @@ const Index: NextPage = () => (
         Enthusiastic about requirements gathering, UI/UX design, and startup environment."
       ></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet"
+      />
     </Head>
-    <div className="row py-5">
-      <div className="d-flex flex-column align-items-center">
-        <h1 className="display-5 text-danger fw-lighter">Matteo Pellegrino</h1>
-        <h2 className="display-6 text-muted fw-lighter">Software Engineer</h2>
+
+    <div className="row mt-5">
+      <div className="d-flex flex-column align-items-left">
+        <div className="fs-3 fw-bolder text-danger">Matteo Pellegrino</div>
+        <div className="fs-5 fw-light text-muted">Software Engineer</div>
       </div>
     </div>
-    <div className="row">
-      <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-end mb-4 pe-md-0 mb-md-0">
+
+    <div className="row d-flex flex-column mt-3">
+      <div className="d-flex align-items-center">
+        <i className="bi bi-file-earmark-text" style={{ fontSize: 24 }} />
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col d-flex flex-column align-items-center me-0 me-md-4"
+          className="ms-2"
           href="/assets/matteo-pellegrino-cv.pdf"
         >
-          <i className="bi bi-file-earmark-text" style={{ fontSize: 24 }} />
           <span>Résumé</span>
         </a>
-
+      </div>
+      <div className="d-flex align-items-center">
+        <i className="bi bi-envelope" style={{ fontSize: 24 }} />
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col d-flex flex-column align-items-center me-0 me-md-4"
+          className="ms-2"
           href="#mailgo"
           data-address="matteo.pelle.pellegrino"
           data-domain="gmail.com"
         >
-          <i className="bi bi-envelope" style={{ fontSize: 24 }} />
           <span>Email</span>
         </a>
       </div>
-      <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-start ps-md-0">
+      <div className="d-flex align-items-center">
+        <i className="bi bi-github" style={{ fontSize: 24 }} />
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col d-flex flex-column align-items-center me-0 me-md-4"
+          className="ms-2"
           href="https://github.com/arabello"
         >
-          <i className="bi bi-github" style={{ fontSize: 24 }} />
           <span>GitHub</span>
         </a>
+      </div>
+      <div className="d-flex align-items-center">
+        <i className="bi bi-linkedin" style={{ fontSize: 24 }} />
         <a
           type="button"
           style={{ maxWidth: 96 }}
-          className="col d-flex flex-column align-items-center me-0 me-md-4"
+          className="ms-2"
           href="https://www.linkedin.com/in/mttpll"
         >
-          <i className="bi bi-linkedin" style={{ fontSize: 24 }} />
           <span>Linkedin</span>
         </a>
       </div>
     </div>
-    <div className="row flex-grow-1 py-5">
-      <div className="d-flex justify-content-center">
-        <h3 className="text-muted fw-lighter">WIP</h3>
-      </div>
+
+    <div className="d-flex flex-column mt-5">
+      <a href="https://hub.espanso.org" target="_blank">
+        <div className="card bg-transparent mb-3">
+          <div className="row g-0">
+            <div className="col-md-4 d-flex flex-column justify-content-center">
+              <img
+                src="assets/thumbnail/espanso.webp"
+                className="img-fluid rounded-start"
+              ></img>
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">Espanso</h5>
+                <p className="card-text">
+                  Espanso is a privacy-first cross-platform text expander.
+                  Espanso Hub is the official web application, built using
+                  Nextjs SSG technology, to search and explore Espanso packages.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="night-focus" target="_blank">
+        <div className="card bg-transparent mb-3">
+          <div className="row g-0">
+            <div className="col-md-4 d-flex flex-column justify-content-center">
+              <img
+                src="assets/thumbnail/night-focus.webp"
+                className="img-fluid rounded-start"
+              ></img>
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">Night Focus</h5>
+                <p className="card-text">
+                  I love to immerse myself with ambient sounds while coding or
+                  studying at night. I wanted something tailored, with a picky
+                  user experience to mix and fine-tune a variety of ambient
+                  sounds. I sought a customizable auditory experience that would
+                  reconcile my focus. Night Focus helps me get into the Flow
+                  State.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
+
+    <div className="flex-grow-1"></div>
     <div className="row pb-2">
       <div
         className="text-center justify-content-center fw-lightergit"
