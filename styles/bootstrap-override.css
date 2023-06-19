@@ -9,3 +9,7 @@
 .text-danger {
   color: rgb(255, 59, 48) !important;
 }
+
+.card:hover{
+  cursor: pointer;
+}
