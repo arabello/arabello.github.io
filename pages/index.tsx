@@ -50,53 +50,50 @@ const Index: NextPage = () => (
         </div>
       </div>
 
-      <div className="row d-flex flex-column mt-3">
-        <div className="d-flex align-items-center">
-          <i className="bi bi-file-earmark-text" style={{ fontSize: 24 }} />
-          <a
-            type="button"
-            style={{ maxWidth: 96 }}
-            className="ms-2"
-            href="/assets/matteo-pellegrino-cv.pdf"
-          >
-            <span>Résumé</span>
-          </a>
+      <div className="row mt-5">
+        <div className="col card shadow rounded-4 border-0 mb-5">
+          <div className="card-body">
+            <div className="row">
+              <a
+                type="button"
+                className="col d-flex gap-2 align-items-center ms-2"
+                href="/assets/matteo-pellegrino-cv.pdf"
+              >
+                <img src="assets/icons/file-text.svg"></img>
+                <span>Résumé</span>
+              </a>
+              <a
+                type="button"
+                className="col d-flex gap-2 align-items-center ms-2"
+                href="#mailgo"
+                data-address="matteo.pelle.pellegrino"
+                data-domain="gmail.com"
+              >
+                <img src="assets/icons/mail.svg"></img>
+                <span>Email</span>
+              </a>
+            </div>
+            <div className="row mt-3">
+              <a
+                type="button"
+                className="col d-flex gap-2 align-items-center ms-2"
+                href="https://github.com/arabello"
+              >
+                <img src="assets/icons/github.svg"></img>
+                <span>GitHub</span>
+              </a>
+              <a
+                type="button"
+                className="col d-flex gap-2 align-items-center ms-2"
+                href="https://www.linkedin.com/in/mttpll"
+              >
+                <img src="assets/icons/linkedin.svg"></img>
+                <span>Linkedin</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="d-flex align-items-center">
-          <i className="bi bi-envelope" style={{ fontSize: 24 }} />
-          <a
-            type="button"
-            style={{ maxWidth: 96 }}
-            className="ms-2"
-            href="#mailgo"
-            data-address="matteo.pelle.pellegrino"
-            data-domain="gmail.com"
-          >
-            <span>Email</span>
-          </a>
-        </div>
-        <div className="d-flex align-items-center">
-          <i className="bi bi-github" style={{ fontSize: 24 }} />
-          <a
-            type="button"
-            style={{ maxWidth: 96 }}
-            className="ms-2"
-            href="https://github.com/arabello"
-          >
-            <span>GitHub</span>
-          </a>
-        </div>
-        <div className="d-flex align-items-center">
-          <i className="bi bi-linkedin" style={{ fontSize: 24 }} />
-          <a
-            type="button"
-            style={{ maxWidth: 96 }}
-            className="ms-2"
-            href="https://www.linkedin.com/in/mttpll"
-          >
-            <span>Linkedin</span>
-          </a>
-        </div>
+        <div className="col"></div>
       </div>
 
       <div className="d-flex flex-column mt-5">

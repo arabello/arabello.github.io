@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/bootstrap-theme.css";
 import "../styles/bootstrap-override.css";
