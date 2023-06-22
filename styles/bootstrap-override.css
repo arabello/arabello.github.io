@@ -6,10 +6,6 @@
   background-color: rgb(242, 242, 247);
 }
 
-.text-danger {
-  color: rgb(255, 59, 48) !important;
-}
-
-.card:hover{
-  cursor: pointer;
+.text-primary {
+  color: #dc3545 !important;
 }

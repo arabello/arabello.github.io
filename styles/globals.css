@@ -29,6 +29,6 @@ a {
 }
 
 .bg-gradient-custom {
-  background: #dc3545;
-  background: linear-gradient(135deg, #dc3545 25%, #e21e80 100%);
+  background: #f75858;
+  background: linear-gradient(135deg, #f75858 65%, #dc3545 100%);
 }
