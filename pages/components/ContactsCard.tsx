@@ -7,6 +7,7 @@ export const ContactsCard = () => (
       type="button"
       className="btn btn-light border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
       href="/assets/matteo-pellegrino-cv.pdf"
+      target="blank"
     >
       <img src="assets/icons/file-text.svg"></img>
       <span>Curriculum Vitae</span>
@@ -25,6 +26,7 @@ export const ContactsCard = () => (
       type="button"
       className="btn btn-light border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
       href="https://www.linkedin.com/in/mttpll"
+      target="blank"
     >
       <img src="assets/icons/linkedin.svg"></img>
       <span>Linkedin</span>
