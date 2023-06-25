@@ -90,13 +90,6 @@ const Index: NextPage = () => (
           </ProjectCard>
         </div>
       </div>
-
-      <div className="text-light text-center justify-content-center fw-lighter mb-3">
-        mailto plugin by &nbsp;
-        <a href="https://mailgo.dev/" style={{ color: "inherit" }}>
-          mailgo.
-        </a>
-      </div>
     </div>
   </div>
 );
