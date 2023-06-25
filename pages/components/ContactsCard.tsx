@@ -1,15 +1,21 @@
 import { Card } from "./Card";
+import Image from "next/image";
 
 export const ContactsCard = () => (
   <Card>
-    <p className="text-center">Let's keep in touch 👇</p>
+    <div className="text-center">Let&apos;s keep in touch 👇</div>
     <a
       type="button"
       className="btn btn-light border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
       href="/assets/matteo-pellegrino-cv.pdf"
       target="blank"
     >
-      <img src="assets/icons/file-text.svg"></img>
+      <Image
+        src="/assets/icons/file-text.svg"
+        width={24}
+        height={24}
+        alt="curriculum vitae icon"
+      />
       <span>Curriculum Vitae</span>
     </a>
     <a
@@ -19,7 +25,12 @@ export const ContactsCard = () => (
       data-address="matteo.pelle.pellegrino"
       data-domain="gmail.com"
     >
-      <img src="assets/icons/mail.svg"></img>
+      <Image
+        src="/assets/icons/mail.svg"
+        width={24}
+        height={24}
+        alt="email icon"
+      />
       <span>Drop me a line</span>
     </a>
     <a
@@ -28,7 +39,12 @@ export const ContactsCard = () => (
       href="https://www.linkedin.com/in/mttpll"
       target="blank"
     >
-      <img src="assets/icons/linkedin.svg"></img>
+      <Image
+        src="/assets/icons/linkedin.svg"
+        width={24}
+        height={24}
+        alt="linkedin icon"
+      />
       <span>Linkedin</span>
     </a>
   </Card>

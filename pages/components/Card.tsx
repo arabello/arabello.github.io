@@ -9,7 +9,7 @@ export const Card = (props: Props) => (
     className={`card shadow border-0 rounded-3 mt-4 p-4 fs-6 fw-light ${props.className}`}
   >
     {props.href ? (
-      <a href={props.href} target="_blank">
+      <a href={props.href} target="_blank" rel="noreferrer">
         {props.children}
       </a>
     ) : (

@@ -32,3 +32,7 @@ a {
   background: #f75858;
   background: linear-gradient(135deg, #f75858 65%, #dc3545 100%);
 }
+
+.text-footer {
+  color: #a91d1d;
+}
