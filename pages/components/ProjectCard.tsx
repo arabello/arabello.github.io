@@ -1,16 +1,18 @@
-import { Card } from "./Card";
+import Card from "./Card";
 
 type Props = {
   href?: string;
-  header: () => React.ReactNode;
+  header: React.ReactNode;
   children: React.ReactNode;
 };
 
-export const ProjectCard = (props: Props) => (
+const ProjectCard = (props: Props) => (
   <Card href={props.href}>
     <div className="d-flex flex-column align-items-center gap-4">
-      {props.header()}
+      {props.header}
       <div>{props.children}</div>
     </div>
   </Card>
 );
+
+export default ProjectCard;

@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { ContactsCard } from "./components/ContactsCard";
-import { Card } from "./components/Card";
+import ContactsCard from "./components/ContactsCard";
+import Card from "./components/Card";
 import Image from "next/image";
-import { ProjectCard } from "./components/ProjectCard";
+import ProjectCard from "./components/ProjectCard";
 
 const Index: NextPage = () => (
   <div className="min-vh-100 bg-gradient-custom">
@@ -61,14 +61,14 @@ const Index: NextPage = () => (
 
           <ProjectCard
             href="https://hub.espanso.org"
-            header={() => (
+            header={
               <Image
                 src="/assets/espansohub.svg"
                 width={46}
                 height={46}
                 alt="espansohub logo icon"
               />
-            )}
+            }
           >
             Espanso is a privacy-first cross-platform text expander.
             <span className="fw-bolder text-primary"> Espanso Hub</span> is the
@@ -80,7 +80,7 @@ const Index: NextPage = () => (
         <div className="col">
           <ProjectCard
             href="https://matteopellegrino.dev/night-focus"
-            header={() => <div className="display-5">🌙</div>}
+            header={<div className="display-5">🌙</div>}
           >
             I love to immerse myself with ambient sounds while coding or
             studying at night. I sought a customizable auditory experience, with

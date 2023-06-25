@@ -4,7 +4,7 @@ type Props = {
   href?: string;
 };
 
-export const Card = (props: Props) => (
+const Card = (props: Props) => (
   <div
     className={`card shadow border-0 rounded-3 mt-4 p-4 fs-6 fw-light ${props.className}`}
   >
@@ -17,3 +17,5 @@ export const Card = (props: Props) => (
     )}
   </div>
 );
+
+export default Card;
