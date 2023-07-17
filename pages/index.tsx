@@ -19,37 +19,35 @@ const Index: NextPage = () => (
 
     <div className="min-vh-100 container-centered d-flex flex-column">
       <Card>
-        <div className="card-body">
-          <div className="d-flex align-items-center gap-3">
-            <Image
-              className="rounded-circle avatar"
-              src="/assets/profile.jpg"
-              alt="profile picture"
-              width={86}
-              height={86}
-            />
+        <div className="d-flex align-items-center gap-3">
+          <Image
+            className="rounded-circle avatar"
+            src="/assets/profile.jpg"
+            alt="profile picture"
+            width={80}
+            height={80}
+          />
 
-            <div className="flex-grow-1 me-3">
-              <div className="d-flex align-items-center">
-                <div className="fs-3 fw-bold text-primary flex-grow-1">
-                  Matteo Pellegrino
-                </div>
-                <a
-                  type="button"
-                  href="https://github.com/arabello"
-                  target="blank"
-                >
-                  <Image
-                    src="/assets/icons/github.svg"
-                    width={24}
-                    height={24}
-                    alt="github icon link"
-                  />
-                </a>
+          <div className="flex-grow-1 me-3">
+            <div className="d-flex align-items-center">
+              <div className="fs-3 fw-bold text-primary flex-grow-1">
+                Matteo Pellegrino
               </div>
-              <div className="fs-5 fw-light text-muted">
-                Software Engineer, Electronic Music Nerd
-              </div>
+              <a
+                type="button"
+                href="https://github.com/arabello"
+                target="blank"
+              >
+                <Image
+                  src="/assets/icons/github.svg"
+                  width={24}
+                  height={24}
+                  alt="github icon link"
+                />
+              </a>
+            </div>
+            <div className="fs-6 fw-light text-muted">
+              Software Engineer, Electronic Music Nerd
             </div>
           </div>
         </div>
@@ -64,8 +62,8 @@ const Index: NextPage = () => (
             header={
               <Image
                 src="/assets/espansohub.svg"
-                width={46}
-                height={46}
+                width={64}
+                height={64}
                 alt="espansohub logo icon"
               />
             }
@@ -80,7 +78,14 @@ const Index: NextPage = () => (
         <div className="col">
           <ProjectCard
             href="https://matteopellegrino.dev/night-focus"
-            header={<div className="display-5">🌙</div>}
+            header={
+              <Image
+                src="/assets/moon.png"
+                width={64}
+                height={64}
+                alt="moon icon"
+              />
+            }
           >
             I love to immerse myself with ambient sounds while coding or
             studying at night. I sought a customizable auditory experience, with
