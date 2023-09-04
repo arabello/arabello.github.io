@@ -1,3 +1,6 @@
+import "braid-design-system/reset";
+import apacTheme from "braid-design-system/themes/apac";
+import { BraidProvider } from "braid-design-system";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/bootstrap-theme.css";
@@ -17,7 +20,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       showFooter: false,
     });
   }, []);
-  return <Component {...pageProps} />;
+  return (
+    <BraidProvider theme={apacTheme}>
+      <Component {...pageProps} />;
+    </BraidProvider>
+  );
 }
 
 export default MyApp;
