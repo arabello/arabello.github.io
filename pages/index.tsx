@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import ContactsCard from "./components/ContactsCard";
-import Card from "./components/Card";
+import {
+  Card,
+  Column,
+  Columns,
+  Heading,
+  Inline,
+  Secondary,
+  Stack,
+} from "braid-design-system";
 import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
 
@@ -52,39 +60,44 @@ const Index: NextPage = () => {
       </Head>
 
       <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-0">
-        <Card>
-          <div className="d-flex align-items-center gap-3">
-            <Image
-              className="rounded-circle avatar"
-              src="/assets/profile.jpg"
-              alt="profile picture"
-              width={80}
-              height={80}
-            />
+        <Card rounded>
+          <Columns space="medium" alignY="center">
+            <Column width="content">
+              <Image
+                className="rounded-circle avatar"
+                src="/assets/profile.jpg"
+                alt="profile picture"
+                width={80}
+                height={80}
+              />
+            </Column>
 
-            <div className="flex-grow-1 me-3">
-              <div className="d-flex align-items-center">
-                <div className="fs-3 fw-bold text-primary flex-grow-1">
-                  Matteo Pellegrino
-                </div>
-                <a
-                  type="button"
-                  href="https://github.com/arabello"
-                  target="blank"
-                >
-                  <Image
-                    src="/assets/icons/github.svg"
-                    width={24}
-                    height={24}
-                    alt="github icon link"
-                  />
-                </a>
-              </div>
-              <div className="fs-6 fw-light text-muted">
-                Software Engineer, Electronic Music Nerd
-              </div>
-            </div>
-          </div>
+            <Column>
+              <Stack space="none">
+                <Columns space="medium">
+                  <Column>
+                    <Heading level="2">Matteo Pellegrino</Heading>
+                  </Column>
+                  <Column width="content">
+                    <a
+                      type="button"
+                      href="https://github.com/arabello"
+                      target="blank"
+                    >
+                      <Image
+                        src="/assets/icons/github.svg"
+                        width={24}
+                        height={24}
+                        alt="github icon link"
+                      />
+                    </a>
+                  </Column>
+                </Columns>
+
+                <Secondary>Software Engineer, Electronic Music Nerd</Secondary>
+              </Stack>
+            </Column>
+          </Columns>
         </Card>
 
         <div className="row flex-grow-1">
