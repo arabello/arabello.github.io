@@ -10,7 +10,6 @@
     "export": "next export"
   },
   "dependencies": {
-    "bootstrap": "5.2.0-beta1",
     "braid-design-system": "^32.9.2",
     "mailgo": "^0.12.2",
     "next": "^12.3.0",

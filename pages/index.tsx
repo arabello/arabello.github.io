@@ -1,4 +1,5 @@
 import {
+  Box,
   ButtonLink,
   Card,
   Column,
@@ -10,7 +11,6 @@ import {
   IconSocialLinkedIn,
   Link,
   PageBlock,
-  Secondary,
   Stack,
   Strong,
   Text,
@@ -24,16 +24,20 @@ const HeaderCard = () => (
     <Columns space="medium" alignY="center">
       <Column width="content">
         <Image
-          className="rounded-circle avatar"
+          style={{
+            verticalAlign: "middle",
+            borderRadius: "50%",
+          }}
           src="/assets/profile.jpg"
           alt="profile picture"
           width={80}
           height={80}
+          objectFit="cover"
         />
       </Column>
 
       <Column>
-        <Stack space="none">
+        <Stack space="xsmall">
           <Columns space="medium">
             <Column>
               <Heading level="2">Matteo Pellegrino</Heading>
@@ -54,7 +58,9 @@ const HeaderCard = () => (
             </Column>
           </Columns>
 
-          <Secondary>Software Engineer, Electronic Music Nerd</Secondary>
+          <Heading level="4" weight="weak">
+            Software Engineer, Electronic Music Nerd
+          </Heading>
         </Stack>
       </Column>
     </Columns>
@@ -62,7 +68,7 @@ const HeaderCard = () => (
 );
 
 const ContactsCard = () => (
-  <Card>
+  <Card rounded>
     <Stack space="xsmall" align="center">
       <Text>Let&apos;s keep in touch 👇</Text>
       <Text />
@@ -145,6 +151,7 @@ const Index: NextPage = () => {
 
   return (
     <PageBlock width="medium">
+      <Box paddingTop="small" />
       <Head>
         <title>Matteo Pellegrino | Software Engineer</title>
         <meta

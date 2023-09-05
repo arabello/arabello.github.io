@@ -1,13 +1,10 @@
 import "braid-design-system/reset";
 import apacTheme from "braid-design-system/themes/apac";
 import { BraidProvider } from "braid-design-system";
-import "../styles/globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/bootstrap-theme.css";
-import "../styles/bootstrap-override.css";
 import type { AppProps } from "next/app";
 import mailgo from "mailgo";
 import { useEffect } from "react";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -22,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <BraidProvider theme={apacTheme}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </BraidProvider>
   );
 }
