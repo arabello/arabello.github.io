@@ -2,50 +2,63 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ContactsCard from "./components/ContactsCard";
 import {
+  Box,
   Card,
   Column,
   Columns,
   Heading,
-  Inline,
+  Link,
   Secondary,
   Stack,
+  Strong,
+  Text,
 } from "braid-design-system";
 import Image from "next/image";
-import ProjectCard from "./components/ProjectCard";
 
 const Index: NextPage = () => {
   const contacts = <ContactsCard />;
   const espanso = (
-    <ProjectCard
-      href="https://hub.espanso.org"
-      header={
-        <Image
-          src="/assets/espansohub.svg"
-          width={64}
-          height={64}
-          alt="espansohub logo icon"
-        />
-      }
-    >
-      Espanso is a privacy-first cross-platform text expander.
-      <span className="fw-bolder text-primary"> Espanso Hub</span> is the
-      official web application, built using Nextjs SSG technology, to search and
-      explore Espanso packages.
-    </ProjectCard>
+    <Card rounded>
+      <Link href="https://hub.espanso.org" target="blank">
+        <Stack space="large">
+          <Heading level="1" align="center">
+            <Image
+              src="/assets/espansohub.svg"
+              width={64}
+              height={64}
+              alt="espansohub logo icon"
+            />
+          </Heading>
+          <Text>
+            Espanso is a privacy-first cross-platform text expander.
+            <Strong> Espanso Hub</Strong> is the official web application, built
+            using Nextjs SSG technology, to search and explore Espanso packages.
+          </Text>
+        </Stack>
+      </Link>
+    </Card>
   );
   const nightFocus = (
-    <ProjectCard
-      href="https://matteopellegrino.dev/night-focus"
-      header={
-        <Image src="/assets/moon.png" width={64} height={64} alt="moon icon" />
-      }
-    >
-      I love to immerse myself with ambient sounds while coding or studying at
-      night. I sought a customizable auditory experience, with a picky user
-      experience that would reconcile my focus.{" "}
-      <span className="fw-bolder text-primary"> Night Focus</span> helps me get
-      into the Flow State.
-    </ProjectCard>
+    <Card rounded>
+      <Link href="https://matteopellegrino.dev/night-focus" target="blank">
+        <Stack space="large">
+          <Heading level="1" align="center">
+            <Image
+              src="/assets/moon.png"
+              width={64}
+              height={64}
+              alt="moon icon"
+            />
+          </Heading>
+          <Text>
+            I love to immerse myself with ambient sounds while coding or
+            studying at night. I sought a customizable auditory experience, with
+            a picky user experience that would reconcile my focus.{" "}
+            <Strong> Night Focus</Strong> helps me get into the Flow State.
+          </Text>
+        </Stack>
+      </Link>
+    </Card>
   );
   return (
     <div className="min-vh-100 bg-gradient-custom">
