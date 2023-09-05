@@ -1,67 +1,150 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import ContactsCard from "./components/ContactsCard";
 import {
-  Box,
+  ButtonLink,
   Card,
   Column,
   Columns,
   Heading,
+  Hidden,
+  IconDocument,
+  IconMail,
+  IconSocialLinkedIn,
   Link,
+  PageBlock,
   Secondary,
   Stack,
   Strong,
   Text,
 } from "braid-design-system";
+import type { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 
+const HeaderCard = () => (
+  <Card rounded>
+    <Columns space="medium" alignY="center">
+      <Column width="content">
+        <Image
+          className="rounded-circle avatar"
+          src="/assets/profile.jpg"
+          alt="profile picture"
+          width={80}
+          height={80}
+        />
+      </Column>
+
+      <Column>
+        <Stack space="none">
+          <Columns space="medium">
+            <Column>
+              <Heading level="2">Matteo Pellegrino</Heading>
+            </Column>
+            <Column width="content">
+              <a
+                type="button"
+                href="https://github.com/arabello"
+                target="blank"
+              >
+                <Image
+                  src="/assets/icons/github.svg"
+                  width={24}
+                  height={24}
+                  alt="github icon link"
+                />
+              </a>
+            </Column>
+          </Columns>
+
+          <Secondary>Software Engineer, Electronic Music Nerd</Secondary>
+        </Stack>
+      </Column>
+    </Columns>
+  </Card>
+);
+
+const ContactsCard = () => (
+  <Card>
+    <Stack space="xsmall" align="center">
+      <Text>Let&apos;s keep in touch 👇</Text>
+      <Text />
+      <ButtonLink
+        href="/assets/matteo-pellegrino-cv.pdf"
+        target="blank"
+        variant="soft"
+        size="small"
+        icon={<IconDocument />}
+        tone="neutral"
+      >
+        Curriculum Vitae
+      </ButtonLink>
+      <ButtonLink
+        data-address="matteo.pelle.pellegrino"
+        data-domain="gmail.com"
+        href="#mailgo"
+        variant="soft"
+        size="small"
+        icon={<IconMail />}
+        tone="neutral"
+      >
+        Drop me a line
+      </ButtonLink>
+      <ButtonLink
+        href="https://www.linkedin.com/in/mttpll"
+        target="blank"
+        variant="soft"
+        size="small"
+        icon={<IconSocialLinkedIn />}
+        tone="neutral"
+      >
+        LinkedIn
+      </ButtonLink>
+    </Stack>
+  </Card>
+);
+
+const ProjectCard = ({
+  href,
+  src,
+  children,
+}: {
+  href: string;
+  src: string;
+  children: React.ReactNode;
+}) => (
+  <Card rounded>
+    <Link href={href} target="blank">
+      <Stack space="large">
+        <Heading level="1" align="center">
+          <Image src={src} width={64} height={64} alt="espansohub logo icon" />
+        </Heading>
+        <Text>{children}</Text>
+      </Stack>
+    </Link>
+  </Card>
+);
+
 const Index: NextPage = () => {
-  const contacts = <ContactsCard />;
   const espanso = (
-    <Card rounded>
-      <Link href="https://hub.espanso.org" target="blank">
-        <Stack space="large">
-          <Heading level="1" align="center">
-            <Image
-              src="/assets/espansohub.svg"
-              width={64}
-              height={64}
-              alt="espansohub logo icon"
-            />
-          </Heading>
-          <Text>
-            Espanso is a privacy-first cross-platform text expander.
-            <Strong> Espanso Hub</Strong> is the official web application, built
-            using Nextjs SSG technology, to search and explore Espanso packages.
-          </Text>
-        </Stack>
-      </Link>
-    </Card>
+    <ProjectCard href="https://hub.espanso.org" src="/assets/espansohub.svg">
+      Espanso is a privacy-first cross-platform text expander.
+      <Strong> Espanso Hub</Strong> is the official web application, built using
+      Nextjs SSG technology, to search and explore Espanso packages.
+    </ProjectCard>
   );
+
   const nightFocus = (
-    <Card rounded>
-      <Link href="https://matteopellegrino.dev/night-focus" target="blank">
-        <Stack space="large">
-          <Heading level="1" align="center">
-            <Image
-              src="/assets/moon.png"
-              width={64}
-              height={64}
-              alt="moon icon"
-            />
-          </Heading>
-          <Text>
-            I love to immerse myself with ambient sounds while coding or
-            studying at night. I sought a customizable auditory experience, with
-            a picky user experience that would reconcile my focus.{" "}
-            <Strong> Night Focus</Strong> helps me get into the Flow State.
-          </Text>
-        </Stack>
-      </Link>
-    </Card>
+    <ProjectCard
+      href="https://matteopellegrino.dev/night-focus"
+      src="/assets/moon.png"
+    >
+      I love to immerse myself with ambient sounds while coding or studying at
+      night. I sought a customizable auditory experience, with a picky user
+      experience that would reconcile my focus. <Strong> Night Focus</Strong>{" "}
+      helps me get into the Flow State.
+    </ProjectCard>
   );
+
   return (
-    <div className="min-vh-100 bg-gradient-custom">
+    <PageBlock width="medium">
       <Head>
         <title>Matteo Pellegrino | Software Engineer</title>
         <meta
@@ -72,63 +155,30 @@ const Index: NextPage = () => {
         ></meta>
       </Head>
 
-      <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-0">
-        <Card rounded>
-          <Columns space="medium" alignY="center">
-            <Column width="content">
-              <Image
-                className="rounded-circle avatar"
-                src="/assets/profile.jpg"
-                alt="profile picture"
-                width={80}
-                height={80}
-              />
-            </Column>
-
+      <Hidden below="tablet">
+        <Stack space="medium">
+          <HeaderCard />
+          <Columns space="medium">
             <Column>
-              <Stack space="none">
-                <Columns space="medium">
-                  <Column>
-                    <Heading level="2">Matteo Pellegrino</Heading>
-                  </Column>
-                  <Column width="content">
-                    <a
-                      type="button"
-                      href="https://github.com/arabello"
-                      target="blank"
-                    >
-                      <Image
-                        src="/assets/icons/github.svg"
-                        width={24}
-                        height={24}
-                        alt="github icon link"
-                      />
-                    </a>
-                  </Column>
-                </Columns>
-
-                <Secondary>Software Engineer, Electronic Music Nerd</Secondary>
+              <Stack space="medium">
+                <ContactsCard />
+                {espanso}
               </Stack>
             </Column>
+            <Column>{nightFocus}</Column>
           </Columns>
-        </Card>
+        </Stack>
+      </Hidden>
 
-        <div className="row flex-grow-1">
-          <div className="col d-none d-md-block">
-            {contacts}
-            {espanso}
-          </div>
-
-          <div className="col d-none d-md-block">{nightFocus}</div>
-
-          <div className="col d-md-none">
-            {contacts}
-            {espanso}
-            {nightFocus}
-          </div>
-        </div>
-      </div>
-    </div>
+      <Hidden above="mobile">
+        <Stack space="medium">
+          <HeaderCard />
+          <ContactsCard />
+          {espanso}
+          {nightFocus}
+        </Stack>
+      </Hidden>
+    </PageBlock>
   );
 };
 
