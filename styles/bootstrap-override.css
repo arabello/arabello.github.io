@@ -1,11 +1,12 @@
+:root {
+  --bs-body-bg-rgb: 242, 242, 247;
+  --bs-body-bg: rgb(242, 242, 247);
+}
+
 .row {
   background-color: inherit;
 }
 
-.body {
-  background-color: rgb(242, 242, 247);
-}
-
 .text-primary {
-  color: #dc3545 !important;
+  color: rgb(255 105 97) !important;
 }

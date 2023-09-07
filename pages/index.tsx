@@ -40,7 +40,8 @@ const Index: NextPage = () => {
     </ProjectCard>
   );
   return (
-    <div className="min-vh-100 bg-gradient-custom">
+    <div className="min-vh-100">
+      <div className="bg-gradient-custom"></div>
       <Head>
         <title>Matteo Pellegrino | Software Engineer</title>
         <meta
