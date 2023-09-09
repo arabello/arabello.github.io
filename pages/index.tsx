@@ -52,7 +52,7 @@ const Index: NextPage = () => {
         ></meta>
       </Head>
 
-      <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-0">
+      <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
         <Card>
           <div className="d-flex align-items-center gap-3">
             <Image
