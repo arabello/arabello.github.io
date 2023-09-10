@@ -6,7 +6,7 @@ const ContactsCard = () => (
     <div className="text-center">Let&apos;s keep in touch 👇</div>
     <a
       type="button"
-      className="btn btn-outline-light border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
+      className="btn btn-outline-light text-reset border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
       href="/assets/matteo-pellegrino-cv.pdf"
       target="blank"
     >
@@ -20,7 +20,7 @@ const ContactsCard = () => (
     </a>
     <a
       type="button"
-      className="btn btn-outline-light border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
+      className="btn btn-outline-light text-reset border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
       href="#mailgo"
       data-address="matteo.pelle.pellegrino"
       data-domain="gmail.com"
@@ -35,7 +35,7 @@ const ContactsCard = () => (
     </a>
     <a
       type="button"
-      className="btn btn-outline-light border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
+      className="btn btn-outline-light text-reset border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
       href="https://www.linkedin.com/in/mttpll"
       target="blank"
     >
