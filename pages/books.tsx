@@ -61,7 +61,7 @@ export default function Books({
         />
 
         <div className="row flex-grow-1">
-          <div className="col mt-5">
+          <div className="col">
             <Card className="p-4">
               <ul className="list-group list-group-flush">
                 <li className="list-group-item border-0">
