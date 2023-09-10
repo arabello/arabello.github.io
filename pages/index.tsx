@@ -32,9 +32,9 @@ const Index: NextPage = () => {
         <Image src="/assets/moon.png" width={64} height={64} alt="moon icon" />
       }
     >
-      I love to immerse myself with ambient sounds while coding or studying at
-      night. I sought a customizable auditory experience, with a picky user
-      experience that would reconcile my focus.{" "}
+      I love to immerse myself with ambient sounds while coding or reading. I
+      sought a customizable auditory experience, with a picky user experience
+      that would reconcile my focus.{" "}
       <span className="fw-bolder text-primary"> Night Focus</span> helps me get
       into the Flow State.
     </ProjectCard>
