@@ -1,4 +1,4 @@
-import Card from "./Card";
+import { Card } from "./Card";
 
 type ImageProps = {
   width: number;
@@ -12,7 +12,7 @@ type Props = {
   icon: (size: ImageProps) => JSX.Element;
 };
 
-const HeaderCard = (props: Props) => (
+export const HeaderCard = (props: Props) => (
   <Card>
     <div className="d-flex align-items-center gap-3">
       <div
@@ -36,5 +36,3 @@ const HeaderCard = (props: Props) => (
     </div>
   </Card>
 );
-
-export default HeaderCard;

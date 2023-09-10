@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import ContactsCard from "../components/ContactsCard";
 import Image from "next/image";
-import ProjectCard from "../components/ProjectCard";
-import HeaderCard from "../components/HeaderCard";
+import { HeaderCard, ContactsCard, ProjectCard } from "../components";
 
 const Index: NextPage = () => {
   const contacts = <ContactsCard />;

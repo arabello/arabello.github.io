@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import HeaderCard from "../components/HeaderCard";
 import { Book, books as data } from "../data/reading_list";
-import Card from "../components/Card";
 import Link from "next/link";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import { HeaderCard, Card } from "../components";
 
 type BookWithCover = Book & {
   base64img?: string;

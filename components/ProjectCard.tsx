@@ -1,4 +1,4 @@
-import Card from "./Card";
+import { Card } from "./Card";
 
 type Props = {
   href?: string;
@@ -6,7 +6,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const ProjectCard = (props: Props) => (
+export const ProjectCard = (props: Props) => (
   <Card>
     <a
       href={props.href}
@@ -21,5 +21,3 @@ const ProjectCard = (props: Props) => (
     </a>
   </Card>
 );
-
-export default ProjectCard;

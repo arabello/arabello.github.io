@@ -1,7 +1,7 @@
-import Card from "./Card";
+import { Card } from "./Card";
 import Image from "next/image";
 
-const ContactsCard = () => (
+export const ContactsCard = () => (
   <Card className="card-contacts">
     <div className="text-center">Let&apos;s keep in touch 👇</div>
     <a
@@ -49,5 +49,3 @@ const ContactsCard = () => (
     </a>
   </Card>
 );
-
-export default ContactsCard;
