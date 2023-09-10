@@ -1,5 +1,4 @@
-a {
-  color: inherit !important;
+.project-card a {
   text-decoration: none !important;
 }
 
@@ -27,4 +26,8 @@ a {
   radial-gradient(circle at 35% 45%, rgb(255 255 255 / 20%) 5%, rgb(255 255 255 / 0%) 80%),
   radial-gradient(circle at 75% 55%, rgb(213 211 243 / 12%) 5%, rgb(213 211 243 / 0%)70%),
   radial-gradient(circle at 40% 80%, rgb(255 105 97 / 20%) 5%, rgb(255 105 97 / 0%) 80%)
+}
+
+.pointer {
+  cursor: pointer;
 }

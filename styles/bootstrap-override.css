@@ -1,12 +1,16 @@
 :root {
+  --bs-primary-rgb: 255, 105, 97;
+  --bs-primary: rgb(255 105 97);
   --bs-body-bg-rgb: 242, 242, 247;
-  --bs-body-bg: rgb(242, 242, 247);
+  --bs-body-bg: #f2f2f7;
+  --bs-link-color: rgb(255 105 97);
+  --bs-link-hover-color: rgb(255 105 97 / 0.8);
 }
 
-.row {
-  background-color: inherit;
+.list-group{
+  --bs-list-group-bg: transparent;
 }
 
-.text-primary {
-  color: rgb(255 105 97) !important;
+a {
+  text-decoration: none;
 }

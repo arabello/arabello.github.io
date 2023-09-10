@@ -1,11 +1,46 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
-import ContactsCard from "./components/ContactsCard";
-import Card from "./components/Card";
 import Image from "next/image";
-import ProjectCard from "./components/ProjectCard";
+import { HeaderCard, ContactsCard, ProjectCard } from "../components";
+import { BookPreview, ReadingListCard } from "../components/ReadingListCard";
+import {
+  Book,
+  currentBook,
+  lastBook,
+  secondLastBook,
+} from "../data/reading_list";
 
-const Index: NextPage = () => {
+export const getStaticProps: GetStaticProps<{
+  bookPreview: {
+    current: BookPreview;
+    last: BookPreview;
+    secondLast: BookPreview;
+  };
+}> = async () => {
+  const makeCover: (book: Book) => Promise<BookPreview> = (book: Book) =>
+    !book.isbn
+      ? Promise.resolve(book)
+      : fetch(`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`)
+          .then((r) => r.arrayBuffer())
+          .then((buff) => ({
+            ...book,
+            base64img: Buffer.from(buff).toString("base64"),
+          }));
+
+  return {
+    props: {
+      bookPreview: {
+        current: await makeCover(currentBook),
+        last: await makeCover(lastBook),
+        secondLast: await makeCover(secondLastBook),
+      },
+    },
+  };
+};
+
+export default function Index({
+  bookPreview,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const contacts = <ContactsCard />;
   const espanso = (
     <ProjectCard
@@ -39,6 +74,7 @@ const Index: NextPage = () => {
       into the Flow State.
     </ProjectCard>
   );
+  const readingListCard = <ReadingListCard {...bookPreview} />;
   return (
     <div className="min-vh-100">
       <div className="bg-gradient-custom"></div>
@@ -46,65 +82,56 @@ const Index: NextPage = () => {
         <title>Matteo Pellegrino | Software Engineer</title>
         <meta
           name="description"
-          content="Software Engineer and Full Stack Developer who loves building digital products.
-          Specialized in web technologies and cloud infrastructures.
-          Enthusiastic about requirements gathering, UI/UX design, and startup environment."
+          content="Product-oriented Web Software Engineer specialized in full-stack development for 
+          scale-ups. I profoundly care about business impact as well as UX & UI while keenly nerding
+          on the software architecture and technical details. I thoroughly enjoy bootstrapping and 
+          scaling up digital products."
         ></meta>
       </Head>
 
       <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
-        <Card>
-          <div className="d-flex align-items-center gap-3">
+        <HeaderCard
+          heading="Matteo Pellegrino"
+          subheading="Software Engineer, Electronic Music Nerd"
+          avatar={(size) => (
             <Image
               className="rounded-circle avatar"
               src="/assets/profile.jpg"
               alt="profile picture"
-              width={80}
-              height={80}
+              {...size}
             />
-
-            <div className="flex-grow-1 me-3">
-              <div className="d-flex align-items-center">
-                <div className="fs-3 fw-bold text-primary flex-grow-1">
-                  Matteo Pellegrino
-                </div>
-                <a
-                  type="button"
-                  href="https://github.com/arabello"
-                  target="blank"
-                >
-                  <Image
-                    src="/assets/icons/github.svg"
-                    width={24}
-                    height={24}
-                    alt="github icon link"
-                  />
-                </a>
-              </div>
-              <div className="fs-6 fw-light text-muted">
-                Software Engineer, Electronic Music Nerd
-              </div>
-            </div>
-          </div>
-        </Card>
+          )}
+          icon={(size) => (
+            <a type="button" href="https://github.com/arabello" target="blank">
+              <Image
+                src="/assets/icons/github.svg"
+                alt="github icon link"
+                {...size}
+              />
+            </a>
+          )}
+        />
 
         <div className="row flex-grow-1">
+          {/* Tablet and Desktop */}
           <div className="col d-none d-md-block">
             {contacts}
             {espanso}
           </div>
 
-          <div className="col d-none d-md-block">{nightFocus}</div>
-
+          {/* Mobile */}
+          <div className="col d-none d-md-block">
+            {nightFocus}
+            {readingListCard}
+          </div>
           <div className="col d-md-none">
             {contacts}
             {espanso}
             {nightFocus}
+            {readingListCard}
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default Index;
+}
