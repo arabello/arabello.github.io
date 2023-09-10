@@ -1,9 +1,46 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { HeaderCard, ContactsCard, ProjectCard } from "../components";
+import { BookPreview, ReadingListCard } from "../components/ReadingListCard";
+import {
+  Book,
+  currentBook,
+  lastBook,
+  secondLastBook,
+} from "../data/reading_list";
 
-const Index: NextPage = () => {
+export const getStaticProps: GetStaticProps<{
+  bookPreview: {
+    current: BookPreview;
+    last: BookPreview;
+    secondLast: BookPreview;
+  };
+}> = async () => {
+  const makeCover: (book: Book) => Promise<BookPreview> = (book: Book) =>
+    !book.isbn
+      ? Promise.resolve(book)
+      : fetch(`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`)
+          .then((r) => r.arrayBuffer())
+          .then((buff) => ({
+            ...book,
+            base64img: Buffer.from(buff).toString("base64"),
+          }));
+
+  return {
+    props: {
+      bookPreview: {
+        current: await makeCover(currentBook),
+        last: await makeCover(lastBook),
+        secondLast: await makeCover(secondLastBook),
+      },
+    },
+  };
+};
+
+export default function Index({
+  bookPreview,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const contacts = <ContactsCard />;
   const espanso = (
     <ProjectCard
@@ -37,6 +74,7 @@ const Index: NextPage = () => {
       into the Flow State.
     </ProjectCard>
   );
+  const readingListCard = <ReadingListCard {...bookPreview} />;
   return (
     <div className="min-vh-100">
       <div className="bg-gradient-custom"></div>
@@ -82,16 +120,18 @@ const Index: NextPage = () => {
           </div>
 
           {/* Mobile */}
-          <div className="col d-none d-md-block">{nightFocus}</div>
+          <div className="col d-none d-md-block">
+            {nightFocus}
+            {readingListCard}
+          </div>
           <div className="col d-md-none">
             {contacts}
             {espanso}
             {nightFocus}
+            {readingListCard}
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default Index;
+}

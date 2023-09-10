@@ -2,7 +2,7 @@ import { Card } from "./Card";
 import Image from "next/image";
 
 export const ContactsCard = () => (
-  <Card className="card-contacts">
+  <Card>
     <div className="text-center">Let&apos;s keep in touch 👇</div>
     <a
       type="button"

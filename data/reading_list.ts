@@ -94,3 +94,5 @@ export const books: Array<Book> = [
     isbn: "9788845901843"
   }
 ]
+
+export const [currentBook, lastBook, secondLastBook] = [books[3], books[1], books[0]]

@@ -48,7 +48,7 @@ export default function Books({
           subheading="Books I have read and believe are worth sharing"
           avatar={() => <>📚</>}
           icon={() => (
-            <Link type="button" href="/" prefetch>
+            <Link type="button" href="/">
               <Image
                 src="/assets/icons/home.svg"
                 width={24}
