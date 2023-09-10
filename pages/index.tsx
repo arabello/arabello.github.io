@@ -4,6 +4,7 @@ import ContactsCard from "./components/ContactsCard";
 import Card from "./components/Card";
 import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
+import { HeaderCard } from "./components/HeaderCard";
 
 const Index: NextPage = () => {
   const contacts = <ContactsCard />;
@@ -53,40 +54,27 @@ const Index: NextPage = () => {
       </Head>
 
       <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
-        <Card>
-          <div className="d-flex align-items-center gap-3">
+        <HeaderCard
+          heading="Matteo Pellegrino"
+          subheading="Software Engineer, Electronic Music Nerd"
+          avatar={(size) => (
             <Image
               className="rounded-circle avatar"
               src="/assets/profile.jpg"
               alt="profile picture"
-              width={80}
-              height={80}
+              {...size}
             />
-
-            <div className="flex-grow-1 me-3">
-              <div className="d-flex align-items-center">
-                <div className="fs-3 fw-bold text-primary flex-grow-1">
-                  Matteo Pellegrino
-                </div>
-                <a
-                  type="button"
-                  href="https://github.com/arabello"
-                  target="blank"
-                >
-                  <Image
-                    src="/assets/icons/github.svg"
-                    width={24}
-                    height={24}
-                    alt="github icon link"
-                  />
-                </a>
-              </div>
-              <div className="fs-6 fw-light text-muted">
-                Software Engineer, Electronic Music Nerd
-              </div>
-            </div>
-          </div>
-        </Card>
+          )}
+          icon={(size) => (
+            <a type="button" href="https://github.com/arabello" target="blank">
+              <Image
+                src="/assets/icons/github.svg"
+                alt="github icon link"
+                {...size}
+              />
+            </a>
+          )}
+        />
 
         <div className="row flex-grow-1">
           {/* Tablet and Desktop */}
