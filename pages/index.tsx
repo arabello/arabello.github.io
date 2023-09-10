@@ -47,9 +47,10 @@ const Index: NextPage = () => {
         <title>Matteo Pellegrino | Software Engineer</title>
         <meta
           name="description"
-          content="Software Engineer and Full Stack Developer who loves building digital products.
-          Specialized in web technologies and cloud infrastructures.
-          Enthusiastic about requirements gathering, UI/UX design, and startup environment."
+          content="Product-oriented Web Software Engineer specialized in full-stack development for 
+          scale-ups. I profoundly care about business impact as well as UX & UI while keenly nerding
+          on the software architecture and technical details. I thoroughly enjoy bootstrapping and 
+          scaling up digital products."
         ></meta>
       </Head>
 
