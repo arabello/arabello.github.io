@@ -27,3 +27,7 @@
   radial-gradient(circle at 75% 55%, rgb(213 211 243 / 12%) 5%, rgb(213 211 243 / 0%)70%),
   radial-gradient(circle at 40% 80%, rgb(255 105 97 / 20%) 5%, rgb(255 105 97 / 0%) 80%)
 }
+
+.pointer {
+  cursor: pointer;
+}

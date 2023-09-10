@@ -1,11 +1,38 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { HeaderCard } from "./components/HeaderCard";
-import { books } from "./reading_list";
-import Card from "./components/Card";
+import HeaderCard from "../components/HeaderCard";
+import { Book, books as data } from "../data/reading_list";
+import Card from "../components/Card";
+import Link from "next/link";
+import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
-const Books: NextPage = () => {
+type BookWithCover = Book & {
+  base64img?: string;
+};
+
+export const getStaticProps: GetStaticProps<{
+  books: Array<BookWithCover>;
+}> = async () => {
+  const promises: Array<Promise<BookWithCover>> = data.map((b) =>
+    !b.isbn
+      ? Promise.resolve(b)
+      : fetch(`https://covers.openlibrary.org/b/isbn/${b.isbn}-M.jpg`)
+          .then((r) => r.arrayBuffer())
+          .then((buff) => ({
+            ...b,
+            base64img: Buffer.from(buff).toString("base64"),
+          }))
+  );
+
+  const books = await Promise.all(promises);
+
+  return { props: { books } };
+};
+
+export default function Books({
+  books,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="min-vh-100">
       <div className="bg-gradient-custom"></div>
@@ -23,14 +50,15 @@ const Books: NextPage = () => {
           subheading="Books I have read and believe are worth sharing"
           avatar={() => <>📚</>}
           icon={() => (
-            <a type="button" href="/">
+            <Link type="button" href="/" prefetch>
               <Image
                 src="/assets/icons/home.svg"
                 width={24}
                 height={24}
-                alt="github icon link"
+                alt="home icon link"
+                className="pointer"
               />
-            </a>
+            </Link>
           )}
         />
 
@@ -55,11 +83,31 @@ const Books: NextPage = () => {
                 </li>
                 {books.map((book) => (
                   <li key={book.title} className="list-group-item pb-4 pt-4">
-                    <div className="fs-5 fw-medium">{book.title}</div>
-                    <div className="fst-italic text-muted">{book.author}</div>
-                    {book.description && (
-                      <div className="mt-3">{book.description}</div>
-                    )}
+                    <div className="d-inline-flex align-items-center gap-3">
+                      <div className="flex-shrink-0 text-center">
+                        {book.base64img ? (
+                          <Image
+                            src={`data:image/png;base64, ${book.base64img}`}
+                            width={80}
+                            height={120}
+                            alt={`${book.title} book cover`}
+                          />
+                        ) : (
+                          <div style={{ width: 80, height: 80, fontSize: 56 }}>
+                            📕
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <div className="fs-5 fw-medium">{book.title}</div>
+                        <div className="fst-italic text-muted">
+                          {book.author}
+                        </div>
+                        {book.description && (
+                          <div className="mt-3">{book.description}</div>
+                        )}
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -69,6 +117,4 @@ const Books: NextPage = () => {
       </div>
     </div>
   );
-};
-
-export default Books;
+}

@@ -12,7 +12,7 @@ type Props = {
   icon: (size: ImageProps) => JSX.Element;
 };
 
-export const HeaderCard = (props: Props) => (
+const HeaderCard = (props: Props) => (
   <Card>
     <div className="d-flex align-items-center gap-3">
       <div
@@ -36,3 +36,5 @@ export const HeaderCard = (props: Props) => (
     </div>
   </Card>
 );
+
+export default HeaderCard;
