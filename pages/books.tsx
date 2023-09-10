@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { HeaderCard } from "./components/HeaderCard";
 import { books } from "./reading_list";
+import Card from "./components/Card";
 
 const Books: NextPage = () => {
   return (
@@ -35,15 +36,34 @@ const Books: NextPage = () => {
 
         <div className="row flex-grow-1">
           <div className="col mt-5">
-            <ul className="list-group list-group-flush">
-              {books.map((book) => (
-                <li key={book.title} className="list-group-item">
-                  <div className="fs-5">{book.title}</div>
-                  <div className="fst-italic fw-lighter">{book.author}</div>
-                  <p className="mt-3 fw-light">{book.description}</p>
+            <Card className="p-4">
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item border-0">
+                  <p className="">
+                    I commonly lean towards non-narrative and generalistic
+                    readings, aiming to draw links between concepts originating
+                    from diverse sources. I prefer articles, research papers, or
+                    practical exploration when it comes to comprehensively
+                    understanding a specific technology. Also, I advocate for{" "}
+                    <a href="https://fs.blog/reading/">
+                      quitting books, different levels of reading and taking
+                      notes.
+                    </a>{" "}
+                    Here is a selection of books, amongst others, which most
+                    influenced me:
+                  </p>
                 </li>
-              ))}
-            </ul>
+                {books.map((book) => (
+                  <li key={book.title} className="list-group-item pb-4 pt-4">
+                    <div className="fs-5 fw-medium">{book.title}</div>
+                    <div className="fst-italic text-muted">{book.author}</div>
+                    {book.description && (
+                      <div className="mt-3">{book.description}</div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </Card>
           </div>
         </div>
       </div>

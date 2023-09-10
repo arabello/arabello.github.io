@@ -6,19 +6,19 @@ export type Book = {
 
 export const books: Array<Book> = [
   {
-    title: "How to think like a roman emperor",
+    title: "How to Think Like a Roman Emperor",
     author: "Donald Robertson",
     description: "I highly recommend this book for mindfulness enthusiasts. It presents key Stoicism concepts in a narrative way through historical examples, along with practical tools to use in your daily life."
-  },
-  {
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    description: "I'm glad that this book was among my initial in-depth readings during my academic studies. I find its fundamental principles retain their relevance and could be applied broadly across the industry."
   },
   {
     title: "Small Data",
     author: "Martin Lindstrom",
     description: "Martin Lindstrom's work provides deep insights for comprehending the nuances of people's behaviors and reasonings. While his work is primarily associated with branding, I find key concepts relevant to the digital products as well."
+  },
+  {
+    title: "Clean Architecture",
+    author: "Robert C. Martin",
+    description: "I'm glad that this book was among my initial in-depth readings during my academic studies. I find its fundamental principles retain their relevance and could be applied broadly across the industry."
   },
   {
     title: "Predictably Irrational",
@@ -35,6 +35,10 @@ export const books: Array<Book> = [
     author: "Benjamin Graham"
   },
   {
+    title: "Cloud Native Patterns Designing",
+    author: "Cornelia Davis"
+  },
+  {
     title: "How Google Works",
     author: "Eric Schmidt, Jonathan Rosenberg"
   },
@@ -43,7 +47,7 @@ export const books: Array<Book> = [
     author: "John Von Neumann"
   },
   {
-    title: "Dieci Cose da Sapere sull’Economia Italiana",
+    title: "Ten Things to Know About Italian Economy",
     author: "Alan Friedman",
     description: "My father and I have listened to Alan Friedman's interviews on the national car radio for years. He gifted me this book, which allowed me to understand the intricate mechanisms behind a nation's economy, specifically the tragic Italian one."
   },
@@ -73,13 +77,5 @@ export const books: Array<Book> = [
   {
     title: "Siddhartha",
     author: "Hesse"
-  },
-  {
-    title: "The Little Prince",
-    author: "Antoine de Saint-Exupery"
-  },
-  {
-    title: "The Great Gatsby",
-    author: "Scott Fitzgerald"
   }
 ]

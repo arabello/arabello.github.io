@@ -1,5 +1,4 @@
-a {
-  color: inherit !important;
+.project-card a {
   text-decoration: none !important;
 }
 

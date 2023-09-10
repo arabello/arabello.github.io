@@ -1,6 +1,8 @@
 :root {
   --bs-body-bg-rgb: 242, 242, 247;
   --bs-body-bg: #f2f2f7;
+  --bs-link-color: rgb(255 105 97);
+  --bs-link-hover-color: rgb(255 105 97 / 0.8);
 }
 
 .list-group{
