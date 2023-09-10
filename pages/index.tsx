@@ -89,13 +89,14 @@ const Index: NextPage = () => {
         </Card>
 
         <div className="row flex-grow-1">
+          {/* Tablet and Desktop */}
           <div className="col d-none d-md-block">
             {contacts}
             {espanso}
           </div>
 
+          {/* Mobile */}
           <div className="col d-none d-md-block">{nightFocus}</div>
-
           <div className="col d-md-none">
             {contacts}
             {espanso}
