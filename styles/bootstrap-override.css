@@ -1,6 +1,10 @@
 :root {
   --bs-body-bg-rgb: 242, 242, 247;
-  --bs-body-bg: rgb(242, 242, 247);
+  --bs-body-bg: #f2f2f7;
+}
+
+.list-group{
+  --bs-list-group-bg: transparent;
 }
 
 .row {

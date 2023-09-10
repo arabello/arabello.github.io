@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import ContactsCard from "./components/ContactsCard";
-import Card from "./components/Card";
 import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
 import { HeaderCard } from "./components/HeaderCard";
