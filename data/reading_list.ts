@@ -13,6 +13,11 @@ export const books: Array<Book> = [
     isbn: "9781250196620"
   },
   {
+    title: "Software Engineering at Google",
+    author: "Titus Winters, Tom Manshreck, Hyrum Wright",
+    isbn: "9781492082798"
+  },
+  {
     title: "Small Data",
     author: "Martin Lindstrom",
     description: "Martin Lindstrom's work provides deep insights for comprehending the nuances of people's behaviors and reasonings. While his work is primarily associated with branding, I find key concepts relevant to the digital products as well.",
@@ -52,11 +57,6 @@ export const books: Array<Book> = [
     isbn: "9781455582327"
   },
   {
-    title: "The Computer and The Brain",
-    author: "John Von Neumann",
-    isbn: "9780300181111"
-  },
-  {
     title: "Ten Things to Know About Italian Economy",
     author: "Alan Friedman",
     description: "My father and I have listened to Alan Friedman's interviews on the national car radio for years. He gifted me this book, which allowed me to understand the intricate mechanisms behind a nation's economy, specifically the tragic Italian one.",
@@ -92,7 +92,12 @@ export const books: Array<Book> = [
     title: "Siddhartha",
     author: "Hesse",
     isbn: "9788845901843"
-  }
+  },
+  {
+    title: "The Computer and The Brain",
+    author: "John Von Neumann",
+    isbn: "9780300181111"
+  },
 ]
 
-export const [currentBook, lastBook, secondLastBook] = [books[3], books[1], books[0]]
+export const [currentBook, lastBook, secondLastBook] = [books[1], books[4], books[0]]

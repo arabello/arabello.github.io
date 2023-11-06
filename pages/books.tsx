@@ -75,8 +75,7 @@ export default function Books({
                       quitting books, different levels of reading and taking
                       notes.
                     </a>{" "}
-                    Here is a selection of books, amongst others, which most
-                    influenced me:
+                    Among others, here&apos;s a collection of books that had a significant impact on me:
                   </p>
                 </li>
                 {books.map((book) => (
