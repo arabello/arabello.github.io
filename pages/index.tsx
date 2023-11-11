@@ -87,6 +87,7 @@ export default function Index({
           on the software architecture and technical details. I thoroughly enjoy bootstrapping and 
           scaling up digital products."
         ></meta>
+        <link rel="me" href="https://mastodon.world/@pelle" />
       </Head>
 
       <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
