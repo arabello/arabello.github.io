@@ -10,12 +10,7 @@ export const ContactsCard = () => (
       href="/assets/matteo-pellegrino-cv.pdf"
       target="blank"
     >
-      <Image
-        src="/assets/icons/file-text.svg"
-        width={24}
-        height={24}
-        alt="curriculum vitae icon"
-      />
+      <Image src="/assets/icons/file-text.svg" width={24} height={24} alt="curriculum vitae icon" />
       <span>Curriculum Vitae</span>
     </a>
     <a
@@ -25,12 +20,7 @@ export const ContactsCard = () => (
       data-address="matteo.pelle.pellegrino"
       data-domain="gmail.com"
     >
-      <Image
-        src="/assets/icons/mail.svg"
-        width={24}
-        height={24}
-        alt="email icon"
-      />
+      <Image src="/assets/icons/mail.svg" width={24} height={24} alt="email icon" />
       <span>Drop me a line</span>
     </a>
     <a
@@ -39,12 +29,7 @@ export const ContactsCard = () => (
       href="https://www.linkedin.com/in/mttpll"
       target="blank"
     >
-      <Image
-        src="/assets/icons/linkedin.svg"
-        width={24}
-        height={24}
-        alt="linkedin icon"
-      />
+      <Image src="/assets/icons/linkedin.svg" width={24} height={24} alt="linkedin icon" />
       <span>Linkedin</span>
     </a>
   </Card>

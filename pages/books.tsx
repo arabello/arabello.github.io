@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<{
           .then((buff) => ({
             ...b,
             base64img: Buffer.from(buff).toString("base64"),
-          }))
+          })),
   );
 
   const books = await Promise.all(promises);
@@ -28,18 +28,13 @@ export const getStaticProps: GetStaticProps<{
   return { props: { books } };
 };
 
-export default function Books({
-  books,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Books({ books }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="min-vh-100">
       <div className="bg-gradient-custom"></div>
       <Head>
         <title>Matteo Pellegrino | Reading List</title>
-        <meta
-          name="description"
-          content="Hand-picked books reccomendations."
-        ></meta>
+        <meta name="description" content="Hand-picked books reccomendations."></meta>
       </Head>
 
       <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
@@ -66,16 +61,15 @@ export default function Books({
               <ul className="list-group list-group-flush">
                 <li className="list-group-item border-0">
                   <p className="">
-                    I commonly lean towards non-narrative and generalistic
-                    readings, aiming to draw links between concepts originating
-                    from diverse sources. I prefer articles, research papers, or
-                    practical exploration when it comes to comprehensively
+                    I commonly lean towards non-narrative and generalistic readings, aiming to draw
+                    links between concepts originating from diverse sources. I prefer articles,
+                    research papers, or practical exploration when it comes to comprehensively
                     understanding a specific technology. Also, I advocate for{" "}
                     <a href="https://fs.blog/reading/">
-                      quitting books, different levels of reading and taking
-                      notes.
+                      quitting books, different levels of reading and taking notes.
                     </a>{" "}
-                    Among others, here&apos;s a collection of books that had a significant impact on me:
+                    Among others, here&apos;s a collection of books that had a significant impact on
+                    me:
                   </p>
                 </li>
                 {books.map((book) => (
@@ -90,19 +84,13 @@ export default function Books({
                             alt={`${book.title} book cover`}
                           />
                         ) : (
-                          <div style={{ width: 80, height: 80, fontSize: 56 }}>
-                            📕
-                          </div>
+                          <div style={{ width: 80, height: 80, fontSize: 56 }}>📕</div>
                         )}
                       </div>
                       <div>
                         <div className="fs-5 fw-medium">{book.title}</div>
-                        <div className="fst-italic text-muted">
-                          {book.author}
-                        </div>
-                        {book.description && (
-                          <div className="mt-3">{book.description}</div>
-                        )}
+                        <div className="fst-italic text-muted">{book.author}</div>
+                        {book.description && <div className="mt-3">{book.description}</div>}
                       </div>
                     </div>
                   </li>

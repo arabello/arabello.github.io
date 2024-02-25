@@ -48,14 +48,12 @@ export const ReadingListCard = ({ current, last, secondLast }: Props) => {
             ))}
           </div>
           <p>
-            I&apos;m currently reading{" "}
-            <span className="fw-bolder">{current.title}</span>, after{" "}
+            I&apos;m currently reading <span className="fw-bolder">{current.title}</span>, after{" "}
             <span className="fw-bolder">{last.title}</span> and{" "}
             <span className="fw-bolder">{secondLast.title}</span>.
           </p>
           <div className="align-self-start">
-            Take a look at my suggestion{" "}
-            <span className="text-primary">reading </span> list.
+            Take a look at my suggestion <span className="text-primary">reading </span> list.
           </div>
         </div>
       </Link>

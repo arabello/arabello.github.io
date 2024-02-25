@@ -5,10 +5,7 @@ const Custom404 = () => (
   <div className="container-fluid d-flex flex-column min-vh-100">
     <Head>
       <title>Matteo Pellegrino | 404 Not Found</title>
-      <meta
-        name="description"
-        content="404 page not found on matteopellegrino.me"
-      ></meta>
+      <meta name="description" content="404 page not found on matteopellegrino.me"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
     <div className="row min-vh-100 justify-content-center align-items-center">

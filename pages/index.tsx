@@ -3,12 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { HeaderCard, ContactsCard, ProjectCard } from "../components";
 import { BookPreview, ReadingListCard } from "../components/ReadingListCard";
-import {
-  Book,
-  currentBook,
-  lastBook,
-  secondLastBook,
-} from "../data/reading_list";
+import { Book, currentBook, lastBook, secondLastBook } from "../data/reading_list";
 
 export const getStaticProps: GetStaticProps<{
   bookPreview: {
@@ -38,40 +33,28 @@ export const getStaticProps: GetStaticProps<{
   };
 };
 
-export default function Index({
-  bookPreview,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Index({ bookPreview }: InferGetStaticPropsType<typeof getStaticProps>) {
   const contacts = <ContactsCard />;
   const espanso = (
     <ProjectCard
       href="https://hub.espanso.org"
       header={
-        <Image
-          src="/assets/espansohub.svg"
-          width={64}
-          height={64}
-          alt="espansohub logo icon"
-        />
+        <Image src="/assets/espansohub.svg" width={64} height={64} alt="espansohub logo icon" />
       }
     >
       Espanso is a privacy-first cross-platform text expander.
-      <span className="fw-bolder text-primary"> Espanso Hub</span> is the
-      official web application, built using Nextjs SSG technology, to search and
-      explore Espanso packages.
+      <span className="fw-bolder text-primary"> Espanso Hub</span> is the official web application,
+      built using Nextjs SSG technology, to search and explore Espanso packages.
     </ProjectCard>
   );
   const nightFocus = (
     <ProjectCard
       href="https://matteopellegrino.dev/night-focus"
-      header={
-        <Image src="/assets/moon.png" width={64} height={64} alt="moon icon" />
-      }
+      header={<Image src="/assets/moon.png" width={64} height={64} alt="moon icon" />}
     >
-      I love to immerse myself with ambient sounds while coding or reading. I
-      sought a customizable auditory experience, with a picky user experience
-      that would reconcile my focus.{" "}
-      <span className="fw-bolder text-primary"> Night Focus</span> helps me get
-      into the Flow State.
+      I love to immerse myself with ambient sounds while coding or reading. I sought a customizable
+      auditory experience, with a picky user experience that would reconcile my focus.{" "}
+      <span className="fw-bolder text-primary"> Night Focus</span> helps me get into the Flow State.
     </ProjectCard>
   );
   const readingListCard = <ReadingListCard {...bookPreview} />;
@@ -104,11 +87,7 @@ export default function Index({
           )}
           icon={(size) => (
             <a type="button" href="https://github.com/arabello" target="blank">
-              <Image
-                src="/assets/icons/github.svg"
-                alt="github icon link"
-                {...size}
-              />
+              <Image src="/assets/icons/github.svg" alt="github icon link" {...size} />
             </a>
           )}
         />
