@@ -4,6 +4,7 @@ import { Book, books as data } from "../data/reading_list";
 import Link from "next/link";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { HeaderCard, Card } from "../components";
+import { Content, Page } from "../components/layout";
 
 type BookWithCover = Book & {
   base64img?: string;
@@ -30,14 +31,13 @@ export const getStaticProps: GetStaticProps<{
 
 export default function Books({ books }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className="min-vh-100">
-      <div className="bg-gradient-custom"></div>
+    <Page>
       <Head>
         <title>Matteo Pellegrino | Reading List</title>
         <meta name="description" content="Hand-picked books reccomendations."></meta>
       </Head>
 
-      <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
+      <Content>
         <HeaderCard
           heading="Reading List"
           subheading="Books I have read and believe are worth sharing"
@@ -99,7 +99,7 @@ export default function Books({ books }: InferGetStaticPropsType<typeof getStati
             </Card>
           </div>
         </div>
-      </div>
-    </div>
+      </Content>
+    </Page>
   );
 }

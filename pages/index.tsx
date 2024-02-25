@@ -4,6 +4,7 @@ import Image from "next/image";
 import { HeaderCard, ContactsCard, ProjectCard } from "../components";
 import { BookPreview, ReadingListCard } from "../components/ReadingListCard";
 import { Book, currentBook, lastBook, secondLastBook } from "../data/reading_list";
+import { Content, Page } from "../components/layout";
 
 export const getStaticProps: GetStaticProps<{
   bookPreview: {
@@ -59,8 +60,7 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
   );
   const readingListCard = <ReadingListCard {...bookPreview} />;
   return (
-    <div className="min-vh-100">
-      <div className="bg-gradient-custom"></div>
+    <Page>
       <Head>
         <title>Matteo Pellegrino | Software Engineer</title>
         <meta
@@ -73,7 +73,7 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
         <link rel="me" href="https://mastodon.world/@pelle" />
       </Head>
 
-      <div className="min-vh-100 container-centered d-flex flex-column p-3 pt-4">
+      <Content>
         <HeaderCard
           heading="Matteo Pellegrino"
           subheading="Software Engineer, Electronic Music Nerd"
@@ -111,7 +111,7 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
             {readingListCard}
           </div>
         </div>
-      </div>
-    </div>
+      </Content>
+    </Page>
   );
 }
