@@ -1,10 +1,11 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { HeaderCard, ContactsCard, ProjectCard } from "../components";
+import { Header, ContactsCard, ProjectCard } from "../components";
 import { BookPreview, ReadingListCard } from "../components/ReadingListCard";
 import { Book, currentBook, lastBook, secondLastBook } from "../data/reading_list";
 import { Content, Page } from "../components/layout";
+import { IconLink } from "../components/IconLink";
 
 export const getStaticProps: GetStaticProps<{
   bookPreview: {
@@ -59,6 +60,7 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
     </ProjectCard>
   );
   const readingListCard = <ReadingListCard {...bookPreview} />;
+
   return (
     <Page>
       <Head>
@@ -74,22 +76,17 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
       </Head>
 
       <Content>
-        <HeaderCard
+        <Header
           heading="Matteo Pellegrino"
           subheading="Software Engineer, Electronic Music Nerd"
-          avatar={(size) => (
-            <Image
-              className="rounded-circle avatar"
-              src="/assets/profile.jpg"
-              alt="profile picture"
-              {...size}
-            />
-          )}
-          icon={(size) => (
-            <a type="button" href="https://github.com/arabello" target="blank">
-              <Image src="/assets/icons/github.svg" alt="github icon link" {...size} />
-            </a>
-          )}
+          actions={{
+            right: {
+              href: "https://github.com/arabello",
+              target: "_blank",
+              src: "/assets/icons/github.svg",
+              alt: "github icon link",
+            },
+          }}
         />
 
         <div className="row flex-grow-1">

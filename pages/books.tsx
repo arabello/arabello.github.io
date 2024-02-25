@@ -3,8 +3,9 @@ import Image from "next/image";
 import { Book, books as data } from "../data/reading_list";
 import Link from "next/link";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
-import { HeaderCard, Card } from "../components";
+import { Header, Card } from "../components";
 import { Content, Page } from "../components/layout";
+import { ItemList } from "../components/ItemList";
 
 type BookWithCover = Book & {
   base64img?: string;
@@ -30,6 +31,18 @@ export const getStaticProps: GetStaticProps<{
 };
 
 export default function Books({ books }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const items = books.map((b) => ({
+    title: b.title,
+    subtitle: b.author,
+    caption: b.description,
+    image: {
+      src: b.base64img ? `data:image/png;base64, ${b.base64img}` : "/assets/icons/book.svg",
+      width: 60,
+      height: 90,
+      alt: `${b.title} book cover`,
+    },
+  }));
+
   return (
     <Page>
       <Head>
@@ -38,64 +51,32 @@ export default function Books({ books }: InferGetStaticPropsType<typeof getStati
       </Head>
 
       <Content>
-        <HeaderCard
+        <Header
           heading="Reading List"
           subheading="Books I have read and believe are worth sharing"
-          avatar={() => <>📚</>}
-          icon={() => (
-            <Link type="button" href="/">
-              <Image
-                src="/assets/icons/home.svg"
-                width={24}
-                height={24}
-                alt="home icon link"
-                className="pointer"
-              />
-            </Link>
-          )}
+          actions={{
+            right: {
+              src: "/assets/icons/home.svg",
+              alt: "home icon link",
+              href: "/",
+            },
+          }}
         />
 
         <div className="row flex-grow-1">
           <div className="col">
-            <Card className="p-4">
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item border-0">
-                  <p className="">
-                    I commonly lean towards non-narrative and generalistic readings, aiming to draw
-                    links between concepts originating from diverse sources. I prefer articles,
-                    research papers, or practical exploration when it comes to comprehensively
-                    understanding a specific technology. Also, I advocate for{" "}
-                    <a href="https://fs.blog/reading/">
-                      quitting books, different levels of reading and taking notes.
-                    </a>{" "}
-                    Among others, here&apos;s a collection of books that had a significant impact on
-                    me:
-                  </p>
-                </li>
-                {books.map((book) => (
-                  <li key={book.title} className="list-group-item pb-4 pt-4">
-                    <div className="d-inline-flex align-items-center gap-3">
-                      <div className="flex-shrink-0 text-center">
-                        {book.base64img ? (
-                          <Image
-                            src={`data:image/png;base64, ${book.base64img}`}
-                            width={80}
-                            height={120}
-                            alt={`${book.title} book cover`}
-                          />
-                        ) : (
-                          <div style={{ width: 80, height: 80, fontSize: 56 }}>📕</div>
-                        )}
-                      </div>
-                      <div>
-                        <div className="fs-5 fw-medium">{book.title}</div>
-                        <div className="fst-italic text-muted">{book.author}</div>
-                        {book.description && <div className="mt-3">{book.description}</div>}
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+            <Card>
+              <p className="">
+                I commonly lean towards non-narrative and generalistic readings, aiming to draw
+                links between concepts originating from diverse sources. I prefer articles, research
+                papers, or practical exploration when it comes to comprehensively understanding a
+                specific technology. Also, I advocate for{" "}
+                <a href="https://fs.blog/reading/">
+                  quitting books, different levels of reading and taking notes.
+                </a>{" "}
+                Among others, here&apos;s a collection of books that had a significant impact on me:
+              </p>
+              <ItemList items={items} />
             </Card>
           </div>
         </div>
