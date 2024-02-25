@@ -12,15 +12,14 @@ export const getStaticProps: GetStaticProps<{
   posts: Array<PostWithSlug>;
 }> = () => {
   const posts = Object.entries(data).map(([k, v]) => ({ ...v, slug: k }));
-  const fake = [...posts, posts[0], posts[0]];
-  return { props: { posts: fake } };
+  return { props: { posts } };
 };
 
 export default function Posts({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const items = posts.map((p) => ({
     title: p.title,
-    subtitle: p.date,
-    caption: "asdasd",
+    subtitle: p.lastUpdate,
+    caption: p.description,
     link: {
       href: `/posts/${p.slug}`,
     },
