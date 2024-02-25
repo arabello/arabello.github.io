@@ -20,6 +20,12 @@ export default function Posts({ posts }: InferGetStaticPropsType<typeof getStati
     title: p.title,
     subtitle: p.lastUpdate,
     caption: p.description,
+    image: {
+      src: `/assets/posts/${p.slug}.webp`,
+      alt: "post image",
+      width: 90,
+      height: 60,
+    },
     link: {
       href: `/posts/${p.slug}`,
     },
@@ -29,7 +35,6 @@ export default function Posts({ posts }: InferGetStaticPropsType<typeof getStati
       <Content>
         <Header
           heading="Posts"
-          subheading="A collection of thoughts and ideas"
           actions={{
             right: {
               src: "/assets/icons/home.svg",
