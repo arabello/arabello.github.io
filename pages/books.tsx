@@ -6,6 +6,7 @@ import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { Header, Card } from "../components";
 import { Content, Page } from "../components/layout";
 import { ItemList } from "../components/ItemList";
+import { Footer } from "../components/Footer";
 
 type BookWithCover = Book & {
   base64img?: string;
@@ -80,6 +81,8 @@ export default function Books({ books }: InferGetStaticPropsType<typeof getStati
             </Card>
           </div>
         </div>
+
+        <Footer caption="Would you like to talk about the topics of these books or recommend one?" />
       </Content>
     </Page>
   );

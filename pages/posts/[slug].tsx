@@ -5,6 +5,7 @@ import { Card, Header } from "../../components";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { Post, posts as data } from "../../data/posts_list";
 import { useWindowScroll } from "@uidotdev/usehooks";
+import { Footer } from "../../components/Footer";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -60,6 +61,8 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
         <Card>
           <div dangerouslySetInnerHTML={{ __html: postHtml }} />;
         </Card>
+
+        <Footer caption="Any feedback or open to discuss?" />
       </Content>
     </Page>
   );
