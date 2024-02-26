@@ -1,4 +1,3 @@
-import Showdown from "showdown";
 import Image from "next/image";
 import { Content, Page } from "../../components/layout";
 import { Card, Header } from "../../components";
@@ -6,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { Post, posts as data } from "../../data/posts_list";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { Footer } from "../../components/Footer";
+import { Markdown } from "../../components/Markdown";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -27,8 +27,6 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
   const yScroll = y ?? 0;
   if (!post) return <div>Post not found</div>;
 
-  const converter = new Showdown.Converter();
-  const postHtml = converter.makeHtml(post.content);
   return (
     <Page>
       <Content>
@@ -59,7 +57,7 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
       </div>
       <Content>
         <Card>
-          <div dangerouslySetInnerHTML={{ __html: postHtml }} />;
+          <Markdown content={post.content} />
         </Card>
 
         <Footer caption="Any feedback or open to discuss?" />
