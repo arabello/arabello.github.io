@@ -220,8 +220,8 @@ We may drop the explicit declaration, but we would move the responsibility of a 
 
 \`\`\`diff
 - const nextState = (prev: State, command: Command): State => { /** */ }
-+ const nextState = (prev: State, command: Command)~~: State~~ => { /** */ }
-~~~~// inferred return type: State | undefined
++ const nextState = (prev: State, command: Command) => { /** */ }
+---     ^ inferred return type is State | undefined
 \`\`\`
 
 \`\`\`tsx

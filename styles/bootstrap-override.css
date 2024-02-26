@@ -1,15 +1,14 @@
 :root {
-  --bs-primary-rgb: 255, 105, 97;
-  --bs-primary: rgb(255 105 97);
+  --bs-primary-rgb: 235, 87, 87;
+  --bs-primary: rgb(var(--bs-primary-rgb));
   --bs-body-bg-rgb: 242, 242, 247;
   --bs-body-bg: #f2f2f7;
-  --bs-link-color: rgb(255 105 97);
-  --bs-link-hover-color: rgb(255 105 97 / 0.8);
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: rgba(var(--bs-primary-rgb), 0.8);
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
     "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 
     "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
+  --bs-font-monospace: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
 }
 
 .list-group {
@@ -18,4 +17,24 @@
 
 a {
   text-decoration: none;
+}
+
+ol li a{
+  color: unset;
+}
+
+/* hanging inline code */
+code:not(.hljs){
+  border-radius: 4px;
+  color: var(--bs-primary);
+  background-color: rgba(135, 131, 120, .15);
+  padding: 0.3rem;
+  box-sizing: border-box;
+  line-height: normal;
+  padding: 0.2em 0.4em;
+}
+
+/* code block */
+pre code.hljs {
+  border-radius: 8px;
 }

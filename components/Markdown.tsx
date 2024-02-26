@@ -1,4 +1,17 @@
 import Showdown from "showdown";
+import "highlight.js/styles/vs2015.css";
+import hljs from "highlight.js/lib/core";
+import typescript from "highlight.js/lib/languages/typescript";
+import plaintext from "highlight.js/lib/languages/plaintext";
+import diff from "highlight.js/lib/languages/diff";
+import { useEffect } from "react";
+
+hljs.registerLanguage("typescript", typescript);
+hljs.registerLanguage("plaintext", plaintext);
+hljs.registerLanguage("diff", diff);
+hljs.configure({
+  languages: ["typescript", "plaintext", "diff"],
+});
 
 type Props = {
   content: string;
@@ -9,12 +22,12 @@ export const Markdown = (props: Props) => {
     extensions: [...bindings, supExt],
   });
   const postHtml = converter.makeHtml(props.content);
+
+  useEffect(() => hljs.highlightAll(), []);
   return <div dangerouslySetInnerHTML={{ __html: postHtml }} />;
 };
 
-const classMap: Record<string, string> = {
-  code: "font-monospace",
-};
+const classMap: Record<string, string> = {};
 
 const bindings = Object.keys(classMap).map((key) => ({
   type: "output",
