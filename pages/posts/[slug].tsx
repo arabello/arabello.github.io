@@ -6,6 +6,14 @@ import { Post, posts as data } from "../../data/posts_list";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { Footer } from "../../components/Footer";
 import { Markdown } from "../../components/Markdown";
+import { readFileSync } from "fs";
+import { join } from "path";
+
+const DATA_POSTS_PATH = join(process.cwd(), "data/posts");
+
+type PostWithContent = Post & {
+  content: string;
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -15,11 +23,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<{
-  post: Post | undefined;
+  post: PostWithContent | undefined;
 }> = (context) => {
   const slug = context.params ? context.params["slug"] : "";
   const post = typeof slug === "string" ? data[slug] : undefined;
-  return { props: { post } };
+
+  if (!post) return { props: { post: undefined } };
+
+  const content = readFileSync(`${DATA_POSTS_PATH}/${slug}.md`).toString();
+
+  return { props: { post: { ...post, content } } };
 };
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
