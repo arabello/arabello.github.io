@@ -6,9 +6,10 @@
   --bs-link-color: var(--bs-primary);
   --bs-link-hover-color: rgba(var(--bs-primary-rgb), 0.8);
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
-    "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 
+    "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
-  --bs-font-monospace: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+  --bs-font-monospace: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier,
+    monospace;
 }
 
 .list-group {
@@ -19,15 +20,15 @@ a {
   text-decoration: none;
 }
 
-ol li a{
+ol li a {
   color: unset;
 }
 
 /* hanging inline code */
-code:not(.hljs){
+code:not(.hljs) {
   border-radius: 4px;
   color: var(--bs-primary);
-  background-color: rgba(135, 131, 120, .15);
+  background-color: rgba(135, 131, 120, 0.15);
   padding: 0.3rem;
   box-sizing: border-box;
   line-height: normal;
@@ -49,18 +50,15 @@ h2,
   font-size: 1.5rem;
 }
 
-
 h3,
 .h3 {
   font-size: 1.25rem;
 }
 
-
 h4,
 .h4 {
   font-size: 1.125rem;
 }
-
 
 h5,
 .h5 {
