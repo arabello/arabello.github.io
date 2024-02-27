@@ -1,4 +1,3 @@
-# Practicing Typescript: Generalized Algebraic Data Types
 On November 11th 2023, [we](https://buildo.com/) hosted the [Scala Italy](https://www.scala-italy.it/) meetup in our Milan’s office. A talk by [Nicolas Rinaudo](https://nrinaudo.github.io/) titled *["Far more than you’ve ever wanted to know about ADTs”$^{1}$](https://www.scala-italy.it/speakers/nicolas-rinaudo)* grabbed my attention. Algebraic Data Types (ADT) is a noteworthy concept in Software Engineering, particularly in functional programming and type theory. Thanks to this presentation, I better realized its effectiveness on a more pragmatic level.
 
 At the same time I was looking deeper into Typescript’s type system, so I asked myself:

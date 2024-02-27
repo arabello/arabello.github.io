@@ -21,7 +21,7 @@ export const Header = (props: Props) => (
       </div>
     )}
     <div className="d-flex flex-column flex-grow-1">
-      <div className="fs-4 fw-bold text-primary flex-grow-1">{props.heading}</div>
+      <div className="fs-4 fw-medium text-primary flex-grow-1">{props.heading}</div>
       {props.subheading && <div className="fs-6 fw-light text-muted">{props.subheading}</div>}
     </div>
     <div className="text-center">
