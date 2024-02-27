@@ -1,11 +1,18 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Header, ContactsCard, ProjectCard } from "../components";
-import { BookPreview, ReadingListCard } from "../components/ReadingListCard";
+import {
+  Header,
+  ContactsCard,
+  ProjectCard,
+  PostsCard,
+  BookPreview,
+  ReadingListCard,
+  PostWithSlug,
+} from "../components";
 import { Book, currentBook, lastBook, secondLastBook } from "../data/reading_list";
 import { Content, Page } from "../components/layout";
-import { IconLink } from "../components/IconLink";
+import { posts } from "../data/posts_list";
 
 export const getStaticProps: GetStaticProps<{
   bookPreview: {
@@ -13,6 +20,7 @@ export const getStaticProps: GetStaticProps<{
     last: BookPreview;
     secondLast: BookPreview;
   };
+  postsPreview: PostWithSlug[];
 }> = async () => {
   const makeCover: (book: Book) => Promise<BookPreview> = (book: Book) =>
     !book.isbn
@@ -24,6 +32,8 @@ export const getStaticProps: GetStaticProps<{
             base64img: Buffer.from(buff).toString("base64"),
           }));
 
+  const postsPreview = Object.entries(posts).map(([k, v]) => ({ ...v, slug: k }));
+
   return {
     props: {
       bookPreview: {
@@ -31,11 +41,15 @@ export const getStaticProps: GetStaticProps<{
         last: await makeCover(lastBook),
         secondLast: await makeCover(secondLastBook),
       },
+      postsPreview,
     },
   };
 };
 
-export default function Index({ bookPreview }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Index({
+  bookPreview,
+  postsPreview,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const contacts = <ContactsCard />;
   const espanso = (
     <ProjectCard
@@ -60,6 +74,7 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
     </ProjectCard>
   );
   const readingListCard = <ReadingListCard {...bookPreview} />;
+  const postsCards = <PostsCard posts={postsPreview} />;
 
   return (
     <Page>
@@ -92,16 +107,18 @@ export default function Index({ bookPreview }: InferGetStaticPropsType<typeof ge
         <div className="row flex-grow-1">
           {/* Tablet and Desktop */}
           <div className="col d-none d-md-block">
+            {postsCards}
+            {nightFocus}
             {contacts}
+          </div>
+          <div className="col d-none d-md-block">
+            {readingListCard}
             {espanso}
           </div>
 
           {/* Mobile */}
-          <div className="col d-none d-md-block">
-            {nightFocus}
-            {readingListCard}
-          </div>
           <div className="col d-md-none">
+            {postsCards}
             {contacts}
             {espanso}
             {nightFocus}
