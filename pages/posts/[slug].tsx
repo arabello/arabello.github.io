@@ -13,6 +13,7 @@ const DATA_POSTS_PATH = join(process.cwd(), "data/posts");
 
 type PostWithContent = Post & {
   content: string;
+  slug: string;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -26,13 +27,15 @@ export const getStaticProps: GetStaticProps<{
   post: PostWithContent | undefined;
 }> = (context) => {
   const slug = context.params ? context.params["slug"] : "";
-  const post = typeof slug === "string" ? data[slug] : undefined;
+  if (typeof slug !== "string") return { props: { post: undefined } };
+
+  const post = data[slug];
 
   if (!post) return { props: { post: undefined } };
 
   const content = readFileSync(`${DATA_POSTS_PATH}/${slug}.md`).toString();
 
-  return { props: { post: { ...post, content } } };
+  return { props: { post: { ...post, content, slug } } };
 };
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -60,12 +63,12 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
           }}
         />
       </Content>
-      <div style={{ position: "relative", height: 280, width: "100%" }}>
+      <div style={{ position: "relative", height: 280, width: "100%" }} className="mt-4 mt-md-0">
         <Image
-          src="/assets/posts/typescript-algebraic-data-types.webp"
+          src={`/assets/posts/${post.slug}.webp`}
           alt="post header image"
           fill={true}
-          style={{ objectFit: "cover", objectPosition: `center ${60 - yScroll / 30}%` }}
+          style={{ objectFit: "none", objectPosition: `center ${60 - yScroll / 30}%` }}
         />
       </div>
       <Content>

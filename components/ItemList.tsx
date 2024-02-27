@@ -18,7 +18,7 @@ export const ItemList = ({ items }: Props) => {
   const makeContent = (item: Item, i: number) => (
     <div className="d-inline-flex align-items-center gap-3">
       {item.image && (
-        <div className="flex-shrink-0 text-center p-2">
+        <div className="flex-shrink-0 text-center p-2 d-md-block d-none">
           <Image {...item.image} />
         </div>
       )}

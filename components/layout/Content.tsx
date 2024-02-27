@@ -3,5 +3,5 @@ type Props = {
 };
 
 export function Content({ children }: Props) {
-  return <div className="container-centered d-flex flex-column p-3 pt-4">{children}</div>;
+  return <div className="container-centered d-flex flex-column p-1 p-md-3 pt-md-4">{children}</div>;
 }
