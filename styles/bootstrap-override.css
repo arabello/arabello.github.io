@@ -69,3 +69,13 @@ h6,
 .h6 {
   font-size: 1rem;
 }
+
+img.post-header-image {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  img.post-header-image {
+    object-fit: none;
+  }
+}

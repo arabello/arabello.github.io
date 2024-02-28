@@ -68,7 +68,8 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
           src={`/assets/posts/${post.slug}.webp`}
           alt="post header image"
           fill={true}
-          style={{ objectFit: "none", objectPosition: `center ${60 - yScroll / 30}%` }}
+          style={{ objectPosition: `center ${60 - yScroll / 30}%` }}
+          className="post-header-image"
         />
       </div>
       <Content>
