@@ -59,7 +59,10 @@ BooleanTuple = [Boolean, Boolean]
 Why “_product”_ type? Because its cardinality (number of possible values) is the algebraic _product_ of the cardinalities of its component types. For instance, variables of `BooleanTuple` type can assume 4 values
 
 ```tsx
-[true, false][(false, true)][(true, true)][(false, false)];
+[true, false]
+[false, true]
+[true, true]
+[false, false]
 ```
 
 as

@@ -119,10 +119,10 @@ export default function Index({
           {/* Mobile */}
           <div className="col d-md-none">
             {postsCards}
-            {contacts}
+            {readingListCard}
             {espanso}
             {nightFocus}
-            {readingListCard}
+            {contacts}
           </div>
         </div>
       </Content>
