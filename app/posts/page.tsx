@@ -1,21 +1,19 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { Card, Header } from "../components";
-import { Content, Page } from "../components/layout";
-import { Post, posts as data } from "../data/posts_list";
-import { ItemList } from "../components/ItemList";
+import { Metadata } from "next";
+import { Card, Header, ItemList } from "../../components";
+import { Content, Page } from "../../components/layout";
+import { Post, posts as data } from "../../data/posts_list";
 
 type PostWithSlug = Post & {
   slug: string;
 };
 
-export const getStaticProps: GetStaticProps<{
-  posts: Array<PostWithSlug>;
-}> = () => {
-  const posts = Object.entries(data).map(([k, v]) => ({ ...v, slug: k }));
-  return { props: { posts } };
+export const metadata: Metadata = {
+  title: "Matteo Pellegrino | Posts",
+  description: "Posts about software engineering, web development, and more.",
 };
 
-export default function Posts({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Posts() {
+  const posts: Array<PostWithSlug> = Object.entries(data).map(([k, v]) => ({ ...v, slug: k }));
   const items = posts.map((p) => ({
     title: p.title,
     subtitle: p.lastUpdate,

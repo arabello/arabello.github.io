@@ -4,3 +4,6 @@ export * from "./Header";
 export * from "./ProjectCard";
 export * from "./PostsCard";
 export * from "./ReadingListCard";
+export * from "./Footer";
+export * from "./ItemList";
+export * from "./Markdown";

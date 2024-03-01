@@ -1,3 +1,5 @@
+"use client";
+
 import Showdown from "showdown";
 import "highlight.js/styles/vs2015.css";
 import hljs from "highlight.js/lib/core";
@@ -17,16 +19,6 @@ type Props = {
   content: string;
 };
 
-export const Markdown = (props: Props) => {
-  const converter = new Showdown.Converter({
-    extensions: [...bindings, supExt],
-  });
-  const postHtml = converter.makeHtml(props.content);
-
-  useEffect(() => hljs.highlightAll(), []);
-  return <div dangerouslySetInnerHTML={{ __html: postHtml }} />;
-};
-
 const classMap: Record<string, string> = {};
 
 const bindings = Object.keys(classMap).map((key) => ({
@@ -39,4 +31,14 @@ const supExt = {
   type: "output",
   regex: /\$\^\{([^\s]+)\}\$/g, // $^{1}$
   replace: "<sup>$1</sup>",
+};
+
+export const Markdown = (props: Props) => {
+  const converter = new Showdown.Converter({
+    extensions: [...bindings, supExt],
+  });
+  const postHtml = converter.makeHtml(props.content);
+
+  useEffect(() => hljs.highlightAll(), []);
+  return <div dangerouslySetInnerHTML={{ __html: postHtml }} />;
 };
