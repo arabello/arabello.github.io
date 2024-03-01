@@ -566,6 +566,7 @@ However, they add complexity that must be weighed against their benefits as they
 Deciding whether to use a GADT/ADT at design time is not always easy. A common approach is to first outline your system, and then evaluate if a GADT/ADT option emerges from the needs.
 
 ---
+*All code available [here](https://github.com/arabello/ts-gadt).*
 
 1. [https://nrinaudo.github.io/far-more-adt](https://nrinaudo.github.io/far-more-adt)
 2. [https://github.com/gcanti/talks/blob/master/talks/adt/adt.md](https://github.com/gcanti/talks/blob/master/talks/adt/adt.md)
