@@ -45,6 +45,21 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
 
   return (
     <Page>
+      {/* TODO: temp approach */}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@mttpll" />
+      <meta name="twitter:creator" content="@mttpll" />
+      <meta property="og:title" content={post.title} />
+      <meta property="og:type" content="image/webp" />
+      <meta property="og:url" content={`https://matteopellegrino.dev/posts/${post.slug}`} />
+      <meta property="og:image" content={`/assets/posts/${post.slug}.webp`} />
+      <meta property="article:published_time" content={post.publishDate} />
+      <meta property="article:modified_time" content={post.lastUpdate} />
+      <meta property="article:author" content="Matteo Pellegrino" />
+      <meta property="article:section" content="Software Engineering" />
+      {post.tags.map((tag) => (
+        <meta property="article:tag" content={tag} key={tag} />
+      ))}
       <Content>
         <Header
           heading={post.title}
