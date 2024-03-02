@@ -9,10 +9,10 @@ export type Post = {
 export const posts: Record<string, Post> = {
   "typescript-algebraic-data-types": {
     title: "Practicing Typescript: Generalized Algebraic Data Types",
-    publishDate: "2023-02-25",
-    lastUpdate: "2023-02-25",
+    publishDate: "204-03-04",
+    lastUpdate: "2024-03-04",
     tags: ["typescript", "algebraic data types", "pattern matching", "scala"],
     description:
-      "How GADT and Pattern Matching look like in Typescript? Let's find out through an hands-on exercise",
+      "How GADT and Pattern Matching look like in Typescript? Let's find out with an hands-on exercise",
   },
 };

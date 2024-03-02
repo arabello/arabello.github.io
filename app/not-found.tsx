@@ -5,6 +5,10 @@ import { Content } from "../components/layout";
 export const metadata: Metadata = {
   title: "Matteo Pellegrino | 404 Not Found",
   description: "404 page not found on matteopellegrino.me",
+  openGraph: {
+    title: "Matteo Pellegrino | 404 Not Found",
+    description: "404 page not found on matteopellegrino.me",
+  },
 };
 
 export default function NotFound() {

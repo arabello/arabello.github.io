@@ -6,12 +6,32 @@ import { posts } from "../data/posts_list";
 import { currentBook, lastBook, secondLastBook } from "../data/reading_list";
 import { fetchBookWithCover } from "./fetchBookPreview";
 
+const title = "Matteo Pellegrino";
+const description = "Product-oriented Web Software Engineer";
+
 export const metadata: Metadata = {
-  title: "Matteo Pellegrino | Software Engineer",
-  description:
-    "Product-oriented Web Software Engineer specialized in full-stack development for scale-ups. I profoundly care about business impact as well as UX & UI while keenly nerding on the software architecture and technical details. I thoroughly enjoy bootstrapping and scaling up digital products.",
+  title,
+  description,
   verification: {
     me: "https://mastodon.world/@pelle",
+  },
+  openGraph: {
+    title,
+    description,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    site: "@mttpll",
+    creator: "@mttpll",
+    description,
+    images: [
+      {
+        url: `/assets/og/rocket-emoji.png`,
+        width: 80,
+        height: 80,
+      },
+    ],
   },
 };
 

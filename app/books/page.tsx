@@ -1,14 +1,35 @@
-import type { GetStaticProps, InferGetStaticPropsType, Metadata } from "next";
+import type { Metadata } from "next";
 import { Card, Header } from "../../components";
 import { Footer } from "../../components/Footer";
 import { ItemList } from "../../components/ItemList";
 import { Content } from "../../components/layout";
-import { Book, books as data } from "../../data/reading_list";
+import { books as data } from "../../data/reading_list";
 import { fetchBookWithCover } from "../fetchBookPreview";
 
+const title = "Matteo Pellegrino's Reading List";
+const description = "Hand-picked books reccomendations";
+
 export const metadata: Metadata = {
-  title: "Matteo Pellegrino | Reading List",
-  description: "Hand-picked books reccomendations.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    site: "@mttpll",
+    creator: "@mttpll",
+    description,
+    images: [
+      {
+        url: `/assets/og/books-emoji.png`,
+        width: 80,
+        height: 80,
+      },
+    ],
+  },
 };
 
 export default async function Books() {

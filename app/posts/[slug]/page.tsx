@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { join } from "path";
 import { Post, posts as data } from "../../../data/posts_list";
 import { Post as PostComponent } from "./Post";
+import { BASE_URL } from "../../constants";
 
 const DATA_POSTS_PATH = join(process.cwd(), "data/posts");
 
@@ -30,8 +31,31 @@ export async function generateMetadata({
     ? {}
     : {
         title: post.title,
+        description: post.description,
+        metadataBase: new URL(BASE_URL),
         openGraph: {
           title: post.title,
+          type: "article",
+          publishedTime: post.publishDate,
+          modifiedTime: post.lastUpdate,
+          authors: ["Matteo Pellegrino"],
+          section: "Software Engineering",
+          tags: post.tags,
+          description: post.description,
+          images: [
+            {
+              url: `/assets/posts/${slug}.webp`,
+              width: 1200,
+              height: 630,
+            },
+          ],
+        },
+        twitter: {
+          card: "summary_large_image",
+          site: "@mttpll",
+          creator: "@mttpll",
+          title: post.title,
+          description: post.description,
           images: [
             {
               url: `/assets/posts/${slug}.webp`,
