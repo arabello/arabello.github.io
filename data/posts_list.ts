@@ -7,7 +7,7 @@ export type Post = {
 };
 
 export const posts: Record<string, Post> = {
-  "typescript-algebraic-data-types": {
+  "ts-gadt": {
     title: "Practicing Typescript: Generalized Algebraic Data Types",
     publishDate: "204-03-04",
     lastUpdate: "2024-03-04",
