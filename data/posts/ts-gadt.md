@@ -79,11 +79,9 @@ ADT = A OR (C AND D) OR {nested: ADT}
 
 We are now ready to see how these concepts apply in Typescript, but first a little disclaimer on formality:
 
-> In languages with a nominal type system like Scala, defining a sum or product type produces _new_ types with a new set of potential values. Therefore, the above formal definitions \*\*\*\*are valid at implementation level.
+> In languages with a nominal type system like Scala, defining a sum or product type produces _new_ types with a new set of potential values. Therefore, the above formal definitions are valid at implementation level.
 
-Instead, in a structural type system, all possible values already exist: new types merely define sub-sets. Therefore, we cannot create sum or product types in Typescript as per formal definitions: we can only describe already existing _nominal_ types. Nevertheless, from a practical standpoint, we can define types _acting like_ the sum and product types \*\*and still fully meet our objectives.
-
->
+> Instead, in a structural type system, all possible values already exist: new types merely define sub-sets. Therefore, we cannot create sum or product types in Typescript as per formal definitions: we can only describe already existing _nominal_ types. Nevertheless, from a practical standpoint, we can define types _acting like_ the sum and product types and still fully meet our objectives.
 
 ---
 
