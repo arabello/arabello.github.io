@@ -19,42 +19,53 @@ export const books: Array<Book> = [
     isbn: "9781492082798",
   },
   {
-    title: "Small Data",
-    author: "Martin Lindstrom",
+    title: "Hidden Potential",
+    author: "Adam Grant",
     description:
-      "Martin Lindstrom's work provides deep insights for comprehending the nuances of people's behaviors and reasonings. While his work is primarily associated with branding, I find key concepts relevant to the digital products as well.",
-    isbn: "9781250080684",
+      "I became a huge fan of Adam Grant thanks to his ReThinking podcast. In this book he shows cases of successful people unveiling the hidden and intricate processes that led to their immense growth potential. It gave me notions and pragmatic examples on how to make the “growth mindset” concepts more actionable and helped me re-thinking where success truly reside.",
   },
   {
     title: "Clean Architecture",
     author: "Robert C. Martin",
     description:
-      "I'm glad that this book was among my initial in-depth readings during my academic studies. I find its fundamental principles retain their relevance and could be applied broadly across the industry.",
+      "I am pleased that this book was part of my early, detailed readings in my academic journey. Its core concepts continue to hold their significance and have a wide-ranging applicability across the industry.",
     isbn: "9780134494166",
   },
   {
     title: "Predictably Irrational",
     author: "Dan Ariely",
     description:
-      "This was my first insight on cognitive economics. Like with M. Lindstorm's 'Small Data', I was amazed at the impact psychology has on the product market. This book underscores the importance of considering consumer behavior in product design and marketing decisions, and this extends to digital products as well.",
+      "This was my first insight on cognitive economics. I found myself fascinated by the influence psychology wields in the product industry. This book highlights the necessity of taking into account customer behavior when designing products and making marketing choices, a principle that is just as applicable to the domain of digital products",
     isbn: "9780061353239",
+  },
+  {
+    title: "The Software Engineer's Guidebook",
+    author: "Gergely Orosz",
+    isbn: "9789083381824",
+  },
+  {
+    title: "Small Data",
+    author: "Martin Lindstrom",
+    description:
+      "Martin Lindstrom's work provides deep insights for comprehending the nuances of people's behaviors and reasonings. While his work is primarily associated with branding, I find key concepts relevant to digital products as well.",
+    isbn: "9781250080684",
   },
   {
     title: "Refuse to Choose!",
     author: "Barbara Sher",
     description:
-      "As someone who enjoys picking up new things, change interests and delving into different projects without lingering too long on one thing, I find out clarity and insight thanks to Barbara Sher (who would name me a scanner) helping me to embrace and get out the most of this trait.",
+      "As someone who thrives on learning and shifting focus between different projects without committing to one for too long, this book’s insights have provided me with clarity. Thanks to Barbara Sher, who calls folks like me 'scanners', I now see this trait in a whole new light and am making the most of it.",
     isbn: "9781594863035",
-  },
-  {
-    title: "The Intelligent Investor",
-    author: "Benjamin Graham",
-    isbn: "9780060555665",
   },
   {
     title: "Cloud Native Patterns Designing",
     author: "Cornelia Davis",
     isbn: "9781617294297",
+  },
+  {
+    title: "The Intelligent Investor",
+    author: "Benjamin Graham",
+    isbn: "9780060555665",
   },
   {
     title: "How Google Works",
@@ -109,4 +120,4 @@ export const books: Array<Book> = [
   },
 ];
 
-export const [currentBook, lastBook, secondLastBook] = [books[1], books[4], books[0]];
+export const [currentBook, lastBook, secondLastBook] = [books[5], books[1], books[4]];
