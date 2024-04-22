@@ -73,7 +73,7 @@ export default async function Index() {
     <Content>
       <Header
         heading="Matteo Pellegrino"
-        subheading="Software Engineer, Electronic Music Nerd"
+        subheading="Product-Minded Software Engineer"
         actions={{
           right: {
             href: "https://github.com/arabello",
