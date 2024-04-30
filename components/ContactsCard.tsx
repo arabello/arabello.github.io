@@ -23,16 +23,11 @@ export const ContactsCard = () => {
       <a
         type="button"
         className="btn btn-outline-light text-reset border-0 align-items-center d-flex gap-2 justify-content-center mt-2"
-        href="/assets/matteo-pellegrino-cv.pdf"
+        href="/assets/matteo-pellegrino-resume.pdf"
         target="blank"
       >
-        <Image
-          src="/assets/icons/file-text.svg"
-          width={24}
-          height={24}
-          alt="curriculum vitae icon"
-        />
-        <span>Curriculum Vitae</span>
+        <Image src="/assets/icons/file-text.svg" width={24} height={24} alt="Résumé icon" />
+        <span>Résumé</span>
       </a>
       <a
         type="button"
