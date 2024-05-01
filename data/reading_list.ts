@@ -2,7 +2,7 @@ export type Book = {
   title: string;
   author: string;
   description?: string;
-  isbn?: string;
+  isbn: string;
 };
 
 export const books: Array<Book> = [
@@ -23,6 +23,12 @@ export const books: Array<Book> = [
     author: "Adam Grant",
     description:
       "I became a huge fan of Adam Grant thanks to his ReThinking podcast. In this book he shows cases of successful people unveiling the hidden and intricate processes that led to their immense growth potential. It gave me notions and pragmatic examples on how to make the “growth mindset” concepts more actionable and helped me re-thinking where success truly reside.",
+    isbn: "9780593656976",
+  },
+  {
+    title: "Clear Thinking",
+    author: "Shane Parrish",
+    isbn: "9781529915952",
   },
   {
     title: "Clean Architecture",
@@ -77,6 +83,7 @@ export const books: Array<Book> = [
     author: "Alan Friedman",
     description:
       "My father and I have listened to Alan Friedman's interviews on the national car radio for years. He gifted me this book, which allowed me to understand the intricate mechanisms behind a nation's economy, specifically the tragic Italian one.",
+    isbn: "9788822714190",
   },
   {
     title: "Quantum Physics for Poets",
@@ -102,6 +109,7 @@ export const books: Array<Book> = [
   {
     title: "The Theory of Everything",
     author: "Stephen Hawking",
+    isbn: "9788817079761",
   },
   {
     title: "The Art of Happiness",
@@ -120,4 +128,4 @@ export const books: Array<Book> = [
   },
 ];
 
-export const [currentBook, lastBook, secondLastBook] = [books[5], books[1], books[4]];
+export const lastThree: [Book, Book, Book] = [books[3], books[1], books[6]];

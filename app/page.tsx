@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactsCard, Header, PostsCard, ProjectCard, ReadingListCard } from "../components";
+import {
+  BookPreview,
+  ContactsCard,
+  Header,
+  PostsCard,
+  ProjectCard,
+  ReadingListCard,
+} from "../components";
 import { Content } from "../components/layout";
 import { posts } from "../data/posts_list";
-import { currentBook, lastBook, secondLastBook } from "../data/reading_list";
+import { lastThree } from "../data/reading_list";
 import { fetchBookWithCover } from "./fetchBookPreview";
 
 const title = "Matteo Pellegrino";
@@ -36,12 +43,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Index() {
-  const bookPreview = {
-    current: await fetchBookWithCover(currentBook),
-    last: await fetchBookWithCover(lastBook),
-    secondLast: await fetchBookWithCover(secondLastBook),
-  };
-
+  const lastThreePreview = await Promise.all([
+    fetchBookWithCover(lastThree[0]),
+    fetchBookWithCover(lastThree[1]),
+    fetchBookWithCover(lastThree[2]),
+  ]);
   const postsPreview = Object.entries(posts).map(([k, v]) => ({ ...v, slug: k }));
   const contacts = <ContactsCard />;
   const espanso = (
@@ -66,7 +72,7 @@ export default async function Index() {
       <span className="fw-bolder text-primary"> Night Focus</span> helps me get into the Flow State.
     </ProjectCard>
   );
-  const readingListCard = <ReadingListCard {...bookPreview} />;
+  const readingListCard = <ReadingListCard lastThree={lastThreePreview} />;
   const postsCards = <PostsCard posts={postsPreview} />;
 
   return (

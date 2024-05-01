@@ -8,21 +8,19 @@ export type BookPreview = {
 };
 
 type Props = {
-  current: BookPreview;
-  last: BookPreview;
-  secondLast: BookPreview;
+  lastThree: [BookPreview, BookPreview, BookPreview];
 };
 
-export const ReadingListCard = ({ current, last, secondLast }: Props) => {
+export const ReadingListCard = ({ lastThree }: Props) => {
   const bookTransforms = [
     {
-      transform: `rotate(-10deg) translateY(20px) translateX(25px)`,
-      zIndex: 0,
-      opacity: 0.95,
+      transform: `rotate(0deg) translateY(-10px) translateX(90px)`,
+      zIndex: 2,
     },
     {
-      transform: `rotate(0deg) translateY(-10px) translateX(0px)`,
-      zIndex: 2,
+      transform: `rotate(-10deg) translateY(0px) translateX(-60px)`,
+      zIndex: 0,
+      opacity: 0.95,
     },
     {
       transform: `rotate(10deg) translateY(35px) translateX(-25px)`,
@@ -35,7 +33,7 @@ export const ReadingListCard = ({ current, last, secondLast }: Props) => {
       <Link href="/books" className="text-reset">
         <div className="d-flex flex-column align-items-center">
           <div className="d-flex mt-3 mb-5">
-            {[last, current, secondLast].map((book, i) => (
+            {lastThree.map((book, i) => (
               <div key={book.title} style={bookTransforms[i]}>
                 <Image
                   src={`data:image/png;base64, ${book.base64img}`}
@@ -48,8 +46,9 @@ export const ReadingListCard = ({ current, last, secondLast }: Props) => {
             ))}
           </div>
           <p>
-            I&apos;m currently reading <span className="fw-bolder">{current.title}</span> and{" "}
-            <span className="fw-bolder">{last.title}</span>.
+            I&apos;m currently reading <span className="fw-bolder">{lastThree[0].title}</span> and{" "}
+            <span className="fw-bolder">{lastThree[1].title}</span>. My last read was{" "}
+            <span className="fw-bolder">{lastThree[2].title}</span>.
           </p>
           <div className="align-self-start">
             Take a look at my <span className="text-primary">reading </span> list suggestions.

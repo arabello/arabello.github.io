@@ -40,8 +40,8 @@ export default async function Books() {
     caption: b.description,
     image: {
       src: b.base64img ? `data:image/png;base64, ${b.base64img}` : "/assets/icons/book.svg",
-      width: 60,
-      height: 90,
+      width: 90,
+      height: 120,
       alt: `${b.title} book cover`,
     },
   }));
