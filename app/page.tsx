@@ -4,7 +4,7 @@ import { ContactsCard, Header, PostsCard, ProjectCard, ReadingListCard } from ".
 import { Content } from "../components/layout";
 import { posts } from "../data/posts_list";
 import { lastThree } from "../data/reading_list";
-import { fetchBookWithCover } from "./fetchBookPreview";
+import { fetchBookWithCover } from "./books";
 
 const title = "Matteo Pellegrino";
 const description = "Product-oriented Web Software Engineer";

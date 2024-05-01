@@ -3,8 +3,7 @@ import { Card, Header } from "../../components";
 import { Footer } from "../../components/Footer";
 import { ItemList } from "../../components/ItemList";
 import { Content } from "../../components/layout";
-import { books as data } from "../../data/reading_list";
-import { fetchBookWithCover } from "../fetchBookPreview";
+import { fetchBookWithCover, fetchBooks } from "../books";
 
 const title = "Matteo Pellegrino's Reading List";
 const description = "Hand-picked books reccomendations";
@@ -33,15 +32,16 @@ export const metadata: Metadata = {
 };
 
 export default async function Books() {
-  const books = await Promise.all(data.map(fetchBookWithCover));
-  const items = books.map((b) => ({
+  const books = await fetchBooks();
+  const booksWithCover = await Promise.all(books.map(fetchBookWithCover));
+  const items = booksWithCover.map((b) => ({
     title: b.title,
     subtitle: b.author,
     caption: b.description,
     image: {
       src: b.base64img ? `data:image/png;base64, ${b.base64img}` : "/assets/icons/book.svg",
-      width: 90,
-      height: 120,
+      width: 80,
+      height: 110,
       alt: `${b.title} book cover`,
     },
   }));
