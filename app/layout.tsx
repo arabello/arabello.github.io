@@ -1,10 +1,8 @@
-import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/bootstrap-theme.css";
-import "../styles/bootstrap-override.css";
 import { Metadata, Viewport } from "next";
 import { Page } from "../components/layout";
 import { BASE_URL } from "./constants";
+import "../styles/index.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

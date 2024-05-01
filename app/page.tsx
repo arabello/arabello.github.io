@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import {
-  BookPreview,
-  ContactsCard,
-  Header,
-  PostsCard,
-  ProjectCard,
-  ReadingListCard,
-} from "../components";
+import { ContactsCard, Header, PostsCard, ProjectCard, ReadingListCard } from "../components";
 import { Content } from "../components/layout";
 import { posts } from "../data/posts_list";
 import { lastThree } from "../data/reading_list";
