@@ -30,7 +30,7 @@ export function Post({ post }: Props) {
       <Content>
         <Header
           heading={post.title}
-          subheading={post.lastUpdate}
+          subheading={`Published \t${post.publishDate}\nUpdated \t${post.lastUpdate}`}
           actions={{
             right: {
               src: "/assets/icons/home.svg",

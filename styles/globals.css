@@ -37,3 +37,7 @@ blockquote {
   padding-right: 14px;
   width: 100%;
 }
+
+.preserveBreaklineTabs {
+  white-space: pre-wrap;
+}

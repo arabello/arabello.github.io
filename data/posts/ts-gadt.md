@@ -249,6 +249,18 @@ const nextState = (prev: State, command: Command): State => {
 };
 ```
 
+> EDIT: You can easily achieve a logical OR between branches by utilizing the case clause fall-through mechanism, as TypeScript also [narrows types](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#equality-narrowing) within the `switch` statement$^{6}$.
+> ```tsx
+> switch(command._type){
+>     case "validate":
+>     case "process":
+>         // ...
+>         return prev;
+> 		//...
+> }
+> ```
+
+
 With reference to our secondary objective, the resulting developer experience and potential side effects isn't great. Is there room for improvement?
 
 ## Third Party Pattern Matching
@@ -571,3 +583,4 @@ Deciding whether to use a GADT/ADT at design time is not always easy. A common a
 3. [https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#tagged-union-types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#tagged-union-types)
 4. [https://wiki.haskell.org/Type_witness](https://wiki.haskell.org/Type_witness)
 5. [https://v2.ocaml.org/manual/gadts-tutorial.html](https://v2.ocaml.org/manual/gadts-tutorial.html)
+6. Thanks to [Alex Harri](https://alexharri.com) for pointing it out on [Reddit](https://www.reddit.com/r/typescript/comments/1cj1vi4/comment/l2dlh69/)
