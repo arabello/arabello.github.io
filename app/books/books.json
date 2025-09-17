@@ -1,0 +1,118 @@
+[
+  {
+    "title": "Thinking, fast and slow",
+    "author": "Daniel Kahneman",
+    "isbn": "9780385676519",
+    "notes": "This book is a classic in the field of psychology. It explains the two systems of thinking that we all have and how they work. It's a must-read for anyone interested in psychology or decision-making."
+  },
+  {
+    "title": "Hidden Potential",
+    "author": "Adam Grant",
+    "isbn": "9780593653142",
+    "notes": "I became a huge fan of Adam Grant thanks to his ReThinking podcast. In this book, he showcases successful people by unveiling the subtle and intricate processes that led to their immense growth potential. It gave me practical examples and insights on how to make the “growth mindset” more actionable and helped me rethink where true success lies."
+  },
+  {
+    "title": "Small Data",
+    "author": "Martin Lindstrom",
+    "isbn": "9781250080684",
+    "notes": "Martin Lindstrom's work provides deep insights into understanding the nuances of human behavior and reasoning. While primarily associated with branding, I find many of his concepts highly relevant to digital products as well."
+  },
+  {
+    "title": "Predictably Irrational",
+    "author": "Dan Ariely",
+    "isbn": "9780061353239",
+    "notes": "This was my first introduction to cognitive economics. I was fascinated by the influence psychology has on the product industry. The book highlights the necessity of considering customer behavior when designing products and making marketing choices—a principle equally relevant to digital products."
+  },
+  {
+    "title": "How to Think Like a Roman Emperor",
+    "author": "Donald Robertson",
+    "isbn": "9781250196620",
+    "notes": "I highly recommend this book for mindfulness enthusiasts. It presents key Stoic concepts in a narrative style through historical examples, along with practical tools you can apply in daily life."
+  },
+  {
+    "title": "Clean Architecture",
+    "author": "Robert C. Martin",
+    "isbn": "9780134494166",
+    "notes": "I’m glad this book was part of my early, detailed readings during my academic journey. Its core concepts remain significant and continue to have wide-ranging applicability across the industry."
+  },
+  {
+    "title": "The Six Pillars of Self-Esteem",
+    "author": "Nathaniel Branden",
+    "isbn": "9780553374391",
+    "notes": "Technical, social, and physical skills are not the only ones you can work on. This book explains how to build awareness and actively improve self-esteem, making it a valuable asset in daily life."
+  },
+  {
+    "title": "Refuse to Choose!",
+    "author": "Barbara Sher",
+    "isbn": "9781594863035",
+    "notes": "As someone who thrives on learning and shifting focus between different projects without committing to one for too long, this book gave me clarity. Thanks to Barbara Sher, who calls people like me 'scanners,' I now see this trait in a new light and have learned to make the most of it."
+  },
+  {
+    "title": "Ten Things to Know About Italian Economy",
+    "author": "Alan Friedman",
+    "isbn": "9788822714190",
+    "notes": "My father and I listened to Alan Friedman's interviews on national radio for years. He later gifted me this book, which helped me understand the intricate mechanisms behind a nation's economy—specifically, Italy’s troubled one."
+  },
+  {
+    "title": "Quantum Physics for Poets",
+    "author": "Leon Lederman, Christopher Hill",
+    "isbn": "9781616142339",
+    "notes": "This was my teenage introduction to quantum physics while binge-watching Kurzgesagt. I fell in love with how science can be taught narratively, as opposed to traditional school methods."
+  },
+  {
+    "title": "Dance Music Manual",
+    "author": "Rick Snoman",
+    "isbn": "9781138319646",
+    "notes": "Electronic music production is a hobby of mine, and this book enriched my knowledge of music theory. It’s an essential read for anyone in the field."
+  },
+  {
+    "title": "The Intelligent Investor",
+    "author": "Benjamin Graham",
+    "isbn": "9780060555665"
+  },
+  {
+    "title": "Clear Thinking",
+    "author": "Shane Parrish",
+    "isbn": "9781529915952"
+  },
+  {
+    "title": "The Theory of Everything",
+    "author": "Stephen Hawking",
+    "isbn": "1893224546"
+  },
+  {
+    "title": "Wabi Sabi",
+    "author": "Selene Calloni Williams",
+    "isbn": "8855446851"
+  },
+  {
+    "title": "The Software Engineer's Guidebook",
+    "author": "Gergely Orosz",
+    "isbn": "9789083381824"
+  },
+  {
+    "title": "Software Engineering at Google",
+    "author": "Titus Winters, Tom Manshreck, Hyrum Wright",
+    "isbn": "9781492082798"
+  },
+  {
+    "title": "The Art of Happiness",
+    "author": "Daila Lama",
+    "isbn": "9781573227544"
+  },
+  {
+    "title": "Siddhartha",
+    "author": "Hesse",
+    "isbn": "9788845901843"
+  },
+  {
+    "title": "Cloud Native Patterns Designing",
+    "author": "Cornelia Davis",
+    "isbn": "9781617294297"
+  },
+  {
+    "title": "How Google Works",
+    "author": "Eric Schmidt, Jonathan Rosenberg",
+    "isbn": "9781455582327"
+  }
+]

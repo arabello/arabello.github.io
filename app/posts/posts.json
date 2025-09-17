@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Prefect for Generative AI Pipelines",
+    "date": "2025-02-18",
+    "description": "Developing Generative AI products introduces challenges like indeterminism, data volume, and scalability. Teams must adapt, and selecting the right tools becomes essential, as we did with Prefect, a Pythonic workflow engine.",
+    "url": "https://www.buildo.com/blog-posts/prefect-for-generative-ai-pipelines"
+  },
+  {
+    "slug": "ts-gadt",
+    "title": "Practicing Typescript: Generalized Algebraic Data Types",
+    "date": "2024-03-04",
+    "description": "How GADT and Pattern Matching look like in Typescript? Let's find out with an hands-on exercise",
+    "htmlPath": "ts-gadt.html"
+  },
+  {
+    "title": "Software Development Companies in the AI Era",
+    "date": "2023-11-03",
+    "description": "Unprecedented breakthroughs in LLMs are transforming software development. New techniques enable effective interactions with LLMs, but caution is advised to avoid unnecessary complexity.",
+    "url": "https://www.buildo.com/blog-posts/software-development-companies-in-the-ai-era"
+  }
+]
