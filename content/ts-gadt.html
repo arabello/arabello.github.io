@@ -1,0 +1,761 @@
+<p>
+  On November 11th 2023, <a href="https://buildo.com/">we</a> hosted the
+  <a href="https://www.scala-italy.it/">Scala Italy</a> meetup in our Milan’s
+  office. A talk by
+  <a href="https://nrinaudo.github.io/">Nicolas Rinaudo</a> titled
+  <em
+    ><a href="https://www.scala-italy.it/speakers/nicolas-rinaudo"
+      >"Far more than you’ve ever wanted to know about ADTs"<sup>1</sup></a
+    ></em
+  >
+  grabbed my attention. Algebraic Data Types (ADT) is a noteworthy concept in
+  Software Engineering, particularly in functional programming and type theory.
+  Thanks to this presentation, I better realized its effectiveness on a more
+  pragmatic level.
+</p>
+<p>
+  At the same time I was looking deeper into Typescript’s type system, so I
+  asked myself:
+</p>
+<blockquote>
+  <p>
+    “How Generalized Algebraic Data Types (GADT) and Pattern Matching would look
+    like in Typescript?”
+  </p>
+</blockquote>
+<p>
+  This post aims to answer it. Keep in mind, it's not a deep theoretical
+  analysis, but an attempt for a practical insight on ADTs and Pattern Matching.
+</p>
+<p>
+  As a toy case study, we model a naive payment transactions system with the
+  following assumptions:
+</p>
+<ul>
+  <li>
+    Transaction-specific commands: <code>validate</code> and
+    <code>process</code>
+  </li>
+  <li>A command to alert users: <code>notify</code></li>
+  <li>
+    A transaction may be in <code>unprocessed</code> or
+    <code>processed</code> status.
+  </li>
+</ul>
+<hr />
+<h2>ADT Fundamentals</h2>
+<p>
+  Let's quickly recall the basic ADT concepts<sup>2</sup> before starting
+  coding.
+</p>
+<p>
+  A <em>sum type</em> is a disjoint union of values (sets). In plain words, the
+  sum of a given two or more types is a set containing the values of one of the
+  component types. Essentially, it is like a logical
+  <code>OR</code> (disjunction) between types.
+</p>
+<pre><code>Sum(A, B) = A OR B
+</code></pre>
+<p>
+  It expresses the <em>alternation</em> of the component types:
+  <code>A</code> or <code>B</code> , but not both.
+</p>
+<p>
+  The simplest sum type we can think of is <code>boolean</code> which is the sum
+  type of <code>true</code> and <code>false</code> .
+</p>
+<ul>
+  <li><code>true</code> is a set containing a single value</li>
+  <li><code>false</code> is a set containing a single value</li>
+  <li>
+    <code>boolean</code> is a set containing either the <code>true</code> or
+    <code>false</code> value
+  </li>
+</ul>
+<pre><code>boolean = true OR false
+</code></pre>
+<p>
+  Why “<em>sum”</em> type? Because its cardinality (number of possible values)
+  is the algebraic <em>sum</em> of the cardinalities of its component types.
+</p>
+<pre><code>Boolean_cardinality = true_cardinality + false_cardinality = 1 + 1 = 2
+</code></pre>
+<p>
+  A <em>product</em> type is compounded structure containing values of various
+  types. In plain words, the product of a given two or more types is a
+  collection of all the component types. Essentially, it is like a logical
+  <code>AND</code> (conjunction) between types.
+</p>
+<pre><code>Product(A, B) = A AND B
+</code></pre>
+<p>
+  It corresponds to the Cartesian product in set theory and it expresses the
+  <em>combination</em> of the component types: <code>A</code> and
+  <code>B</code> together.
+</p>
+<p>
+  <code>tuple</code> and <code>records</code> data structures are examples of
+  product types.
+</p>
+<pre><code>BooleanTuple = [Boolean, Boolean]
+</code></pre>
+<p>
+  Why “<em>product”</em> type? Because its cardinality (number of possible
+  values) is the algebraic <em>product</em> of the cardinalities of its
+  component types. For instance, variables of <code>BooleanTuple</code> type can
+  assume 4 values
+</p>
+<pre><code class="language-tsx">[true, false]
+[false, true]
+[true, true]
+[false, false]
+</code></pre>
+<p>as</p>
+<pre><code class="language-tsx">BooleanTuple_cardinality = Boolean_cardinality * Boolean_cardinality = 2 * 2 = 4
+</code></pre>
+<p>
+  An Algebraic Data Type (ADT) is a potentially recursive sum type of product
+  types, ie. an arbitrary structure repeatedly combining sum and products types.
+  For instance:
+</p>
+<pre><code>ADT = A OR (C AND D) OR {nested: ADT}
+</code></pre>
+<p>
+  We are now ready to see how these concepts apply in Typescript, but first a
+  little disclaimer on formality:
+</p>
+<blockquote>
+  <p>
+    In languages with a nominal type system like Scala, defining a sum or
+    product type produces <em>new</em> types with a new set of potential values.
+    Therefore, the above formal definitions are valid at implementation level.
+  </p>
+</blockquote>
+<blockquote>
+  <p>
+    Instead, in a structural type system, all possible values already exist: new
+    types merely define sub-sets. Therefore, we cannot create sum or product
+    types in Typescript as per formal definitions: we can only describe already
+    existing <em>nominal</em> types. Nevertheless, from a practical standpoint,
+    we can define types <em>acting like</em> the sum and product types and still
+    fully meet our objectives.
+  </p>
+</blockquote>
+<hr />
+<h2>Basic ADT</h2>
+<p>
+  In Typescript, the union <code>|</code> type operator creates a disjoint
+  (discriminated) union between types. It's a useful tool for shaping our
+  transaction commands.
+</p>
+<pre><code class="language-tsx">type Command = "validate" | "process" | "notify";
+</code></pre>
+<p>
+  Given a value of standard union type, the compiler cannot infer, without type
+  guards, which of the component type is at a given moment.
+</p>
+<p>
+  A <em>discriminator</em> field, ie. a literal type property, helps the
+  compiler to differentiate between the variants. Such types are known as
+  <em>tagged unions<sup>3</sup></em> and they qualify as <em>sum types.</em>
+</p>
+<pre><code class="language-tsx">type Command = { _type: "validate" } | { _type: "process" } | { _type: "notify" };
+</code></pre>
+<p>
+  Commands may require extra details to carry out their tasks. For instance:
+</p>
+<pre><code class="language-tsx">export type Command =
+  | { _type: "validate"; transactionId: string }
+  | { _type: "process"; transactionId: string }
+  | { _type: "notify"; userId: string };
+</code></pre>
+<p>
+  The <code>Command</code> type acts as contract with the outside world;
+  consumers may use constructors to create commands with ease, for example:
+</p>
+<pre><code class="language-tsx">export const validate = (transactionId: string): Command => ({
+  _type: "validate",
+  transactionId: "&#x3C;uuid>",
+});
+</code></pre>
+<p>
+  Suppose we intend to combine or <em>chain</em> commands like
+  <code>validate</code> and <code>process</code>. How can we set this up?
+</p>
+<p>
+  We can extend the <code>Command</code> definition with a new compounded type
+  acting as a container for commands themselves.
+</p>
+<pre><code class="language-tsx">export type Command =
+  | { _type: "validate"; transactionId: string }
+  | { _type: "process"; transactionId: string }
+  | { _type: "notify"; userId: string }
+  | { _type: "chain"; _cmd1: Command; _cmd2: Command };
+</code></pre>
+<p>
+  The <code>chain</code> container acts as a <em>product type</em> enabling the
+  recursively combination of <code>Command</code> values, even another
+  <code>chain</code>. We notice that <code>Command</code> is now an ADT because
+  it is:
+</p>
+<ul>
+  <li>a recursive</li>
+  <li>sum type</li>
+  <li>of product types</li>
+</ul>
+<hr />
+<h1>Pattern Matching</h1>
+<p>Suppose an arbitrary state for our transactions system</p>
+<pre><code class="language-tsx">type State = {
+  /** */
+};
+</code></pre>
+<p>
+  and a function that computes the new state based on a
+  <code>Command</code> used to execute the system business logic.
+</p>
+<pre><code class="language-tsx">const nextState = (prev: State, command: Command): State => {
+  /** */
+};
+</code></pre>
+<p>
+  Our goal is to provide a skeleton for <code>nextState</code> implementation,
+  ensuring that:
+</p>
+<ul>
+  <li>
+    The <code>Command</code> type is properly discriminated and narrowed,
+    allowing safe data access for each command according to its type.
+  </li>
+  <li>
+    Logical branches should be fully exhausted, meaning that
+    <code>Command</code> cases must be precisely recognized and managed at
+    compile time. If a new command is added or removed without a proper
+    handling, a compile error should be raised.
+  </li>
+</ul>
+<h2>Naive switch</h2>
+<p>
+  We can begin in the simplest way by applying a switch statement to the
+  discriminator field.
+</p>
+<pre><code class="language-tsx">const nextState = (prev: State, command: Command): State => {
+  switch (command._type) {
+    case "validate":
+      command.userId; // compile time error
+      return prev;
+    case "process":
+      // ...
+      return prev;
+    case "notify":
+      // ...
+      return prev;
+    case "chain":
+      // ...
+      return prev;
+  }
+};
+</code></pre>
+<p>
+  The <code>command</code> type is narrowed within each branch. For example,
+  trying to access the <code>userId</code> property inside the
+  <code>validate</code> case results in a compilation error.
+</p>
+<pre><code>Property 'userId' does not exist on type '{ _type: "validate"; transactionId: string; }'. ts(2339)
+</code></pre>
+<p>
+  This meets our first goal. Now, let’s add a new <code>Command</code> component
+  type.
+</p>
+<pre><code class="language-tsx">export type Command =
+  // [...]
+  { _type: "newCommand" };
+</code></pre>
+<p>The compiler raises an error on the <code>nextState</code> function</p>
+<pre><code>Function lacks ending return statement and return type does not include 'undefined'. ts(2366)
+</code></pre>
+<p>
+  stating that the function’s return type can be
+  <code>State | undefined</code> due to the switch statement being
+  <em>non</em>-exhaustive. The error is raised as a mismatch between the
+  declared and the inferred return type.
+</p>
+<p>
+  We may drop the explicit declaration, but we would move the responsibility of
+  a producer’s change to the consumer!
+</p>
+<pre><code class="language-diff">- const nextState = (prev: State, command: Command): State => { /** */ }
++ const nextState = (prev: State, command: Command) => { /** */ }
+---	 ^ inferred return type is State | undefined
+</code></pre>
+<pre><code class="language-tsx">// Consumer
+const newState: State = nextState(prevState, validate("123"));
+//	^ Type 'State | undefined' is not assignable to type 'State'.
+//		Type 'undefined' is not assignable to type 'State'.ts(2322)
+</code></pre>
+<p>
+  Additionally, there are other limitations when working with the native switch.
+  For example
+</p>
+<ul>
+  <li>
+    The inability to use logical operators in the case statement. The reason
+    being, the logical expressions are evaluated before being compared to
+    the switch value.
+  </li>
+  <li>
+    It does not restrict developers from duplicating a branch because the switch
+    statement only compares values.
+  </li>
+</ul>
+<pre><code class="language-tsx">const nextState = (prev: State, command: Command): State => {
+  switch (command._type) {
+    case "validate" || "process": // ⛔️ Always "validate"
+      // ...
+      return prev;
+    case "process":
+      // ...
+      return prev;
+    case "process": // ⛔️ Duplicated branch: compiler won't complain
+      // ...
+      return prev;
+    case "notify":
+      // ...
+      return prev;
+    case "chain":
+      // ...
+      return prev;
+  }
+};
+</code></pre>
+<blockquote>
+  <p>
+    EDIT: You can easily achieve a logical OR between branches by utilizing the
+    case clause fall-through mechanism, as TypeScript also
+    <a
+      href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html#equality-narrowing"
+      >narrows types</a
+    >
+    within the <code>switch</code> statement<sup>6</sup>.
+  </p>
+  <pre><code class="language-tsx">switch(command._type){
+    case "validate":
+    case "process":
+        // ...
+        return prev;
+		//...
+}
+</code></pre>
+</blockquote>
+<p>
+  With reference to our secondary objective, the resulting developer experience
+  and potential side effects isn't great. Is there room for improvement?
+</p>
+<h2>Third Party Pattern Matching</h2>
+<p>
+  <a href="https://docs.scala-lang.org/tour/pattern-matching.html"
+    >Pattern matching is a mechanism for checking a value against a pattern</a
+  >. A successful match can also <em>deconstruct</em> a value into its
+  constituent parts.
+</p>
+<p>
+  Unfortunately, Typescript does not <em>yet</em> (🤞) provide a native pattern
+  matching, but we can rely on third-party libraries.
+</p>
+<p>
+  The one I am most content with is
+  <a href="https://github.com/gvergnaud/ts-pattern"></a><em>ts-pattern.</em> I
+  would not dive into the syntax and mechanisms of the library: it is pretty
+  intuitive and its
+  <a href="https://github.com/gvergnaud/ts-pattern">documentation</a> is
+  well-written. I would focus on the benefits of using <em>ts-pattern</em>.
+</p>
+<p>Let’s refactor <code>nextState</code>.</p>
+<pre><code class="language-tsx">import { match } from "ts-pattern";
+
+type State = {
+  /** */
+};
+
+const nextState = (prev: State, command: Command): State =>
+  match(command)
+    .with({ _type: "validate" }, (cmd) => {
+      // ...
+      return prev;
+    })
+    .with({ _type: "process" }, (cmd) => {
+      // ...
+      return prev;
+    })
+    .with({ _type: "notify" }, (cmd) => {
+      // ...
+      return prev;
+    })
+    .with({ _type: "chain" }, (cmd) => {
+      // ...
+      return prev;
+    })
+    .exhaustive();
+</code></pre>
+<p>Similarly as before</p>
+<ul>
+  <li>
+    we are discriminating over the <code>_type</code> field by matching on a
+    portion of the command object
+  </li>
+  <li>the <code>cmd</code> variable is properly narrowed</li>
+  <li>branches are exhaustive</li>
+</ul>
+<p>
+  If we remove the <code>notify</code> command branch we get an error on the
+  <code>exhaustive</code> call
+</p>
+<pre><code>This expression is not callable.
+	Type 'NonExhaustiveError&#x3C;{ _type: "notify"; userId: string; }>' has no call signatures.ts(2349)
+</code></pre>
+<p>with a pretty straightforward description.</p>
+<p>
+  Note that the error is locally raised inside the function, even if we remove
+  the return type declaration! I want to underlying this fact from an
+  architectural point of view as a difference compared to the previous usage of
+  switch statement. What if the <code>nextState</code> function firm is a
+  software module boundary that other parts of our architecture depends on?
+  Should adding, removing, or updating a command indirectly impacts how the
+  consumers use the function?
+</p>
+<p>
+  In this way the contract with the outside world is stable even if the producer
+  makes internal changes <em>and</em> the function firm is not explicitly
+  declared. Instead of placing the burden of boundary responsibility on the
+  developer, who may choose not to declare the return type, we're making better
+  use of the type system inference.
+</p>
+<pre><code class="language-diff">- const nextState = (prev: State, command: Command): State => { /** */ }
++ const nextState = (prev: State, command: Command) => { /** */ }
+---	    ^ inferred return type is State | undefined
+--- compile error inside nextState
+</code></pre>
+<pre><code class="language-tsx">// Consumer
+const newState: State = nextState(prevState, validate("123"));
+//	✅ No error
+</code></pre>
+<p>
+  Additionally, <em>ts-pattern</em> addresses the limitations found previously
+</p>
+<pre><code class="language-tsx">const nextState(prev: State, command: Command): State =>
+	match(command)
+	.with({ _type: P.union("validate", "process") }, (cmd) => { // ✅ Logic OR
+	  // ...
+	  return prev;
+	})
+	.with({ _type: "notify" }, (cmd) => {
+	  // ...
+	  return prev;
+	})
+		.with({ _type: "notify" }, (cmd) => {.					  // ✅ Compile error raised on duplicated branch
+	  // ...
+	  return prev
+	})
+	.with({ _type: "chain" }, (cmd) => {
+	  // ...
+	  return prev;
+	})
+	.exhaustive();
+</code></pre>
+<p>
+  <em>ts-pattern</em> offers lots of other
+  <a href="https://github.com/gvergnaud/ts-pattern?tab=readme-ov-file#features"
+    >features</a
+  >, I heartily suggest looking into them.
+</p>
+<h1>Generalized ADT for safe composition</h1>
+<p>Let’s encode the status of transactions in our system</p>
+<pre><code class="language-tsx">export type Status = "unprocessed" | "processed";
+</code></pre>
+<p>and how a command modifies a transaction’s status.</p>
+<pre><code class="language-tsx">export type Command&#x3C;B extends Status, A extends Status> =
+  | { _type: "validate"; _before: B; _after: A; transactionId: string }
+  | { _type: "process"; _before: B; _after: A; transactionId: string }
+  | { _type: "notify"; _before: B; _after: A; userId: string }
+  | {
+      _type: "chain";
+      _before: B;
+      _after: A;
+      _cmd1: Command&#x3C;B, Status>;
+      _cmd2: Command&#x3C;Status, A>;
+    };
+</code></pre>
+<p>
+  The <code>B</code> (Before) and <code>A</code> (After) parametric types
+  indicate that a command can be used on a transaction possessing a specific
+  <code>Status</code> (<code>_before</code>) and results in a transaction with
+  an identical or different <code>Status</code> (<code>_after</code>). When
+  parametric types are describing properties of a sum type, they are referred to
+  as <em>witness</em> types<sup>4</sup>: they enable the ADT types refinement at
+  construction time.
+</p>
+<p>
+  In other words, we can now impose stricter constraints for parametric types in
+  the constructors to refine our ADT<sup>5</sup>. This results in a
+  <em>Generalized ADT</em>: a sum type with one or more witness types, each
+  featuring type equality.
+</p>
+<p>Assume that</p>
+<ul>
+  <li><code>validate: "unprocessed" -> "unprocessed"</code></li>
+  <li><code>process: "unprocessed" -> "processed"</code></li>
+  <li><code>notify: "processed" -> "processed"</code></li>
+</ul>
+<p>
+  we refactor our constructors to <em>refine</em> the status transition per each
+  type variant, for example
+</p>
+<pre><code class="language-tsx">export const validate = (transactionId: string): Command&#x3C;"unprocessed", "unprocessed"> => ({
+  _type: "validate",
+  _before: "unprocessed",
+  _after: "unprocessed",
+  transactionId,
+});
+</code></pre>
+<p>However, if we use the constructor</p>
+<pre><code class="language-tsx">export const y: Command&#x3C;"unprocessed", "unprocessed"> = validate("1");
+y._type; // "validate" | "process" | "notify" | "chain"
+y._before; // "unprocessed"
+y._after; // "unprocessed"
+</code></pre>
+<p>
+  we notice that the <code>_type</code> discriminating property is not correctly
+  narrowed due to the lack of connection between <code>_type</code>,
+  <code>_before</code> and <code>_after</code> of each
+  <code>Command</code> component type.
+</p>
+<p>
+  Dually, in the <code>nextState</code> function refactored with the new
+  <code>Command</code>
+</p>
+<pre><code class="language-tsx">const nextState = (prev: {}, command: Command&#x3C;Status, Status>) =>
+  match(command)
+    .with({ _type: "validate" }, (cmd) => {
+      cmd._before; // Status
+      cmd._after; // Status
+    })
+    .with({ _type: "process" }, (cmd) => {})
+    .with({ _type: "notify" }, (cmd) => {})
+    .with({ _type: "chain" }, (cmd) => {
+      nextState(prev, cmd._cmd1);
+      nextState(prev, cmd._cmd2);
+    })
+    .exhaustive();
+</code></pre>
+<p>
+  the <code>_before</code> and <code>_after</code> properties are not narrowed
+  based on the discriminating <code>_type</code> field.
+</p>
+<p>Another relevant issue is that the <code>chain</code> command constructor</p>
+<pre><code class="language-tsx">export const chain = (
+  cmd1: Command&#x3C;Status, Status>,
+  cmd2: Command&#x3C;Status, Status>,
+): Command&#x3C;Status, Status> => ({
+  _type: "chain",
+  _before: cmd1._before,
+  _after: cmd2._after,
+  _cmd1: cmd1,
+  _cmd2: cmd2,
+});
+</code></pre>
+<p>
+  allows to compose two transactions of <em>any</em> status. For example, the
+  type system allows for
+</p>
+<pre><code class="language-tsx">const x: Command&#x3C;Status, Status> = chain(validate("1"), notify("1"));
+</code></pre>
+<p>
+  even though <code>validate</code> ending status is not compatible with the
+  <code>notify</code> starting status.
+</p>
+<p>Can we improve our solution? Yes, with safe composition.</p>
+<p>
+  Firstly, let’s introduce <code>CommandType</code> as a domain helper and
+  refactor our <code>Command</code> type as follows.
+</p>
+<pre><code class="language-tsx">export type CommandType = "validate" | "process" | "notify" | "chain";
+
+export type Command&#x3C;
+  C extends CommandType = CommandType,
+  B extends Status = Status,
+  A extends Status = Status,
+> = {
+  _type: C;
+  _before: B;
+  _after: A;
+} &#x26; (
+  | {
+      _type: "validate";
+      _before: "unprocessed";
+      _after: "unprocessed";
+      transactionId: string;
+    }
+  | {
+      _type: "process";
+      _before: "unprocessed";
+      _after: "processed";
+      transactionId: string;
+    }
+  | {
+      _type: "notify";
+      _before: "processed";
+      _after: "processed";
+      userId: string;
+    }
+  | {
+      _type: "chain";
+      _before: Status;
+      _after: Status;
+      _cmd1: Command&#x3C;CommandType, B, Status>;
+      _cmd2: Command&#x3C;CommandType, Status, A>;
+    }
+);
+</code></pre>
+<p>
+  By binding (imposing a connection) between <code>_type</code> ,
+  <code>_before</code> and <code>_after</code>, the sum type variants will be
+  correctly discriminated when a value is assigned to the field discriminator or
+  to the witness fields.
+</p>
+<pre><code class="language-tsx">const y = validate("1");
+y._type; // "validate"
+y._before; // "unprocessed"
+y._after; // "unprocessed"
+
+const nextState = (prev: {}, command: Command) =>
+  match(command)
+    .with({ _type: "validate" }, (cmd) => {})
+    .with({ _type: "process" }, (cmd) => {
+      cmd._before; // "unprocessed"
+      cmd._after; // "processed"
+    })
+    .with({ _type: "notify" }, (cmd) => {})
+    .with({ _type: "chain" }, (cmd) => {
+      nextState(prev, cmd._cmd1);
+      nextState(prev, cmd._cmd2);
+    })
+    .exhaustive();
+</code></pre>
+<p>
+  We can also enforce the chain constructor to accept only commands with a
+  compatibile ending-starting status, ie. <em>composable</em> commands, even
+  though the <code>Command</code>'s <code>chain</code> subtype allows for
+  <em>any</em> transition <code>Status</code>.
+</p>
+<pre><code class="language-tsx">type Chain&#x3C;B extends Status, A extends Status> = Command&#x3C;"chain", B, A>;
+const chain =
+  &#x3C;B extends Status, T extends Status>(cmd1: Command&#x3C;CommandType, B, T>) =>
+  &#x3C;A extends Status>(cmd2: Command&#x3C;CommandType, T, A>): Chain&#x3C;B, A> => ({
+    _type: "chain",
+    _before: cmd1._before,
+    _after: cmd2._after,
+    _cmd1: cmd1,
+    _cmd2: cmd2,
+  });
+</code></pre>
+<p>For example,</p>
+<pre><code class="language-tsx">const x = chain(validate("1"))(chain(process("1"))(process("1")));
+</code></pre>
+<p>
+  would generate a compile error as the chain
+  <code>validate -> process -> process</code> is not valid:
+  <code>process</code> ends with a <code>processed</code> status, so only a
+  <code>notify</code> command can follow.
+</p>
+<p>
+  Note that the resulting <code>_before</code> and
+  <code>_after</code> properties take in account the entire nested
+  <code>chain</code> of commands
+</p>
+<pre><code class="language-tsx">const x = chain(validate("1"))(chain(process("1"))(notify("1")));
+x._type; // chain
+x._before; // "unprocessed"
+x._after; // "processed"
+</code></pre>
+<h1>When should I use GADT?</h1>
+<p>
+  Essentially, GADTs allow for constrains on type parameters based on the value
+  constructor, enabling ADT’s returned value type refinement. Pattern Matching
+  is a side tool working elegantly and safely with GADTs/ADTs. They can be
+  extremely effective in a variety of scenarios, including but not limited to:
+</p>
+<ul>
+  <li>Compilers or interpreters Abstract Syntax Trees</li>
+  <li>Building domain-specific languages</li>
+  <li>Modeling systems and transitions state</li>
+  <li>Complex data structure manipulation and safe composition</li>
+</ul>
+<p>
+  Generally speaking, GADTs/ADTs should be considered whenever we want the type
+  system to ensure safety, correctness and expressiveness of our solution.
+</p>
+<p>
+  However, they add complexity that must be weighed against their benefits as
+  they might not be helpful or even harmful. If your application is simple and
+  small enough, setting up a GADT or an ADT could be more expensive than the
+  advantages they come with. For example,
+</p>
+<ul>
+  <li>
+    when extensibility is not an issue as you are building a system that is
+    unlikely to expand (you can always refactor it afterwards, thus saving
+    certain upfront costs).
+  </li>
+  <li>
+    when you are designing something to be thrown away, eg. proof of concepts or
+    early MVPs
+  </li>
+</ul>
+<p>
+  Deciding whether to use a GADT/ADT at design time is not always easy. A common
+  approach is to first outline your system, and then evaluate if a GADT/ADT
+  option emerges from the needs.
+</p>
+<hr />
+<p>
+  <em
+    >All code available
+    <a href="https://github.com/arabello/ts-gadt">here</a>.</em
+  >
+</p>
+<ol>
+  <li>
+    <a href="https://nrinaudo.github.io/far-more-adt"
+      >https://nrinaudo.github.io/far-more-adt</a
+    >
+  </li>
+  <li>
+    <a href="https://github.com/gcanti/talks/blob/master/talks/adt/adt.md"
+      >https://github.com/gcanti/talks/blob/master/talks/adt/adt.md</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#tagged-union-types"
+      >https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#tagged-union-types</a
+    >
+  </li>
+  <li>
+    <a href="https://wiki.haskell.org/Type_witness"
+      >https://wiki.haskell.org/Type_witness</a
+    >
+  </li>
+  <li>
+    <a href="https://v2.ocaml.org/manual/gadts-tutorial.html"
+      >https://v2.ocaml.org/manual/gadts-tutorial.html</a
+    >
+  </li>
+  <li>
+    Thanks to <a href="https://alexharri.com">Alex Harri</a> for pointing it out
+    on
+    <a
+      href="https://www.reddit.com/r/typescript/comments/1cj1vi4/comment/l2dlh69/"
+      >Reddit</a
+    >
+  </li>
+</ol>
