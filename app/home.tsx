@@ -1,6 +1,7 @@
 import {
   BookIcon,
   ExternalLinkIcon,
+  FileUser,
   Github,
   Linkedin,
   Mail,
@@ -103,6 +104,15 @@ export default function Home({
                   rel="noreferrer"
                 >
                   <Linkedin />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a
+                  href="assets/matteo-pellegrino-resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FileUser />
                 </a>
               </Button>
             </div>
