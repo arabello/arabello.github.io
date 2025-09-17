@@ -26,7 +26,7 @@ export const meta: Route.MetaFunction = () => [
   {
     name: "description",
     content:
-      "I'm a Product-minded Fullstack Engineer. I love bootstrapping digital products and caring about user needs, business impacts and UX. Currently working at Buildo developing GenAI features. Recently, I've been nerding on evaluation harnessing for AI systems.",
+      "I'm a Product-minded Fullstack Engineer. I love bootstrapping digital products and caring about user needs, business impacts and UX. Currently working at Buildo developing GenAI features. Recently, I've been nerding on evaluation harnesses for AI systems.",
   },
 ];
 
