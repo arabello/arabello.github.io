@@ -44,14 +44,14 @@ export default function Books({
   loaderData: { booksWithNotes, booksWithoutNotes },
 }: Route.ComponentProps) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 px-4 sm:px-0">
       <Button variant="ghost" size="sm" asChild>
         <Link to="/">← Home</Link>
       </Button>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Books worth sharing</h1>
+        <h1 className="text-xl sm:text-2xl font-bold">Books worth sharing</h1>
       </div>
-      <p className="text-muted-foreground">
+      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
         I mostly read non-fiction books, trying to draw links between concepts
         from diverse sources. I advocate for{" "}
         <a
@@ -70,18 +70,18 @@ export default function Books({
           <BookCard key={(b.isbn ?? b.title) + b.author} {...b} />
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {booksWithoutNotes.map((b) => (
           <BookCard key={(b.isbn ?? b.title) + b.author} {...b} />
         ))}
       </div>
-      <section className="mt-8 py-6 border-t flex flex-col items-center gap-3">
-        <p className="text-center text-muted-foreground">
+      <section className="mt-8 py-6 border-t flex flex-col items-center gap-3 px-4 sm:px-0">
+        <p className="text-center text-sm sm:text-base text-muted-foreground">
           Want to talk about a book or share a favorite?
         </p>
         <Button variant="default" size="sm" asChild>
           <a href="mailto:matteo.pelle.pellegrino@gmail.com">
-            <Mail /> Get in touch
+            <Mail className="w-4 h-4" /> Get in touch
           </a>
         </Button>
       </section>
@@ -95,24 +95,28 @@ function BookCard(
   return (
     <Card className="h-full">
       {props.isbn || props.notes ? (
-        <CardContent className="flex gap-4">
+        <CardContent className="flex flex-col sm:flex-row gap-4 p-4 sm:p-6">
           {props.coverDataUrl ? (
             <img
               src={props.coverDataUrl}
               alt={`Cover of ${props.title}`}
-              className="w-20 h-auto rounded-md border"
+              className="w-16 h-auto sm:w-20 rounded-md border self-center sm:flex-shrink-0"
               loading="lazy"
             />
           ) : null}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 min-w-0">
             <div className="flex flex-col">
-              <div className="font-semibold">{props.title}</div>
-              <div className="text-sm text-muted-foreground">
+              <div className="font-semibold text-sm sm:text-base leading-tight">
+                {props.title}
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 by {props.author}
               </div>
             </div>
             {props.notes ? (
-              <p className="text-sm text-muted-foreground">{props.notes}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                {props.notes}
+              </p>
             ) : null}
           </div>
         </CardContent>

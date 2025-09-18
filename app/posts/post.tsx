@@ -35,44 +35,71 @@ export default function Post({ loaderData: { post } }: Route.ComponentProps) {
         });
       };
 
-      // Headings
+      // Headings - Mobile responsive
       appendClasses(
         "h1",
-        "text-4xl font-bold tracking-tight text-balance mt-10 py-4",
+        "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance mt-8 sm:mt-10 py-3 sm:py-4",
       );
       appendClasses(
         "h2",
-        "scroll-m-20 text-3xl font-semibold tracking-tight mt-10 first:mt-0",
+        "scroll-m-20 text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight mt-8 sm:mt-10 first:mt-0",
       );
       appendClasses(
         "h3",
-        "scroll-m-20 text-2xl font-semibold tracking-tight mt-8",
+        "scroll-m-20 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight mt-6 sm:mt-8",
       );
       appendClasses(
         "h4",
-        "scroll-m-20 text-xl font-semibold tracking-tight mt-6",
+        "scroll-m-20 text-base sm:text-lg lg:text-xl font-semibold tracking-tight mt-4 sm:mt-6",
       );
 
-      // Text elements
-      appendClasses("p", "leading-7");
-      appendClasses("a", "underline underline-offset-4 hover:text-primary/80");
-      appendClasses("hr", "my-8 border-border");
-      appendClasses("img", "rounded-md border");
+      // Text elements - Mobile responsive
+      appendClasses(
+        "p",
+        "leading-6 sm:leading-7 text-sm sm:text-base break-words",
+      );
+      appendClasses(
+        "a",
+        "underline underline-offset-4 hover:text-primary/80 break-all hyphens-auto",
+      );
+      appendClasses("hr", "my-6 sm:my-8 border-border");
+      appendClasses("img", "rounded-md border w-full h-auto max-w-full");
 
-      // Lists
-      appendClasses("ul", "my-6 ml-6 list-disc [&>li]:mt-2");
-      appendClasses("ol", "my-6 ml-6 list-decimal [&>li]:mt-2");
+      // Handle potential overflow elements
+      appendClasses("sup", "text-xs break-words");
+      appendClasses("em", "break-words");
+      appendClasses(
+        "table",
+        "w-full max-w-full overflow-x-auto block whitespace-nowrap",
+      );
+      appendClasses("td, th", "break-words max-w-0");
 
-      // Blockquote
+      // Lists - Mobile responsive
+      appendClasses(
+        "ul",
+        "my-4 sm:my-6 ml-4 sm:ml-6 list-disc [&>li]:mt-1 sm:[&>li]:mt-2 text-sm sm:text-base",
+      );
+      appendClasses(
+        "ol",
+        "my-4 sm:my-6 ml-4 sm:ml-6 list-decimal [&>li]:mt-1 sm:[&>li]:mt-2 text-sm sm:text-base",
+      );
+
+      // Blockquote - Mobile responsive
       appendClasses(
         "blockquote",
-        "mt-6 border-l-2 pl-6 italic text-muted-foreground",
+        "mt-4 sm:mt-6 border-l-2 pl-4 sm:pl-6 italic text-muted-foreground text-sm sm:text-base",
       );
 
-      // Code blocks and inline code
-      appendClasses("pre", "rounded-lg bg-muted p-4 text-sm overflow-x-auto");
-      appendClasses("pre code", "bg-transparent p-0 text-inherit");
-      // Inline code that is not inside pre
+      // Code blocks and inline code - Mobile responsive
+      appendClasses(
+        "pre",
+        "rounded-lg bg-muted p-3 sm:p-4 text-xs sm:text-sm overflow-x-auto my-4 sm:my-6 max-w-full whitespace-pre-wrap break-words",
+      );
+      appendClasses(
+        "pre code",
+        "bg-transparent p-0 text-inherit break-words whitespace-pre-wrap",
+      );
+      // Inline code that is not inside pre - Mobile responsive
       doc.querySelectorAll("code").forEach((el) => {
         if (
           el.parentElement &&
@@ -81,7 +108,10 @@ export default function Post({ loaderData: { post } }: Route.ComponentProps) {
           const existing = el.getAttribute("class");
           el.setAttribute(
             "class",
-            [existing, "rounded bg-muted px-1 py-0.5 text-xs"]
+            [
+              existing,
+              "rounded bg-muted px-1 py-0.5 text-xs sm:text-sm break-words",
+            ]
               .filter(Boolean)
               .join(" "),
           );
@@ -105,16 +135,22 @@ export default function Post({ loaderData: { post } }: Route.ComponentProps) {
     return <div className="text-muted-foreground">Post not found.</div>;
 
   return (
-    <article className="space-y-4">
-      <div>
-        <Button variant="ghost" size="sm" asChild>
+    <article className="space-y-6 sm:space-y-8">
+      <div className="flex items-center">
+        <Button variant="ghost" size="sm" asChild className="text-sm">
           <Link to="/">← Home</Link>
         </Button>
       </div>
-      <div className="text-2xl font-bold">{post.title}</div>
-      <div className="text-xs text-muted-foreground">{post.date}</div>
+      <header className="space-y-3 sm:space-y-4">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">
+          {post.title}
+        </h1>
+        <div className="text-sm sm:text-base text-muted-foreground">
+          {post.date}
+        </div>
+      </header>
       <div
-        className="prose max-w-none"
+        className="prose prose-sm sm:prose-base lg:prose-lg max-w-none prose-headings:scroll-mt-20 prose-pre:overflow-x-auto prose-pre:text-xs sm:prose-pre:text-sm overflow-hidden"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </article>
