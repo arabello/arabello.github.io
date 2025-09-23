@@ -1,5 +1,6 @@
 import {
   BookIcon,
+  BrainIcon,
   ExternalLinkIcon,
   FileUser,
   Github,
@@ -19,7 +20,14 @@ import type { Route } from "./+types/home";
 import { H1 } from "./components/ui/H1";
 import { H2 } from "./components/ui/H2";
 import posts from "./posts/posts.json";
-import { useFormatters } from "./useFormatters";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "./components/ui/navigation-menu";
+import { cn } from "./lib/utils";
 
 export const meta: Route.MetaFunction = () => [
   { title: "Matteo Pellegrino – Home" },
@@ -43,6 +51,12 @@ const projects = [
     link: "https://hub.espanso.org",
     external: true,
   },
+  {
+    title: "Dokey",
+    description: "University incubator (Almacube) student project.",
+    link: "https://www.matteopellegrino.dev/dokey-web",
+    external: true,
+  },
 ];
 
 export async function loader() {
@@ -57,6 +71,27 @@ export default function Home({
 }: Route.ComponentProps) {
   return (
     <div className="space-y-8 sm:space-y-12">
+      <div className="flex flex-row justify-center gap-4">
+        <Button variant="ghost" size="default" asChild>
+          <Link to="/books">
+            <BookIcon /> Reading List
+          </Link>
+        </Button>
+        <Button variant="ghost" size="default" asChild>
+          <Link to="/ai-news">
+            <BrainIcon /> AI News
+          </Link>
+        </Button>
+        <Button variant="ghost" size="default" asChild>
+          <a
+            href="assets/matteo-pellegrino-resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FileUser /> Resume
+          </a>
+        </Button>
+      </div>
       {/* Intro */}
       <section className="grid grid-cols-1 gap-8 sm:gap-12 items-start">
         <div className="space-y-4 sm:space-y-6">
@@ -104,22 +139,8 @@ export default function Home({
                   <Linkedin />
                 </a>
               </Button>
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="assets/matteo-pellegrino-resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FileUser />
-                </a>
-              </Button>
             </div>
             <div className="flex flex-row justify-center gap-3">
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/books">
-                  <BookIcon /> Reading List
-                </Link>
-              </Button>
               <Button variant="default" size="sm" asChild>
                 <a href="mailto:matteo.pelle.pellegrino@gmail.com">
                   <Mail /> Get in touch
@@ -165,18 +186,24 @@ export default function Home({
         </div>
       </section>
 
-      {/* Side Projects */}
+      {/* Old Projects */}
       <section className="space-y-4">
         <div className="space-y-4">
-          <H2>Side Projects</H2>
+          <H2>Old Projects</H2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <a
                 key={project.title}
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="block"
+                className={cn(
+                  "block",
+                  // Center the element if it's in the second row and alone
+                  projects.length % 2 === 1 && index === projects.length - 1
+                    ? "sm:col-span-2 sm:w-1/2 sm:mx-auto"
+                    : "",
+                )}
               >
                 <Card className="h-full">
                   <CardHeader>
