@@ -71,7 +71,7 @@ export default function Home({
                 href="https://www.buildo.com"
                 className="underline"
               >
-                Buildo
+                buildo
               </a>{" "}
               developing GenAI features. Recently, I've been nerding on{" "}
               <a
