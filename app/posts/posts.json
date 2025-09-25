@@ -1,5 +1,11 @@
 [
   {
+    "title": "Evaluation Driven Development",
+    "date": "2025-09-24",
+    "description": "Engineering teams are rapidly adopting Generative AI. New challenges arise beyond the traditional software development lifecycle. To escape PoC purgatory, we must follow the Scientific Approach.",
+    "url": "https://www.buildo.com/blog-posts/evaluation-driven-development?utm_campaign=blog_post_edd&utm_source=webpage&utm_medium=personal"
+  },
+  {
     "title": "Prefect for Generative AI Pipelines",
     "date": "2025-02-18",
     "description": "Developing Generative AI products introduces challenges like indeterminism, data volume, and scalability. Teams must adapt, and selecting the right tools becomes essential, as we did with Prefect, a Pythonic workflow engine.",
