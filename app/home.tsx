@@ -40,9 +40,9 @@ export const meta: Route.MetaFunction = () => [
 
 const projects = [
   {
-    title: "Night Focus",
+    title: "Akora",
     description: "An auditory app, to get into the Flow State.",
-    link: "https://www.matteopellegrino.dev/night-focus",
+    link: "https://www.matteopellegrino.dev/akora",
     external: true,
   },
   {
