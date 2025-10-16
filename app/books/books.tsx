@@ -1,6 +1,6 @@
 import { Card, CardContent } from "~/components/ui/card";
 import { Button } from "~/components/ui/button";
-import { Home, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link } from "react-router";
 import type { Route } from "./+types/books";
 import books from "./books.json";

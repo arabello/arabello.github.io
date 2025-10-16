@@ -5,4 +5,5 @@ export default [
   route("/books", "./books/books.tsx"),
   route("/posts/:slug", "./posts/post.tsx"),
   route("/ai-news", "./ai-news/ai-news.tsx"),
+  route("/quotes", "./quotes/quotes.tsx"),
 ] satisfies RouteConfig;

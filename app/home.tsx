@@ -6,6 +6,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Quote,
 } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
@@ -20,13 +21,6 @@ import type { Route } from "./+types/home";
 import { H1 } from "./components/ui/H1";
 import { H2 } from "./components/ui/H2";
 import posts from "./posts/posts.json";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "./components/ui/navigation-menu";
 import { cn } from "./lib/utils";
 
 export const meta: Route.MetaFunction = () => [
@@ -80,6 +74,11 @@ export default function Home({
         <Button variant="ghost" size="default" asChild>
           <Link to="/ai-news">
             <BrainIcon /> AI News
+          </Link>
+        </Button>
+        <Button variant="ghost" size="default" asChild>
+          <Link to="/quotes">
+            <Quote /> Quotes
           </Link>
         </Button>
         <Button variant="ghost" size="default" asChild>
