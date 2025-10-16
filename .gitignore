@@ -1,3 +1,5 @@
+.windsurf/local
+
 # React Router
 /.react-router/
 /build/
