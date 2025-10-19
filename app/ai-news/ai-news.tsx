@@ -17,7 +17,7 @@ export default function AiNews() {
         <h1 className="text-xl sm:text-2xl font-bold">AI News</h1>
       </div>
       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-        In{" "}
+        At{" "}
         <a
           href="https://www.buildo.com"
           target="_blank"
@@ -26,10 +26,11 @@ export default function AiNews() {
         >
           buildo
         </a>
-        , we run a monthly agenda to share latest news from the AI field to a
-        non technical audience. While keeping up with the latest AI tech, I pick
-        up some relevant news, adapt them to the general audience and record a
-        short video with the help of the team to be shared over the company{" "}
+        , we run a monthly AI news series (in Italian) to share the latest
+        developments from the AI field with a non-technical audience. As I keep
+        up with emerging AI technologies, I curate relevant news, adapt it for a
+        broader audience, and record short videos with the team's help to share
+        on the company's{" "}
         <a
           href="https://www.linkedin.com/company/buildo/"
           target="_blank"
