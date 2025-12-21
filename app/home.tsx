@@ -6,6 +6,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Music,
   Quote,
 } from "lucide-react";
 import { Link } from "react-router";
@@ -69,6 +70,11 @@ export default function Home({
         <Button variant="ghost" size="default" asChild>
           <Link to="/books">
             <BookIcon /> Reading List
+          </Link>
+        </Button>
+        <Button variant="ghost" size="default" asChild>
+          <Link to="/music">
+            <Music /> Music
           </Link>
         </Button>
         <Button variant="ghost" size="default" asChild>
