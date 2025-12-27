@@ -35,6 +35,13 @@ export const meta: Route.MetaFunction = () => [
 
 const projects = [
   {
+    title: "Eval Annotator",
+    description:
+      "A simple tool for Evaluation Driven Development feedback loop.",
+    link: "https://www.matteopellegrino.dev/eval-annotator",
+    external: true,
+  },
+  {
     title: "Akora",
     description: "An auditory app, to get into the Flow State.",
     link: "https://www.matteopellegrino.dev/akora",
