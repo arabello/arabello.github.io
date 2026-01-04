@@ -243,7 +243,7 @@ export default function Home({
       {/* Projects */}
       <section className="space-y-4">
         <div className="space-y-4">
-          <H2>Projects</H2>
+          <H2>Personal Projects</H2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {projects.map((project, index) => (
               <a
