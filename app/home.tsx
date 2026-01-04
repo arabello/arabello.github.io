@@ -23,6 +23,7 @@ import { H1 } from "./components/ui/H1";
 import { H2 } from "./components/ui/H2";
 import posts from "./posts/posts.json";
 import { cn } from "./lib/utils";
+import post from "./posts/post";
 
 export const meta: Route.MetaFunction = () => [
   { title: "Matteo Pellegrino – Home" },
@@ -37,7 +38,7 @@ const projects = [
   {
     title: "Eval Annotator",
     description:
-      "A simple tool for Evaluation Driven Development feedback loop.",
+      "A minimalist tool for Evaluation Driven Development feedback loop.",
     link: "https://www.matteopellegrino.dev/eval-annotator",
     external: true,
   },
@@ -57,6 +58,16 @@ const projects = [
     title: "Dokey",
     description: "University incubator (Almacube) student project.",
     link: "https://www.matteopellegrino.dev/dokey-web",
+    external: true,
+  },
+];
+
+const talks = [
+  {
+    title: "From PoC to Product -  Surviving Generative AI",
+    link: "assets/from-poc-to-product-surviving-generative-ai.pdf",
+    description:
+      "Introducing Evaluation Driven Development in the product development process.",
     external: true,
   },
 ];
@@ -198,10 +209,41 @@ export default function Home({
         </div>
       </section>
 
-      {/* Old Projects */}
+      {/* Talks */}
+      <section className="space-y-4">
+        <H2>Talks</H2>
+        <div className="flex flex-col gap-2 sm:gap-3">
+          {talks.map((talk, index) => (
+            <div key={index} className="py-2 sm:py-3">
+              <Link
+                to={talk.link}
+                target={talk.external ? "_blank" : undefined}
+                rel={talk.external ? "noreferrer" : undefined}
+                className="group flex items-start justify-between gap-3 min-h-[44px] sm:min-h-auto"
+              >
+                <div className="flex flex-col gap-1 hover:underline flex-1">
+                  <span className="font-medium text-sm sm:text-base">
+                    {talk.title}
+                  </span>
+                  {talk.description && (
+                    <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
+                      {talk.description}
+                    </p>
+                  )}
+                </div>
+                {talk.link && (
+                  <ExternalLinkIcon className="w-4 h-4 shrink-0 opacity-60 transition-all group-hover:opacity-100 group-hover:translate-x-0.5 mt-1" />
+                )}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects */}
       <section className="space-y-4">
         <div className="space-y-4">
-          <H2>Old Projects</H2>
+          <H2>Projects</H2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {projects.map((project, index) => (
               <a
