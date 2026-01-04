@@ -10,6 +10,10 @@ export const tracks: Track[] = [
   },
   {
     type: "youtube",
+    url: "https://www.youtube.com/embed/p6_CNlTq0cs",
+  },
+  {
+    type: "youtube",
     url: "https://www.youtube.com/embed/CltZsjic5OA",
   },
   {
