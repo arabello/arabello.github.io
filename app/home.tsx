@@ -84,7 +84,8 @@ export default function Home({
 }: Route.ComponentProps) {
   return (
     <div className="space-y-8 sm:space-y-12">
-      <div className="flex flex-row justify-center gap-4">
+      {/* Top Bar */}
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         <Button variant="ghost" size="default" asChild>
           <Link to="/books">
             <BookIcon /> Reading List
@@ -142,7 +143,7 @@ export default function Home({
               for AI systems.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="flex flex-row items-center justify-between gap-4">
             <div className="flex flex-row justify-center gap-3">
               <Button variant="ghost" size="icon" asChild>
                 <a
