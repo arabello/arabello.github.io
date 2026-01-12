@@ -43,6 +43,12 @@ const projects = [
     external: true,
   },
   {
+    title: "Legato",
+    description: "Plan your DJ sets based on harmonic mixing rules.",
+    link: "https://www.matteopellegrino.dev/legato",
+    external: true,
+  },
+  {
     title: "Akora",
     description: "An auditory app, to get into the Flow State.",
     link: "https://www.matteopellegrino.dev/akora",
