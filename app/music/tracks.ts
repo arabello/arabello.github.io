@@ -14,6 +14,10 @@ export const tracks: Track[] = [
   },
   {
     type: "youtube",
+    url: "https://www.youtube.com/embed/n_L9wGjYw5A",
+  },
+  {
+    type: "youtube",
     url: "https://www.youtube.com/embed/CltZsjic5OA",
   },
   {
